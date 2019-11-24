@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto mt-5">
+                <div class="text-center">
+                    <h2 class="question-no"></h2>
+                    <p>Oblicz</p>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 mx-auto mt-3">
+                <form id="question-data" method="POST">
+                    <div class="form-group row">
+                        <label for="math1" class="col-7 col-form-label question">3 + 4 - 5 = </label>
+                        <div class="col-5">
+                            <input type="number" name="math1" class="form-control mt-3">
+                            <span class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="math1" class="col-7 col-form-label question">4 * 5 / 2 = </label>
+                        <div class="col-5">
+                            <input type="number" name="math2" class="form-control mt-3">
+                            <span class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="math1" class="col-7 col-form-label question">4 - 1 + 2 = </label>
+                        <div class="col-5">
+                            <input type="number" name="math3" class="form-control mt-3">
+                            <span class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <label for="math1" class="col-7 col-form-label question">8 / 4 * 2 = </label>
+                        <div class="col-5">
+                            <input type="number" name="math4" class="form-control mt-3">
+                            <span class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+                            <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>

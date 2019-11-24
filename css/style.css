@@ -1,0 +1,9 @@
+html, body {
+    /* background-color: #efefef; */
+    font-size: 20px;
+    font-family: 'Lato', 'Arial', sans-serif;
+}
+
+.question {
+    font-size: 220% !important;
+}
