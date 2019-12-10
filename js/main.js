@@ -71,22 +71,27 @@ $(document).ready(function() {
                 var totalTime = snapshot.val()[i].totalTime.value;
                 var startTime = snapshot.val()[i].startTime.value;
                 var endTime = snapshot.val()[i].endTime.value;
-                console.log('Pytanie numer ' + i);
-                console.log('Total time: ' + totalTime / 1000 + 's');     
-                console.log('Start time: ' + startTime / 1000 + 's');
-                console.log('End time: ' + endTime / 1000 + 's');           
+                // console.log('Pytanie numer ' + i);
+                // console.log('Total time: ' + totalTime / 1000 + 's');     
+                // console.log('Start time: ' + startTime / 1000 + 's');
+                // console.log('End time: ' + endTime / 1000 + 's');           
 
-                result = result + `<ul class="list-group"><li class="list-group-item">Pytanie nr:` + i + `</li></ul>`
-                window.location.replace("result.html");
-                localStorage.setItem("questionNo", "");
-                localStorage.setItem("askedQuestions", ""); 
-            }
-
-            console.log(result);
-            $(".result").html(result);
+                result = result + `<ul class="list-group">
+                                        <li class="list-group-item"><strong>Pytanie nr: ` + i + `</strong></li>
+                                        <li class="list-group-item">Czas rozpoczęcia: ` + startTime/1000  + ` s</li>
+                                        <li class="list-group-item">Czas zakończenia: ` + endTime/1000 + ` s</li>
+                                        <li class="list-group-item">Całkowity czas: ` + totalTime/1000 + ` s</li>
+                                    </ul>`                
+            }            
+            
+            $(".result").html(result);                    
         });     
-    }    
+    }        
 
+    if (window.location.href.indexOf("result") > -1) {
+        displayTimes();
+    }
+    
     // Get current question number
     questionNo = localStorage.getItem("questionNo");
     $(".question-no").html("Zadanie " + questionNo + "/6");
@@ -114,13 +119,15 @@ $(document).ready(function() {
     // Submit question data
     $("#question-data").submit(function(e) {
         saveTime(2);
-        saveTime(3);
+        saveTime(3);             
         var data = $(this).serializeArray();
-        console.log(data)
+        // console.log(data)
         if(inputValidation(data)) {
             if(questionNo == "6") {
                 // Return to main page & clear localStorage items
-                displayTimes();                                
+                window.location.replace("result.html");             
+                localStorage.setItem("questionNo", "");
+                localStorage.setItem("askedQuestions", "");                                           
             } else {
                 // Increment question number
                 localStorage.setItem("questionNo", ++questionNo);
