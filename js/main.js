@@ -138,12 +138,33 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
+    $(".game-data").click(function() {
+        // saveTime(2);
+        // saveTime(3);             
+        var data = $(this).serializeArray();
+        // console.log(data)
+        // if(inputValidation(data)) {
+            if(questionNo == "6") {
+                // Return to main page & clear localStorage items
+                window.location.replace("result.html");             
+                localStorage.setItem("questionNo", "");
+                localStorage.setItem("askedQuestions", "");                                           
+            } else {
+                // Increment question number
+                localStorage.setItem("questionNo", ++questionNo);
+                goToNextQuestion();
+            }
+        // }
+
+    });
+
+
     function goToNextQuestion() {
-        rand = Math.floor((Math.random() * 4) + 1);
+        rand = Math.floor((Math.random() * 5) + 1);
 
         while(true) {
             if(isAsked(rand)) {
-                rand = Math.floor((Math.random() * 4) + 1);
+                rand = Math.floor((Math.random() * 5) + 1);
             } else {
                 break;
             }   
