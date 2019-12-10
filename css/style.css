@@ -4,6 +4,10 @@ html, body {
     font-family: 'Lato', 'Arial', sans-serif;
 }
 
+.small_question {
+    font-size: 70% !important;
+}
+
 .question {
     font-size: 220% !important;
 }
