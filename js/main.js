@@ -54,7 +54,7 @@ $(document).ready(function() {
         }
     }
 
-    $('#firstQuestion').click(function() {
+    $('#firstQuestion').focus(function() {
         saveTime(1);
     });
 
@@ -63,6 +63,7 @@ $(document).ready(function() {
     });
 
     function displayTimes() {
+        var result = ""
         var username = localStorage.getItem('username');
         return db.ref('users/' + username).once('value', (snapshot) => {
             var questionsCount = snapshot.numChildren() - 1;
@@ -75,11 +76,15 @@ $(document).ready(function() {
                 console.log('Start time: ' + startTime / 1000 + 's');
                 console.log('End time: ' + endTime / 1000 + 's');           
 
-                window.location.replace("index.html");
+                result = result + `<ul class="list-group"><li class="list-group-item">Pytanie nr:` + i + `</li></ul>`
+                window.location.replace("result.html");
                 localStorage.setItem("questionNo", "");
-                localStorage.setItem("askedQuestions", "");
+                localStorage.setItem("askedQuestions", ""); 
             }
-        });        
+
+            console.log(result);
+            $(".result").html(result);
+        });     
     }    
 
     // Get current question number
@@ -107,11 +112,11 @@ $(document).ready(function() {
     });
 
     // Submit question data
-    $("#question-data").submit(function(e) {        
+    $("#question-data").submit(function(e) {
         saveTime(2);
         saveTime(3);
         var data = $(this).serializeArray();
-
+        console.log(data)
         if(inputValidation(data)) {
             if(questionNo == "6") {
                 // Return to main page & clear localStorage items
@@ -127,12 +132,11 @@ $(document).ready(function() {
     });
 
     function goToNextQuestion() {
-        rand = Math.floor((Math.random() * 2) + 1);
+        rand = Math.floor((Math.random() * 4) + 1);
 
         while(true) {
             if(isAsked(rand)) {
-                // Do poprawy
-                rand = Math.floor((Math.random() * 2) + 1);
+                rand = Math.floor((Math.random() * 4) + 1);
             } else {
                 break;
             }   
