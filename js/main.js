@@ -1,96 +1,42 @@
 $(document).ready(function() {
+    /*  
+    ------------------------------
+    TIME MEASUREMENT CODE START
+    ------------------------------
+    */
     var startTime = new Date().getTime();
     var endTime;    
     var startTimeSaved = false;
 
-    var firebaseConfig = {
-        apiKey: "AIzaSyCcCWbVcFj_6rG2eqxCfMoZRnyF1NHhmm4",
-        authDomain: "test-app-572fa.firebaseapp.com",
-        databaseURL: "https://test-app-572fa.firebaseio.com",
-        projectId: "test-app-572fa",
-        storageBucket: "test-app-572fa.appspot.com",
-        messagingSenderId: "247352338453",
-        appId: "1:247352338453:web:633baa043b785538bc461c"
-    };
-    // Initialize Firebase
-    firebase.initializeApp(firebaseConfig);
-    var db = firebase.database();
-
-    // Save new user to database
-    function createNewUser(username) {
-        var date = new Date();
-        var dateTime = date.getFullYear()+'-'+(date.getMonth()+1)+'-'+date.getDay()+'/'+date.getHours()+":"+date.getMinutes()+":"+date.getSeconds();
-        db.ref('users/' + username).set({
-            created: dateTime
-        });
-        localStorage.setItem('username', username);
-    }
-
-    // Save time to database that user took to answer the question
-    function saveTime(which) {        
-        var username = localStorage.getItem('username');
-        var questionNumber = localStorage.getItem('questionNo')             
-        // Time from showing question to first click
-        if (which == 1 && !startTimeSaved) {   
-            var time = new Date().getTime() - startTime;         
-            db.ref('users/' + username + "/" + questionNumber + "/startTime").set({
-                value: time
-            });
-            startTimeSaved = true;
-        } 
-        // Time from last click to submitting question
-        else if (which == 2) {                        
-            var time = new Date().getTime() - endTime;
-            db.ref('users/' + username + "/" + questionNumber + "/endTime").set({
-                value: time
-            });
-        } 
-        // Time that user take to complete while question
-        else if (which == 3) {
-            var time = new Date().getTime() - startTime;
-            db.ref('users/' + username + "/" + questionNumber + "/totalTime").set({
-                value: time
-            });
-        }
-    }
-
+    // Save time that user took to start answering question
     $('#firstQuestion').focus(function() {
-        saveTime(1);
+        // saveTime(1);
     });
 
+    // Save time that elapsed between last click and submitting the question
     $('#lastQuestion').focus(function() {
         endTime = new Date().getTime();
     });
 
+    // Function for displaying time results
     function displayTimes() {
         var result = ""
         var username = localStorage.getItem('username');
-        return db.ref('users/' + username).once('value', (snapshot) => {
-            var questionsCount = snapshot.numChildren() - 1;
-            for(i=1; i<=questionsCount; i++) {
-                var totalTime = snapshot.val()[i].totalTime.value;
-                var startTime = snapshot.val()[i].startTime.value;
-                var endTime = snapshot.val()[i].endTime.value;
-                // console.log('Pytanie numer ' + i);
-                // console.log('Total time: ' + totalTime / 1000 + 's');     
-                // console.log('Start time: ' + startTime / 1000 + 's');
-                // console.log('End time: ' + endTime / 1000 + 's');           
+        
+        result = result + `<ul class="list-group">
+                                <li class="list-group-item"><strong>Pytanie nr: ` + i + `</strong></li>
+                                <li class="list-group-item">Czas rozpoczęcia: ` + startTime/1000  + ` s</li>
+                                <li class="list-group-item">Czas zakończenia: ` + endTime/1000 + ` s</li>
+                                <li class="list-group-item">Całkowity czas: ` + totalTime/1000 + ` s</li>
+                            </ul>`                     
 
-                result = result + `<ul class="list-group">
-                                        <li class="list-group-item"><strong>Pytanie nr: ` + i + `</strong></li>
-                                        <li class="list-group-item">Czas rozpoczęcia: ` + startTime/1000  + ` s</li>
-                                        <li class="list-group-item">Czas zakończenia: ` + endTime/1000 + ` s</li>
-                                        <li class="list-group-item">Całkowity czas: ` + totalTime/1000 + ` s</li>
-                                    </ul>`                
-            }            
-            
-            $(".result").html(result);                    
-        });     
-    }        
-
-    if (window.location.href.indexOf("result") > -1) {
-        displayTimes();
+        $(".result").html(result);                    
     }
+    /*  
+    ------------------------------
+    TIME MEASUREMENT CODE END
+    ------------------------------
+    */
     
     // Get current question number
     questionNo = localStorage.getItem("questionNo");
@@ -105,7 +51,6 @@ $(document).ready(function() {
     // Submit user data
     $("#user-data").submit(function(e) {
         var data = $(this).serializeArray();        
-        createNewUser(data[0].value);
 
         if(inputValidation(data)) {
             // Set first question number
@@ -117,14 +62,12 @@ $(document).ready(function() {
     });
 
     // Submit question data
-    $("#question-data").submit(function(e) {
-        saveTime(2);
-        saveTime(3);             
+    $("#question-data").submit(function(e) {               
         var data = $(this).serializeArray();
         // console.log(data)
         if(inputValidation(data)) {
             if(questionNo == "6") {
-                // Return to main page & clear localStorage items
+                // Show results and clear local storage
                 window.location.replace("result.html");             
                 localStorage.setItem("questionNo", "");
                 localStorage.setItem("askedQuestions", "");                                           
@@ -138,19 +81,17 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $(".game-data").click(function() {
-        // saveTime(2);
-        // saveTime(3);             
+    $(".game-data").click(function() {        
         var data = $(this).serializeArray();
         // console.log(data)
-        // if(inputValidation(data)) {
-            if(questionNo == "6") {
-                // Return to main page & clear localStorage items
+        // if(inputValidation(data)) {            
+            if(questionNo == '6') {
+                // Show results and clear local storage                
                 window.location.replace("result.html");             
                 localStorage.setItem("questionNo", "");
                 localStorage.setItem("askedQuestions", "");                                           
             } else {
-                // Increment question number
+                // Increment question number                
                 localStorage.setItem("questionNo", ++questionNo);
                 goToNextQuestion();
             }
@@ -160,53 +101,53 @@ $(document).ready(function() {
 
 
     function goToNextQuestion() {
-        rand = Math.floor((Math.random() * 5) + 1);
+        // rand = Math.floor((Math.random() * 5) + 1);
 
-        while(true) {
-            if(isAsked(rand)) {
-                rand = Math.floor((Math.random() * 5) + 1);
-            } else {
-                break;
-            }   
-        }
-
-        window.location.replace("question" + rand + ".html");
-        addAskedQuestion(rand);
+        // while(true) {
+        //     if(isAsked(rand)) {
+        //         rand = Math.floor((Math.random() * 5) + 1);
+        //     } else {
+        //         break;
+        //     }   
+        // }
+        var num = localStorage.getItem('questionNo');
+        window.location.replace("question" + num + ".html");
+        // addAskedQuestion(rand);
     }
 
     // Add asked question to list
-    function addAskedQuestion(rand) {
-        askedQuestions = localStorage.getItem("askedQuestions");
+    // function addAskedQuestion(rand) {
+    //     askedQuestions = localStorage.getItem("askedQuestions");
 
-        if(askedQuestions == "") {
-            localStorage.setItem("askedQuestions", rand);
-        } 
-        else {
-            localStorage.setItem("askedQuestions", askedQuestions + ", " + rand);
-        }
-    }
+    //     if(askedQuestions == "") {
+    //         localStorage.setItem("askedQuestions", rand);
+    //     } 
+    //     else {
+    //         localStorage.setItem("askedQuestions", askedQuestions + ", " + rand);
+    //     }
+    // }
 
-    // Check if question was already asked
-    function isAsked(rand) {
-        askedQuestions = localStorage.getItem("askedQuestions");
+    // // Check if question was already asked
+    // function isAsked(rand) {
+    //     askedQuestions = localStorage.getItem("askedQuestions");
 
-        if(askedQuestions != null) {
-            var askedQuestionsArray = askedQuestions.split(',');
+    //     if(askedQuestions != null) {
+    //         var askedQuestionsArray = askedQuestions.split(',');
 
-            $.each(askedQuestionsArray, function(key, val) {
-                if(val == rand) {
-                    response = true;
-                } else {
-                    response = false;
-                }
-            });
+    //         $.each(askedQuestionsArray, function(key, val) {
+    //             if(val == rand) {
+    //                 response = true;
+    //             } else {
+    //                 response = false;
+    //             }
+    //         });
 
-        } else {
-            response = false;
-        }
+    //     } else {
+    //         response = false;
+    //     }
         
-        return response;
-    }
+    //     return response;
+    // }
 
     // Validate inputs
     function inputValidation(data) {
