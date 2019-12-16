@@ -38,39 +38,41 @@
         </div>
     </div> -->
 
-    <div class="container">
-        <header>
-            <h1>Matching Game</h1>
-        </header>
+    <div class="container d-flex h-100 align-items-center justify-content-center">
+        <div>
+            <header>
+                <h1>Matching Game</h1>
+            </header>
 
-        <section class="score-panel">
-            <ul id="rating-display" class="stars">
+            <section class="score-panel">
+                <ul id="rating-display" class="stars">
+                </ul>
+
+                <span id="moves-counter" class="moves"> </span>
+
+                <div class="restart" id="restart-button">
+                    <i class="fa fa-repeat"></i>
+                </div>
+
+                <span id="time" class="time" > 00 : 00 : 00 </span> 
+            </section>
+
+            <ul id="cardList" class="deck">
             </ul>
 
-            <span id="moves-counter" class="moves"> </span>
-
-            <div class="restart" id="restart-button">
-                <i class="fa fa-repeat"></i>
-            </div>
-
-            <span id="time" class="time" > 00 : 00 : 00 </span> 
-        </section>
-
-        <ul id="cardList" class="deck">
-        </ul>
-
-        <div class="row">
-            <div class="col">
-                <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
-                <button type="submit" class="btn btn-dark btn-block next-question game-data">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+            <div class="row">
+                <div class="col">
+                    <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+                    <button type="submit" class="btn btn-dark btn-block next-question game-data">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+                </div>
             </div>
         </div>
-
     </div>
     
     <div id="overlay"></div>
 
     <div id="win-screen"></div>
+
 
     
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
