@@ -49,3 +49,12 @@
 .save-btn {
     margin-top: 20px;
 }
+.form-check {
+    padding: 10px;
+}
+.visible {
+    display: inherit;
+}
+.hidden {
+    display: none;
+}
