@@ -1,0 +1,51 @@
+.distraction-box {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    background-color: grey;
+}
+
+#top-left {
+    top: 0;
+    left: 0;
+}
+#top-center {
+    top: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 0);
+}
+#top-right {
+    top: 0;
+    right: 0;    
+}
+#right-center {
+    top: 50%;
+    bottom: 50%;
+    right: 0;
+    transform: translate(0, -50%);
+}
+#bottom-right {
+    bottom: 0;
+    right: 0;
+}
+#bottom-center {
+    bottom: 0;
+    left: 50%;
+    right: 50%;
+    transform: translate(-50%, 0);
+}
+#bottom-left {
+    bottom: 0;
+    left: 0;
+}
+#left-center {
+    top: 50%;
+    bottom: 50%;
+    left: 0;
+    transform: translate(0, -50%);
+}
+
+.save-btn {
+    margin-top: 20px;
+}
