@@ -3,6 +3,8 @@ html, body {
     font-size: 20px;
     font-family: 'Lato', 'Arial', sans-serif;
     height: 100%;
+
+    background-color: #7f7f7f;
 }
 
 .question {
