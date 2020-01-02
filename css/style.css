@@ -10,3 +10,10 @@ html, body {
 .question {
     font-size: 220% !important;
 }
+
+.text-box {
+    text-align: justify;
+    /* background: #fff;
+    padding: 10px;
+    border-radius: 4px; */
+}

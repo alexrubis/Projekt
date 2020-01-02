@@ -64,7 +64,8 @@ $(document).ready(function() {
     // Submit question data
     $("#question-data").submit(function(e) {               
         var data = $(this).serializeArray();
-        // console.log(data)
+
+        console.log(data)
         if(inputValidation(data)) {
             if(questionNo == "6") {
                 // Show results and clear local storage
