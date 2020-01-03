@@ -108,8 +108,7 @@ $(document).ready(function() {
             var freq = 0;
             switch(frequency) {
                 case "1 Hz":
-                    freq = 1;
-                    console.log('ok');
+                    freq = 1;                    
                     break;
                 case '2 Hz':
                     freq = 2;
