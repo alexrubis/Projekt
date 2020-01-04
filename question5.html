@@ -69,12 +69,20 @@
             <ul id="cardList" class="deck">
             </ul>
 
-            <div class="row">
+            <!-- <div class="row">
                 <div class="col">
-                    <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
                     <button type="submit" class="btn btn-dark btn-block next-question game-data">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
                 </div>
-            </div>
+            </div> -->
+
+            <form id="question-data" method="POST">
+                <input id="lastQuestion" type="hidden" name="game" value="game" class="form-control mt-3">
+                <div class="row">
+                    <div class="col">
+                        <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+                    </div>
+                </div>
+            </form>
         </div>
     </div>
     

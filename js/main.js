@@ -1,4 +1,8 @@
 $(document).ready(function() {
+    if(window.location.pathname == "/result.html") {
+        displayTimes();
+    }
+
     /*  
     ------------------------------
     TIME MEASUREMENT CODE START
@@ -7,30 +11,58 @@ $(document).ready(function() {
     var startTime = new Date().getTime();
     var endTime;    
     var startTimeSaved = false;
+    var firstQuestionTime, lastQuestionTime, totalTime;
+    var firstQuestionTimeSaved = false;
+    var lastQuestionTimeSaved = false;
+    var userName
 
     // Save time that user took to start answering question
     $('#firstQuestion').focus(function() {
-        // saveTime(1);
+        if(!firstQuestionTimeSaved) {
+            firstQuestionTime = new Date().getTime() - startTime;
+            console.log("Time to first input click:");
+            console.log(firstQuestionTime);
+            // saveTime(1);
+            firstQuestionTimeSaved = true;
+        }
     });
 
     // Save time that elapsed between last click and submitting the question
     $('#lastQuestion').focus(function() {
-        endTime = new Date().getTime();
+        if(!lastQuestionTimeSaved) {
+            lastQuestionTime = new Date().getTime() - startTime;
+            console.log("Time to last input click:");
+            console.log(lastQuestionTime);
+
+            lastQuestionTimeSaved = true;
+        }
     });
 
     // Function for displaying time results
     function displayTimes() {
-        var result = ""
-        var username = localStorage.getItem('username');
-        
-        result = result + `<ul class="list-group">
-                                <li class="list-group-item"><strong>Pytanie nr: ` + i + `</strong></li>
-                                <li class="list-group-item">Czas rozpoczęcia: ` + startTime/1000  + ` s</li>
-                                <li class="list-group-item">Czas zakończenia: ` + endTime/1000 + ` s</li>
-                                <li class="list-group-item">Całkowity czas: ` + totalTime/1000 + ` s</li>
-                            </ul>`                     
+        var result = "";
+        var report = localStorage.getItem("report");
+        reportArray = JSON.parse(report);
 
-        $(".result").html(result);                    
+        $.each(reportArray[0].questions, function(index, value) {
+            result = result + `<ul class="list-group mt-4">
+                                <li class="list-group-item"><strong>Pytanie nr ` + value.questionNo + `</strong></li>
+                                <li class="list-group-item">Czas rozpoczęcia: ` + value.firstQuestionTime/1000  + ` s</li>
+                                <li class="list-group-item">Czas zakończenia: ` + value.lastQuestionTime/1000 + ` s</li>
+                                <li class="list-group-item">Całkowity czas: ` + value.totalTime/1000 + ` s</li>
+                            </ul>`   
+        });                  
+
+        $(".result").html(result);
+        
+        $.ajax({
+            url: "php/send-report.php",
+            type: "post",
+            data: {data: reportArray}
+        })
+        .done(function(res) {
+            console.log(res);
+        });
     }
     /*  
     ------------------------------
@@ -50,11 +82,19 @@ $(document).ready(function() {
 
     // Submit user data
     $("#user-data").submit(function(e) {
-        var data = $(this).serializeArray();        
+        var data = $(this).serializeArray();
+
+        param = {
+            userName: data[0].value,
+            questions: []
+        }
+
+        addReportUsername(param);
 
         if(inputValidation(data)) {
             // Set first question number
-            localStorage.setItem("questionNo", 1);            
+            localStorage.setItem("questionNo", 1);
+            localStorage.setItem("userName", userName);
             goToNextQuestion();
         }
 
@@ -62,16 +102,28 @@ $(document).ready(function() {
     });
 
     // Submit question data
-    $("#question-data").submit(function(e) {               
+    $("#question-data").submit(function(e) {
+        totalTime = new Date().getTime() - startTime;
+    
+        reportParam = {
+            questionNo: parseInt(questionNo),
+            firstQuestionTime: firstQuestionTime,
+            lastQuestionTime: lastQuestionTime,
+            totalTime: totalTime,
+            score: 3,
+            totalScore: 3
+        };
+
         var data = $(this).serializeArray();
 
-        console.log(data)
+        // console.log(data)
         if(inputValidation(data)) {
+            addReportParam(reportParam);
             if(questionNo == "6") {
                 // Show results and clear local storage
-                window.location.replace("result.html");             
+                window.location.replace("result.html");       
                 localStorage.setItem("questionNo", "");
-                localStorage.setItem("askedQuestions", "");                                           
+                localStorage.setItem("askedQuestions", "");   
             } else {
                 // Increment question number
                 localStorage.setItem("questionNo", ++questionNo);
@@ -82,23 +134,23 @@ $(document).ready(function() {
         e.preventDefault();
     });
 
-    $(".game-data").click(function() {        
-        var data = $(this).serializeArray();
-        // console.log(data)
-        // if(inputValidation(data)) {            
-            if(questionNo == '6') {
-                // Show results and clear local storage                
-                window.location.replace("result.html");             
-                localStorage.setItem("questionNo", "");
-                localStorage.setItem("askedQuestions", "");                                           
-            } else {
-                // Increment question number                
-                localStorage.setItem("questionNo", ++questionNo);
-                goToNextQuestion();
-            }
-        // }
+    // $(".game-data").click(function() {        
+    //     var data = $(this).serializeArray();
+    //     // console.log(data)
+    //     // if(inputValidation(data)) {            
+    //         if(questionNo == '6') {
+    //             // Show results and clear local storage                
+    //             window.location.replace("result.html");             
+    //             localStorage.setItem("questionNo", "");
+    //             localStorage.setItem("askedQuestions", "");                                           
+    //         } else {
+    //             // Increment question number                
+    //             localStorage.setItem("questionNo", ++questionNo);
+    //             goToNextQuestion();
+    //         }
+    //     // }
 
-    });
+    // });
 
 
     function goToNextQuestion() {
@@ -152,14 +204,17 @@ $(document).ready(function() {
 
     // Validate inputs
     function inputValidation(data) {
+        // console.log(data)
         $.each(data, function(key, val) {
             if(val.value.trim() == "") {
                 $("input[name=" + val.name + "]").addClass("is-invalid");
+                $("select[name=" + val.name + "]").addClass("is-invalid");
                 $(".invalid-feedback").html("Wypełnij to pole");
 
                 response = false;
             } else {
                 $("input[name=" + val.name + "]").removeClass("is-invalid");
+                $("select[name=" + val.name + "]").removeClass("is-invalid");
                 $(".invalid-feedback").html("");
 
                 response = true;
@@ -167,4 +222,25 @@ $(document).ready(function() {
         });
         return response;
     }    
+
+    function addReportUsername(userName) {
+        localStorage.setItem("report", "[" + JSON.stringify(userName) + "]");
+    }
+
+    function addReportParam(param) {
+        var report = localStorage.getItem("report");
+
+        reportArray = JSON.parse(report);
+        reportArray[0].questions.push(param);
+        localStorage.setItem("report", JSON.stringify(reportArray));
+
+        // if(report == null || questionNo == 1) {
+        //     console.log("Is empty");
+        //     localStorage.setItem("report", "[" + JSON.stringify(param) + "]");
+        // } else {
+        //     reportArray = JSON.parse(report);
+        //     reportArray.push(param);
+        //     localStorage.setItem("report", JSON.stringify(reportArray));
+        // }
+    }
 });
