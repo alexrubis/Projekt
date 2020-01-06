@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    if(window.location.pathname == "/result.html") {
+    if(window.location.pathname.indexOf("/result.html") >= 0) {
         displayTimes();
     }
 
