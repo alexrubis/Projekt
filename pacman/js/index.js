@@ -56,7 +56,7 @@
   var ghosts = []
   var cherries = []
   var isOpen = false
-  var score = 0
+//  var score = 0
   var ingame = {
     px: 0,
     py: 0
@@ -82,7 +82,7 @@
     drawCherries()
     drawPacman()
     drawGhosts()
-    drawScore()
+//    drawScore()
   }
 
   function controlGame() { // control every elements in the game
@@ -98,7 +98,7 @@
   }
 
   function toDefault() {
-    score = 0
+//    score = 0
     map = []
     food = []
     ghosts = []
@@ -226,7 +226,7 @@
       reset()
     } else {
       ghosts.splice(index, 1)
-      score += 10
+//      score += 10
     }
   }
 
@@ -235,7 +235,7 @@
     if (index === -1) {
       return
     }
-    score++
+//    score++
     food.splice(index, 1)
   }
 
@@ -246,7 +246,7 @@
     }
     pacman.power = NUMBER.INTERVAL * NUMBER.POWER
     cherries.splice(index, 1)
-    score += 5
+//    score += 5
   }
 
   function checkOver() {
@@ -482,13 +482,13 @@
     ctx.fillStyle = COLOR.FOOD
     ctx.fill()
   }
-
+/*
   function drawScore() {
     ctx.fillStyle = COLOR.FOOD
     ctx.font = '20px Monaco'
     ctx.fillText('Score: ' + score, 0, SIZE.BLOCK)
   }
-
+*/
   function drawPath() {
     if (pacman.power <= 0) {
       ghosts.forEach((value) => {
