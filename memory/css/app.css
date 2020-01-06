@@ -6,6 +6,7 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
+    
 }
 
 html,
@@ -14,12 +15,14 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
+    transform: scale(0.8);
 }
 
 body {
-    background: #ffffff url('../img/geometry2.png'); /* Background pattern from Subtle Patterns */
+    background-color: #7f7f7f;
     font-family: 'Coda', cursive;
 }
+
 
 .container {
     display: flex;
