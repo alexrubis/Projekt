@@ -10,20 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="pacman/css/app.css">
-	<script type="text/javascript">
-	    function loadCanvas(id) {
-	        var canvas = document.createElement('canvas');
-	        div = document.getElementById(id); 
-	        canvas.id     = "root";
-	        canvas.width  = 1224;
-	        canvas.height = 768;
-	        canvas.style.zIndex   = 8;
-	        canvas.style.position = "absolute";
-	        canvas.style.border   = "1px solid";
-	        div.appendChild(canvas)
-	    }
-        </script>
 </head>
 <body>
     <div class="distraction-box hidden" id="top-left"></div>
@@ -45,13 +31,6 @@
                 </div>
             </div>
         </div>
-
-        <div id="middle" class="row justify-content-center">
-            <script type="text/javascript">
-                loadCanvas("middle");
-            </script>
-        </div>
-
         <div class="row justify-content-center">
             <div class="col-md-auto">
                 <!-- <form id="game-data" method="POST">
@@ -65,13 +44,11 @@
 
                 <form id="question-data" method="POST">
                     <input id="lastQuestion" type="hidden" name="game" value="game" class="form-control mt-3">
-				<div id="button" class="row justify-content-center">
                     <div class="row">
                         <div class="col">
                             <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
                         </div>
                     </div>
-				</div>
                 </form>
             </div>
         </div>
@@ -81,7 +58,6 @@
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/main.js"></script>   
-	<script type="text/javascript" src="pacman/js/index.js"></script>
     <script type="text/javascript" src="js/distractions.js"></script>   
 </body>
 </html>
