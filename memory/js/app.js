@@ -26,6 +26,7 @@ let CardGame = function() {
 	
 	//types of cards to be matched, 8 in all.
 	let listOfCardTypes = [
+/*
 		"fa fa-diamond",
 		"fa fa-paper-plane-o",
 		"fa fa-anchor",
@@ -34,6 +35,16 @@ let CardGame = function() {
 		"fa fa-leaf",
 		"fa fa-bicycle",
 		"fa fa-bomb"
+*/
+		"fa fa-hand-lizard-o",
+		"fa fa-hand-peace-o",
+		"fa fa-hand-pointer-o",
+		"fa fa-hand-rock-o",
+		"fa fa-hand-scissors-o",
+		"fa fa-hand-spock-o",
+		"fa fa-hand-paper-o",
+//		"fa fa-handshake-o"
+		"fa fa-hand-o-up"
 	];
 	
 	//first clicked card
@@ -59,6 +70,7 @@ let CardGame = function() {
 				[3,0], [3,1], [3,2], [3,3],
 		];
 		listOfCardTypes = [
+/*
 				"fa fa-diamond",
 				"fa fa-paper-plane-o",
 				"fa fa-anchor",
@@ -67,6 +79,16 @@ let CardGame = function() {
 				"fa fa-leaf",
 				"fa fa-bicycle",
 				"fa fa-bomb"
+*/
+			"fa fa-hand-lizard-o",
+			"fa fa-hand-peace-o",
+			"fa fa-hand-pointer-o",
+			"fa fa-hand-rock-o",
+			"fa fa-hand-scissors-o",
+			"fa fa-hand-spock-o",
+			"fa fa-hand-paper-o",
+//			"fa fa-handshake-o"
+			"fa fa-hand-o-up"
 		];
 	};
 
