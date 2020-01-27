@@ -1,4 +1,4 @@
-html {
+/* html {
     box-sizing: border-box;
 }
 
@@ -21,4 +21,9 @@ body {
 
 body {
     background-color: #7f7f7f;
+} */
+
+.game-finished {
+    margin: auto;
+    text-transform: uppercase;
 }

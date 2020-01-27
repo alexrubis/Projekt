@@ -14,6 +14,8 @@ let Card = function(cssClass, x, y) {
  */
 
 let CardGame = function() {
+	var startTime = new Date().getTime();
+
 	let self = this;
 	
 	//all possible card positions 4 across, 4 down, 16 in all.
@@ -260,8 +262,23 @@ let CardGame = function() {
 	};
 	
 	let displayWinScreen = function(){
+		totalTime = new Date().getTime() - startTime;
+		questionNo = localStorage.getItem("questionNo");
+
+		reportParam = {
+            questionNo: parseInt(questionNo),
+            firstQuestionTime: null,
+            lastQuestionTime: null,
+            totalTime: totalTime,
+            score: null,
+			totalScore: null,
+			numOfMoves: numOfMoves
+		}
+		
+		addReportParam(reportParam);
+
 		let victoryScreen = window.document.getElementById("win-screen");
-		victoryScreen.style.display = "block";
+		// victoryScreen.style.display = "block";
 		let victoryTemplate = `<h1 class="winnerHeader"> Congratulations! You Won! </h1> <div class="winnerMessage">With ${numOfMoves} moves and ${starRating} stars Woohoo! </div> <button class="playAgainButton" onClick="cardGm.reset()"> Play again! </button>`;
 		victoryScreen.innerHTML = victoryTemplate;	
 	};
@@ -274,7 +291,7 @@ let CardGame = function() {
 	let updateMoves = function() {
 		numOfMoves++;
 		let movesDisplay = window.document.getElementById("moves-counter");
-		movesDisplay.innerText = numOfMoves + " Moves";
+		// movesDisplay.innerText = numOfMoves + " Moves";
 	};
 	
 	let updateRating = function() {
@@ -290,7 +307,7 @@ let CardGame = function() {
 			ratingHTML += "<li><i class='fa fa-star'></i></li>";		
 		}
 		let ratingDisplay = window.document.getElementById("rating-display");
-		ratingDisplay.innerHTML = ratingHTML;
+		// ratingDisplay.innerHTML = ratingHTML;
 	};
 
 	let currentTimeInSeconds = 0;
@@ -316,7 +333,7 @@ let CardGame = function() {
 	  if(hours < 10)
 		hours = "0" + hours;
 	  
-	  window.document.getElementById("time").innerText = (hours+" : "+minutes+" : "+seconds);
+	//   window.document.getElementById("time").innerText = (hours+" : "+minutes+" : "+seconds);
 	};
 
 	this.reset = function(){
@@ -352,8 +369,16 @@ let CardGame = function() {
 		updateMoves();
 		updateRating();	
 		var restartButton = window.document.getElementById("restart-button");
-		restartButton.addEventListener("click", self.reset, false);
+		// restartButto	n.addEventListener("click", self.reset, false);
 	};
+	
+	function addReportParam(param) {
+        var report = localStorage.getItem("report");
+
+        reportArray = JSON.parse(report);
+        reportArray[0].questions.push(param);
+        localStorage.setItem("report", JSON.stringify(reportArray));
+	}
 	
 	initialize();
 };

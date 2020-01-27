@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container setup-box">
+        <div class="row d-flex align-items-center min-vh-100">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body bg-light">                    
+                    <h5 class="card-title">Ustawienia</h5>
+                    <h7 class="card-subtitle mb-2 text-muted">Skonfiguruj bodźce w aplikacji</h7>   
+                    <form id="setup-form">
+                        <div class="form">
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check1">
+                                <label class="form-check-label" for="check1">
+                                    Lewy górny róg
+                                </label>
+                            </div>      
+                            <div class="form-row">
+                                <div class="form-group col-md-6 hidden check1-form">
+                                    <label for="input1">Częstotliwość [Hz]</label>
+                                    <input id="input1" type="number" name="input1" class="form-control mt-2" min="0" max="10">
+                                </div>                                    
+                                <div class="form-group col-md-6 hidden check1-form">
+                                    <label for="input1-size">Rozmiar [px]</label>
+                                    <input id="input1-size" type="number" name="input1-size" class="form-control mt-2" min="0" max="100">
+                                </div>                                    
+                            </div> 
+                            <div class="form-check">
+                                <input class="form-check-input" type="checkbox" value="" id="check1">
+                                <label class="form-check-label" for="check1">
+                                    Góra środek
+                                </label>
+                            </div>      
+                            <div class="form-row">
+                                <div class="form-group col-md-6 hidden check2-form">
+                                    <label for="input2">Częstotliwość [Hz]</label>
+                                    <input id="input2" type="number" name="input2" class="form-control mt-2" min="0" max="10">
+                                </div>                                    
+                                <div class="form-group col-md-6 hidden check1-form">
+                                    <label for="input2-size">Rozmiar [px]</label>
+                                    <input id="input2-size" type="number" name="input2-size" class="form-control mt-2" min="0" max="100">
+                                </div>                                    
+                            </div>                                                  
+                            
+                            <button type="submit" class="btn btn-success save-btn">Zapisz</button>        
+                        </div>     
+                    </form>                                        
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/distractions.js"></script>  
+</body>
+</html>

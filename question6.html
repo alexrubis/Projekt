@@ -10,22 +10,11 @@
     <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
-	<link rel="stylesheet" href="pacman/css/app.css">
-	<script type="text/javascript">
-	    function loadCanvas(id) {
-	        var canvas = document.createElement('canvas');
-	        div = document.getElementById(id); 
-	        canvas.id     = "root";
-	        canvas.width  = 1224;
-	        canvas.height = 768;
-	        canvas.style.zIndex   = 8;
-	        canvas.style.position = "absolute";
-	        canvas.style.border   = "1px solid";
-	        div.appendChild(canvas)
-	    }
-        </script>
+    <link rel="stylesheet" href="css/pacman.css">
+
 </head>
 <body>
+
     <div class="distraction-box hidden" id="top-left"></div>
     <div class="distraction-box hidden" id="top-center"></div>
     <div class="distraction-box hidden" id="top-right"></div>
@@ -34,55 +23,39 @@
     <div class="distraction-box hidden" id="bottom-center"></div>
     <div class="distraction-box hidden" id="bottom-left"></div>
     <div class="distraction-box hidden" id="left-center"></div>
-    <div class="frame"></div>
+    <!-- <div class="frame"></div> -->
 
     <div class="container h-100 d-flex align-items-center justify-content-center">
         <div>
-        <div class="row justify-content-center">
-            <div class="col-md-auto">
-                <div class="text-center">
-                    <h2 class="question-no"></h2>
-                    <p>Zagraj</p>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Gra</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="game-finished"></div>
+                <div class="col-12">
+                    <canvas id="root"></canvas>
+                    <form id="question-data" method="POST">
+                        <input id="lastQuestion" type="hidden" name="game" value="game" class="form-control mt-3">
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-
-        <div id="middle" class="row justify-content-center">
-            <script type="text/javascript">
-                loadCanvas("middle");
-            </script>
-        </div>
-
-        <div class="row justify-content-center">
-            <div class="col-md-auto">
-                <!-- <form id="game-data" method="POST">
-                    <div class="row">
-                        <div class="col">
-                            <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block">
-                            <button type="submit" class="btn btn-dark btn-block next-question game-data">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </form> -->
-
-                <form id="question-data" method="POST">
-                    <input id="lastQuestion" type="hidden" name="game" value="game" class="form-control mt-3">
-				<div id="button" class="row justify-content-center">
-                    <div class="row">
-                        <div class="col">
-                            <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-				</div>
-                </form>
-            </div>
-        </div>
-    </div>
     </div>
     
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>   
-	<script type="text/javascript" src="pacman/js/index.js"></script>
-    <script type="text/javascript" src="js/distractions.js"></script>   
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/distractions.js"></script>
+    <script type="text/javascript" src="js/pacman.js"></script>   
 </body>
 </html>

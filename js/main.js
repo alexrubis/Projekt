@@ -233,14 +233,5 @@ $(document).ready(function() {
         reportArray = JSON.parse(report);
         reportArray[0].questions.push(param);
         localStorage.setItem("report", JSON.stringify(reportArray));
-
-        // if(report == null || questionNo == 1) {
-        //     console.log("Is empty");
-        //     localStorage.setItem("report", "[" + JSON.stringify(param) + "]");
-        // } else {
-        //     reportArray = JSON.parse(report);
-        //     reportArray.push(param);
-        //     localStorage.setItem("report", JSON.stringify(reportArray));
-        // }
     }
 });

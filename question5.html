@@ -9,16 +9,15 @@
     <link rel="stylesheet" type="text/css" href="css/style.css">
     <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
     <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
-
- 	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/memory.css">
 
     <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
     <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'>
-    <!link rel="stylesheet prefetch" href="https://fonts.googleapis.com/css?family=Coda">
-    <link rel="stylesheet" href="memory/css/app.css">
+
 </head>
 <body>
+
     <div class="distraction-box hidden" id="top-left"></div>
     <div class="distraction-box hidden" id="top-center"></div>
     <div class="distraction-box hidden" id="top-right"></div>
@@ -27,44 +26,43 @@
     <div class="distraction-box hidden" id="bottom-center"></div>
     <div class="distraction-box hidden" id="bottom-left"></div>
     <div class="distraction-box hidden" id="left-center"></div>
-    <div class="frame"></div>
+    <!-- <div class="frame"></div> -->
 
-    <div class="container d-flex h-100 align-items-center justify-content-center">
+    <div class="container h-100 d-flex align-items-center justify-content-center">
         <div>
-        	<div class="row justify-content-center">
-            	<div class="col-md-auto">
-                	<div class="text-center">
-                    	<h2 class="question-no"></h2>
-                    	<p>Gra</p>
-                	</div>
-            	</div>
-        	</div>
-            <ul id="cardList" class="deck">
-            </ul>
-            <!-- <div class="row">
-                <div class="col">
-                    <button type="submit" class="btn btn-dark btn-block next-question game-data">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
-                </div>
-            </div> -->
-
-            <form id="question-data" method="POST">
-                <input id="lastQuestion" type="hidden" name="game" value="game" class="form-control mt-3">
-                <div class="row">
-                    <div class="col">
-                        <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Gra</p>
                     </div>
                 </div>
-            </form>
+            </div>
+            <div class="row">
+                <div class="col-12">
+                    <div id="overlay"></div>
+                    <!-- <div id="win-screen"></div> -->
+
+                    <ul id="cardList" class="deck">
+                    </ul>
+        
+                    <form id="question-data" method="POST">
+                        <input id="lastQuestion" type="hidden" name="game" value="game" class="form-control mt-3">
+                        <div class="row">
+                            <div class="col">
+                                <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
     </div>
-    
-    <div id="overlay"></div>
-    <div id="win-screen"></div>
     
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/main.js"></script>
     <script type="text/javascript" src="js/distractions.js"></script>
-    <script type="text/javascript" src="memory/js/app.js"></script>     
+    <script type="text/javascript" src="js/memory.js"></script>   
 </body>
 </html>

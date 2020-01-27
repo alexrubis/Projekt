@@ -1,4 +1,4 @@
-html {
+/* html {
     box-sizing: border-box;
 }
 
@@ -6,7 +6,6 @@ html {
 *::before,
 *::after {
     box-sizing: inherit;
-    
 }
 
 html,
@@ -15,13 +14,12 @@ body {
     height: 100%;
     margin: 0;
     padding: 0;
-    transform: scale(0.8);
 }
 
 body {
-    background-color: #7f7f7f;
-}
-
+    background: #ffffff url('../img/geometry2.png');
+    font-family: 'Coda', cursive;
+} */
 
 .container {
     display: flex;
@@ -30,18 +28,18 @@ body {
     flex-direction: column;
 }
 
-h1 {
+/* h1 {
     font-family: 'Open Sans', sans-serif;
     font-weight: 300;
-}
+} */
 
 /*
  * Styles for the deck of cards
  */
 
 .deck {
-    width: 660px;
-    min-height: 680px;
+    width: 390px;
+    min-height: 390px;
     background: linear-gradient(160deg, #02ccba 0%, #aa7ecd 100%);
     padding: 32px;
     border-radius: 10px;
@@ -54,8 +52,8 @@ h1 {
 }
 
 .deck .card {
-    height: 125px;
-    width: 125px;
+    height: 70px;
+    width: 70px;
     background: #2e3d49;
     font-size: 0;
     color: #ffffff;
@@ -69,7 +67,7 @@ h1 {
 
 .deck .card.show {
     cursor: default;
-    background: #02b3e4;;
+    background: #02b3e4;
     font-size: 33px;
 }
 
@@ -164,8 +162,8 @@ button.playAgainButton {
 /* entire container, keeps perspective */
 .flip-container {
     perspective: 1000px;
-    height: 125px;
-    width: 125px;
+    height: 70px;
+    width: 70px;
 }
 
 /* flip the pane when hovered */
@@ -198,7 +196,7 @@ button.playAgainButton {
 /* back, initially hidden pane */
 .deck .card.back {
     transform: rotateY(180deg);
-    font-size:33px;
+    font-size: 33px;
     background: #02ccba;
 }
 

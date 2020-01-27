@@ -32,6 +32,8 @@ $(document).ready(function() {
     });
 
     $('#setup-form').submit(function(e) {
+        var data = $(this).serializeArray();
+        console.log(data);
 
         var topLeft = $('#check1').is(":checked");
         var topCenter = $('#check2').is(":checked");

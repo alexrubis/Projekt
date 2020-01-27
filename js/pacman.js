@@ -1,4 +1,8 @@
 (function () {
+  var gameNo = 0;
+  var totalScore = 0;
+  var startTime = new Date().getTime();
+
   // region: initialize constants
   const canvas = document.getElementById('root')
   const ctx = canvas.getContext('2d')
@@ -93,6 +97,30 @@
   }
 
   function reset() { // reset game
+    if(gameNo <= 3) {
+      totalScore = totalScore + score;
+
+      if(gameNo > 2) {
+        canvas.width = 0;
+        document.getElementsByClassName('game-finished')[0].innerHTML = "Koniec gry!"
+        totalTime = new Date().getTime() - startTime;
+        questionNo = localStorage.getItem("questionNo");
+
+        reportParam = {
+          questionNo: parseInt(questionNo),
+          firstQuestionTime: null,
+          lastQuestionTime: null,
+          totalTime: totalTime,
+          score: totalScore,
+          totalScore: null,
+          numOfMoves: null
+        }
+        addReportParam(reportParam);
+      }
+
+      gameNo++;
+    }
+
     toDefault()
     generateElements()
   }
@@ -226,7 +254,7 @@
       reset()
     } else {
       ghosts.splice(index, 1)
-      score += 10
+        score += 10
     }
   }
 
@@ -587,10 +615,10 @@
   function setCanvasStyle() {
     let w = window.innerWidth
     let h = window.innerHeight
-    canvas.width = w > h ? h - 150 : w - 150
+    canvas.width = w > h ? h - 250 : w - 250
     canvas.height = canvas.width
     canvas.style.left = (w - canvas.width) / 2 + 'px'
-    canvas.style.position = "absolute"
+    // canvas.style.position = "absolute"
   }
 
   function isContained(arr, obj) {
@@ -776,6 +804,15 @@
       y: value.y
     })
   }
+
+  function addReportParam(param) {
+    var report = localStorage.getItem("report");
+
+    reportArray = JSON.parse(report);
+    reportArray[0].questions.push(param);
+    localStorage.setItem("report", JSON.stringify(reportArray));
+}
+
   // endregion
 
   // region: keypress event
