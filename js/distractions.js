@@ -147,6 +147,7 @@ $(document).ready(function() {
                         element.delay(tim).hide(0);
                     }, tim);
                     break;
+                    
                 case 'Poprzedzona bodźcem':
                     window.setTimeout(function() {
                         small_element.delay(1000).fadeIn(1000);
@@ -159,11 +160,12 @@ $(document).ready(function() {
                     setTimeout(function() {
                         element.fadeIn(1000);
                     }, tim);
-                    
+
                     setTimeout(function() {
                         element.delay(tim).hide(0);
                     }, tim);
                     break;
+
                 case 'Normalna':
                     window.setTimeout(function() {
                         if(element.hasClass('hidden')) {
@@ -175,30 +177,9 @@ $(document).ready(function() {
                     }, tim);
                     break;
             }
-             // else if type == 'Poprzedzona bodźcem' {
-            //     element.delay(time).hide(0);
-            // } else if type == 'Normalna' {
-            //     element.delay(time).hide(0);
-
-            // window.setTimeout(function() {
-            //     // if (type === 'Wyłaniająca się') {
-            //     //     element.fadeIn(1000);
-            //     // }
-            //     if(element.hasClass('hidden') &&  type === 'Wyłaniająca się') {
-            //        element.fadeIn(1000);
-            //     }
-            // }, 10);
-
-            // window.setInterval(function() {
-            //     if(element.hasClass('hidden')) {
-
-            //         element.fadeIn(3000);
-
-            //     } else {
-            //         element.addClass('hidden');
-            //     }
-            // }, 1000);
 
         });
+
     }
+
 });
