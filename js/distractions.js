@@ -31,6 +31,10 @@ $(document).ready(function() {
         this.checked ? $('.check8-form').removeClass('hidden') : $('.check8-form').addClass('hidden');
     });
 
+    $('#check9').change(function() {
+        this.checked ? $('.check9-form').removeClass('hidden') : $('.check9-form').addClass('hidden');
+    });
+
     $('#setup-form').submit(function(e) {
         var data = $(this).serializeArray();
         console.log(data);
@@ -43,9 +47,10 @@ $(document).ready(function() {
         var bottomCenter = $('#check6').is(":checked");
         var bottomLeft = $('#check7').is(":checked");
         var leftCenter = $('#check8').is(":checked");        
+        var centered = $('#check9').is(":checked");
 
         var distractions = [];                
-        var active = [topLeft, topCenter, topRight, rightCenter, bottomRight, bottomCenter, bottomLeft, leftCenter];                     
+        var active = [topLeft, topCenter, topRight, rightCenter, bottomRight, bottomCenter, bottomLeft, leftCenter, centered];                     
 
         for(var i=0; i<active.length; i++) {
             if (active[i]) {                                
@@ -77,6 +82,9 @@ $(document).ready(function() {
                         break;
                     case 7:
                         name = 'left-center';
+                        break;
+                    case 8:
+                        name = 'centered';
                         break;
                 }
                 
