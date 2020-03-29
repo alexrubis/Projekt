@@ -56,6 +56,8 @@ $(document).ready(function() {
             if (active[i]) {                                
                 var frequency = $('#input'+(i+1)).val();
                 var size = $('#input'+(i+1)+'-size').val();
+                var type = $('#input'+(i+1)+'-type').val();
+                var time = $('#input'+(i+1)+'-time').val();
                 var name = '';
 
                 switch(i) {
@@ -88,7 +90,7 @@ $(document).ready(function() {
                         break;
                 }
                 
-                distractions.push(new Array(name, frequency, size));
+                distractions.push(new Array(name, frequency, size, type, time));
             }
         }                      
         localStorage.setItem('distractions', JSON.stringify(distractions));
@@ -103,10 +105,17 @@ $(document).ready(function() {
             var id = el[0];
             var frequency = el[1];
             var size = el[2];     
+            var type = el[3];
+            var time = el[4];
             var element = $('#'+id);       
+            element.addClass('hidden');
+            var small_element = element;
 
+            small_element.css('width', '100px');
+            small_element.css('height', '100px');
+            small_element.css('background-color', 'blue');
             // Show distraction
-            element.removeClass('hidden');
+            //element.removeClass('hidden');
 
             // Change size of a distraction
             if (size == 'x2') {
@@ -114,28 +123,82 @@ $(document).ready(function() {
                 element.css('height', '300px');
             }
 
-            // Set blinking frequency
-            var freq = 0;
-            switch(frequency) {
-                case "1 Hz":
-                    freq = 1;                    
+            var tim = 0;
+            switch(time) {
+                case '10s':
+                    tim = 10000;                    
                     break;
-                case '2 Hz':
-                    freq = 2;
+                case '20s':
+                    tim = 20000;  
                     break;
-                case '4 Hz':
-                    freq = 4;
+                case 'Losowo':
+                    tim = 1000;  
                     break;
             }
-                        
-            window.setInterval(function() {
-                if(element.hasClass('hidden')) {
-                    element.removeClass('hidden');
-                } else {
-                    element.addClass('hidden');
-                }
-            }, 1000 / freq);
+
+            switch(type) {
+                case 'Wyłaniająca się':
+                    setTimeout(function() {
+                        if(element.hasClass('hidden')){
+                           element.delay(1000).fadeIn(1000);
+                        }
+                    }, tim);
+                    setTimeout(function() {
+                        element.delay(tim).hide(0);
+                    }, tim);
+                    break;
+                case 'Poprzedzona bodźcem':
+                    window.setTimeout(function() {
+                        small_element.delay(1000).fadeIn(1000);
+                    }, tim);
+
+                    setTimeout(function() {
+                        small_element.delay(tim).fadeOut(100);
+                    }, tim);
+
+                    setTimeout(function() {
+                        element.fadeIn(1000);
+                    }, tim);
+                    
+                    setTimeout(function() {
+                        element.delay(tim).hide(0);
+                    }, tim);
+                    break;
+                case 'Normalna':
+                    window.setTimeout(function() {
+                        if(element.hasClass('hidden')) {
+                           element.removeClass('hidden');
+                        }
+                    }, tim);
+                    setTimeout(function() {
+                        element.delay(tim).hide(0);
+                    }, tim);
+                    break;
+            }
+             // else if type == 'Poprzedzona bodźcem' {
+            //     element.delay(time).hide(0);
+            // } else if type == 'Normalna' {
+            //     element.delay(time).hide(0);
+
+            // window.setTimeout(function() {
+            //     // if (type === 'Wyłaniająca się') {
+            //     //     element.fadeIn(1000);
+            //     // }
+            //     if(element.hasClass('hidden') &&  type === 'Wyłaniająca się') {
+            //        element.fadeIn(1000);
+            //     }
+            // }, 10);
+
+            // window.setInterval(function() {
+            //     if(element.hasClass('hidden')) {
+
+            //         element.fadeIn(3000);
+
+            //     } else {
+            //         element.addClass('hidden');
+            //     }
+            // }, 1000);
+
         });
     }
-    
 });
