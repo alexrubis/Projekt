@@ -89,7 +89,6 @@ $(document).ready(function() {
                         name = 'centered';
                         break;
                 }
-                
                 distractions.push(new Array(name, displaytime, displaymoment, type, teaserdisplay));
             }
         }                      
@@ -103,68 +102,76 @@ $(document).ready(function() {
         var distractions = JSON.parse(localStorage.getItem('distractions'));
         distractions.forEach(el => {
             var id = el[0];
-            var displaytime = el[1] * 1000;
-            var displaymoment = el[2] * 1000;     
+            // var displaytime = el[1] * 1000;
+            // var displaymoment = el[2] * 1000;     
             var type = el[3];
-            var teaserdisplay = el[4] * 1000;
+            // var teaserdisplay = el[4] * 1000;
             var element = $('#'+id);       
             element.addClass('hidden');
-            // small_element.addClass('hidden');
+            var maxtimes = 10;
+            var displaytime = 5000;
+            var displaymoment = 1000;
+            var teaserdisplay = 2000;
+            var readingtime = (Math.floor(Math.random() * (15 - 8 + 1)) + 8)*1000;
+            // if (id === 'top-center' || id === 'bottom-center') {
+            //     element.css('width', '400px');
+            //     element.css('height', '50px');
+            //     element.css('background-color', 'blue');
+            // }
+            var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna']
+            var options_index = 0;
 
-            // small_element.css('width', '100px');
-            // small_element.css('height', '100px');
-            // small_element.css('background-color', 'blue');
-            // Show distraction
-            //element.removeClass('hidden');
+            setInterval(function() {
+                options_index = (Math.floor(Math.random() * (3 - 0)) + 0);
+                switch(options[2]) {
+                    case 'Wyłaniająca się':
+                        setTimeout(function() {
+                            if(element.hasClass('hidden')){
+                               element.fadeIn(teaserdisplay);
+                            }
+                        }, displaytime);
+                        setTimeout(function() {
+                            element.delay(displaytime).hide(0);
+                        }, displaytime);
+                        break;
+                        
+                    case 'Poprzedzona bodźcem':
+                        window.setTimeout(function() {
+                            element.css('width', '50px');
+                            element.css('height', '50px');
+                            element.css('background-color', 'blue');
+                            if(element.hasClass('hidden')){
+                                element.delay(displaymoment).fadeIn(teaserdisplay);
+                            }
+                        }, displaytime/8);
 
-            if (id === 'top-center' || id === 'bottom-center') {
-                element.css('width', '400px');
-                element.css('height', '50px');
-                element.css('background-color', 'blue');
-            }
+                        window.setTimeout(function() {
+                            element.css('width', '350px');
+                            element.css('height', '200px');
+                            element.css('background-color', 'red');
+                            element.delay(0).fadeIn(0);
+                        }, displaytime);
+                        break;
 
-            switch(type) {
-                case 'Wyłaniająca się':
-                    setTimeout(function() {
-                        if(element.hasClass('hidden')){
-                           element.fadeIn(teaserdisplay);
-                        }
-                    }, 100);
-                    setTimeout(function() {
-                        element.delay(displaytime).hide(0);
-                    }, displaytime);
-                    break;
-                    
-                case 'Poprzedzona bodźcem':
-                    window.setTimeout(function() {
-                        if(element.hasClass('hidden')){
-                            element.delay(displaymoment).fadeIn(teaserdisplay);
-                        }
-                    }, displaytime);
+                    case 'Normalna':
+                        window.setTimeout(function() {
+                            if(element.hasClass('hidden')) {
+                               element.removeClass('hidden');
+                            }
+                        }, 100);
+                        setTimeout(function() {
+                            element.delay(0).hide(0);
+                        }, displaytime);
+                        break;
+                }
+                element.addClass('hidden');
+                setTimeout(function() {
+                    element.addClass('hidden');
+                    element.delay(0).hide(0);
+                }, readingtime);
 
-                    window.setTimeout(function() {
-                        element.delay(displaymoment).fadeOut(teaserdisplay);
-                    }, displaytime/2);
-
-                    window.setTimeout(function() {
-                        element.css('width', '200px');
-                        element.css('height', '200px');
-                        element.delay(displaymoment).fadeIn(teaserdisplay);
-                    }, displaytime*2);
-
-                    break;
-
-                case 'Normalna':
-                    window.setTimeout(function() {
-                        if(element.hasClass('hidden')) {
-                           element.removeClass('hidden');
-                        }
-                    }, 100);
-                    setTimeout(function() {
-                        element.delay(displaytime).hide(0);
-                    }, displaytime);
-                    break;
-            }
+                maxtimes = maxtimes - 1;
+            }, readingtime);
 
         });
 
