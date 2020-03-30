@@ -15,7 +15,7 @@ html, body {
     top: 50%;
     left: 50%;
     overflow-x: hidden;
-    width: 600px;
+    width: 625px;
     height: 500px;
     text-align: justify;
     overflow-y: scroll;
@@ -23,7 +23,7 @@ html, body {
 
 #content {
     min-height: 100%;
-    width: 580px;
+    width: 600px;
 }
 
 .answerInput {

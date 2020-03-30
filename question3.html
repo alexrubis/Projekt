@@ -12,6 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
 </head>
 <body>
+
     <div class="distraction-box hidden" id="top-left"></div>
     <div class="distraction-box hidden" id="top-center"></div>
     <div class="distraction-box hidden" id="top-right"></div>
@@ -25,61 +26,60 @@
 
     <div class="container h-100 d-flex align-items-center justify-content-center">
         <div>
-            <div class="row justify-content-center">
-                <div class="col-md-auto">
-                    <div class="text-center">
-                        <h2 class="question-no"></h2>
-                        <p>Przeczytaj i odpowiedz na pytania</p>
-                    </div>
-                </div>
-            </div>
-            <div class="row justify-content-center">
+        <div class="row justify-content-center">
+            <div class="col-md-auto">
                 <div class="text-center">
-                    <div class="text-box mb-4">
-                    <div id="content">
-                        Zbliżał się chłodny październik. Dzieci wybrały się na wycieczkę do Warszawy. Wyjechały bardzo wcześnie rano bo już o godzinie 6.00. W Warszawie zwiedzały między innymi Stare Miasto. Potem pojechały do Centrum Nauki Kopernik na wspaniałą, edukacyjną zabawę. Z powrotem w Łodzi były około godziny 19.00. Zbliżał się chłodny październik. Dzieci wybrały się na wycieczkę do Warszawy. Wyjechały bardzo wcześnie rano bo już o godzinie 6.00. W Warszawie zwiedzały między innymi Stare Miasto. Potem pojechały do Centrum Nauki Kopernik na wspaniałą, edukacyjną zabawę. Z powrotem w Łodzi były około godziny 19.00. Zbliżał się chłodny październik. Dzieci wybrały się na wycieczkę do Warszawy. Wyjechały bardzo wcześnie rano bo już o godzinie 6.00. W Warszawie zwiedzały między innymi Stare Miasto. Potem pojechały do Centrum Nauki Kopernik na wspaniałą, edukacyjną zabawę. Z powrotem w Łodzi były około godziny 19.00. Zbliżał się chłodny październik. Dzieci wybrały się na wycieczkę do Warszawy. Wyjechały bardzo wcześnie rano bo już o godzinie 6.00. W Warszawie zwiedzały między innymi Stare Miasto. Potem pojechały do Centrum Nauki Kopernik na wspaniałą, edukacyjną zabawę. Z powrotem w Łodzi były około godziny 19.00.
-                    </div>
-                    <form id="question-data" method="POST">
-                        <div class="form-group row">
-                            <label for="text1" class="col-9 col-form-label">Czy wycieczka była w Krakowie?</label>
-                            <div class="col-3">
-                                <select id="firstQuestion" name="text1" class="form-control">
-                                    <option></option>
-                                    <option>tak</option>
-                                    <option>nie</option>
-                                </select>
-                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
-                                <span class="invalid-feedback"></span>
-                            </div>
-                        </div>
-                        <div class="form-group row">
-                            <label for="text2" class="col-9 col-form-label">Czy dzieci odwiedziły Stare Miasto?</label>
-                            <div class="col-3">
-                                <select id="lastQuestion" name="text1" class="form-control">
-                                    <option></option>
-                                    <option>tak</option>
-                                    <option>nie</option>
-                                </select>
-                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
-                                <span class="invalid-feedback"></span>
-                            </div>
-                        </div>
-                        </div>
-                        <div class="row">
-                            <div class="col">
-                                <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
-                                <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
-                            </div>
-                        </div>
-                    </form>
+                    <h2 class="question-no"></h2>
+                    <p>Oblicz</p>
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-12">
+                <form id="question-data" method="POST">
+                    <div class="form-group row">
+                        <p class="col question">2 + 2 * 2 = </p>
+                        <div class="col ml-auto">
+                            <input id="firstQuestion" type="number" name="math1" class="form-control mt-2 answerInput">
+                            <span class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <p class="col question">5 + (3 - 2) = </p>
+                        <div class="col ml-auto">
+                            <input type="number" name="math2" class="form-control mt-2 answerInput">
+                            <span class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <p class="col question">4 – 3 / 3 = </p>
+                        <div class="col ml-auto">
+                            <input type="number" name="math3" class="form-control mt-3 answerInput">
+                            <span class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="form-group row">
+                        <p class="col-md-auto question">7 + 8 – 4 / 2 = </p>
+                        <div class="col ml-auto">
+                            <input id="lastQuestion" type="number" name="math4" class="form-control mt-3 answerInput">
+                            <span class="invalid-feedback"></span>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col">
+                            <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+                            <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
     </div>
     
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
-    <script type="text/javascript" src="js/main.js"></script>    
-    <script type="text/javascript" src="js/distractions.js"></script>    
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/distractions.js"></script>
 </body>
 </html>

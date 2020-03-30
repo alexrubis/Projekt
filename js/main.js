@@ -72,9 +72,9 @@ $(document).ready(function() {
     
     // Get current question number
     questionNo = localStorage.getItem("questionNo");
-    $(".question-no").html("Zadanie " + questionNo + "/6");
+    $(".question-no").html("Zadanie " + questionNo);
 
-    if(questionNo == "6") {
+    if(questionNo == "1") {
         $(".next-question").html("Zakończ &nbsp;<i class='fas fa-check'></i>");
         $(".next-question").removeClass("btn-dark");
         $(".next-question").addClass("btn-success");
@@ -119,7 +119,7 @@ $(document).ready(function() {
         // console.log(data)
         if(inputValidation(data)) {
             addReportParam(reportParam);
-            if(questionNo == "6") {
+            if(questionNo == "1") {
                 // Show results and clear local storage
                 window.location.replace("result.html");       
                 localStorage.setItem("questionNo", "");
