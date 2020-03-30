@@ -25,24 +25,16 @@
                                 <label class="form-check-label" for="check1">
                                 Lewy górny róg
                                 </label>
-                            </div>      
+                            </div>     
+
                             <div class="form-row">
                                 <div class="form-group col-md-4 hidden check1-form">
-                                    <label for="input1">Częstotliwość</label>
-                                    <select id="input1" class="form-control">
-                                        <option selected>Wybierz...</option>
-                                        <option>1 Hz</option>
-                                        <option>2 Hz</option>
-                                        <option>4 Hz</option>
-                                    </select>
+                                    <label for="input1-displaytime">Czas trwania</label>
+                                    <input type="number" id="input1-displaytime" class="form-control form-control-lg">
                                 </div>                                
                                 <div class="form-group col-md-4 hidden check1-form">
-                                    <label for="input1-size">Rozmiar</label>
-                                    <select id="input1-size" class="form-control">
-                                        <option selected>Wybierz...</option>
-                                        <option>x1</option>
-                                        <option>x2</option>                                        
-                                    </select>
+                                    <label for="input1-displaymoment">Moment wyświetlenia</label>
+                                    <input type="number" id="input1-displaymoment" class="form-control form-control-lg">
                                 </div>
                                 <div class="form-group col-md-4 hidden check1-form">
                                     <label for="input1-type">Typ reklamy</label>
@@ -54,15 +46,11 @@
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 hidden check1-form">
-                                    <label for="input1-time">Czas trwania reklamy</label>
-                                    <select id="input1-time" class="form-control">
-                                        <option selected>Wybierz...</option>
-                                        <option>10s</option>
-                                        <option>20s</option>       
-                                        <option>Losowo</option>                                 
-                                    </select>
+                                    <label for="input1-teaserdisplay">Czas zajawki</label>
+                                    <input type="number" id="input1-teaserdisplay" class="form-control form-control-lg">
                                 </div>
-                            </div>                                                  
+                            </div>     
+
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="check2">
                                 <label class="form-check-label" for="check2">
@@ -71,48 +59,58 @@
                             </div>   
                             <div class="form-row">
                                 <div class="form-group col-md-4 hidden check2-form">
-                                    <label for="input2">Częstotliwość</label>
-                                    <select id="input2" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>1 Hz</option>
-                                      <option>2 Hz</option>
-                                      <option>4 Hz</option>
-                                    </select>
-                                </div>       
+                                    <label for="input2-displaytime">Czas trwania</label>
+                                    <input type="number" id="input2-displaytime" class="form-control form-control-lg">
+                                </div>                                
                                 <div class="form-group col-md-4 hidden check2-form">
-                                    <label for="input2-size">Rozmiar</label>
-                                    <select id="input2-size" class="form-control">
+                                    <label for="input2-displaymoment">Moment wyświetlenia</label>
+                                    <input type="number" id="input2-displaymoment" class="form-control form-control-lg">
+                                </div>
+                                <div class="form-group col-md-4 hidden check2-form">
+                                    <label for="input2-type">Typ reklamy</label>
+                                    <select id="input2-type" class="form-control">
                                         <option selected>Wybierz...</option>
-                                        <option>x1</option>
-                                        <option>x2</option>                                        
+                                        <option>Wyłaniająca się</option>
+                                        <option>Poprzedzona bodźcem</option>       
+                                        <option>Normalna</option>                                 
                                     </select>
-                                </div>                     
-                            </div>                            
+                                </div>
+                                <div class="form-group col-md-4 hidden check2-form">
+                                    <label for="input2-teaserdisplay">Czas zajawki</label>
+                                    <input type="number" id="input2-teaserdisplay" class="form-control form-control-lg">
+                                </div>
+                            </div>        
+
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="check3">
                                 <label class="form-check-label" for="check3">
                                 Prawy górny róg
                                 </label>
                             </div>      
+
                             <div class="form-row">
                                 <div class="form-group col-md-4 hidden check3-form">
-                                    <label for="input3">Częstotliwość</label>
-                                    <select id="input3" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>1 Hz</option>
-                                      <option>2 Hz</option>
-                                      <option>4 Hz</option>
+                                    <label for="input3-displaytime">Czas trwania</label>
+                                    <input type="number" id="input3-displaytime" class="form-control form-control-lg">
+                                </div>                                
+                                <div class="form-group col-md-4 hidden check3-form">
+                                    <label for="input3-displaymoment">Moment wyświetlenia</label>
+                                    <input type="number" id="input3-displaymoment" class="form-control form-control-lg">
+                                </div>
+                                <div class="form-group col-md-4 hidden check3-form">
+                                    <label for="input3-type">Typ reklamy</label>
+                                    <select id="input3-type" class="form-control">
+                                        <option selected>Wybierz...</option>
+                                        <option>Wyłaniająca się</option>
+                                        <option>Poprzedzona bodźcem</option>       
+                                        <option>Normalna</option>                                 
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 hidden check3-form">
-                                    <label for="input3-size">Rozmiar</label>
-                                    <select id="input3-size" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>x1</option>
-                                      <option>x2</option>                                    
-                                    </select>
-                                </div>    
-                            </div>
+                                    <label for="input3-teaserdisplay">Czas zajawki</label>
+                                    <input type="number" id="input3-teaserdisplay" class="form-control form-control-lg">
+                                </div>
+                            </div>    
                                 
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="check4">
@@ -120,150 +118,186 @@
                                 Prawy środek
                                 </label>
                             </div>  
+
                             <div class="form-row">
                                 <div class="form-group col-md-4 hidden check4-form">
-                                    <label for="input4">Częstotliwość</label>
-                                    <select id="input4" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>1 Hz</option>
-                                      <option>2 Hz</option>
-                                      <option>4 Hz</option>
+                                    <label for="input4-displaytime">Czas trwania</label>
+                                    <input type="number" id="input4-displaytime" class="form-control form-control-lg">
+                                </div>                                
+                                <div class="form-group col-md-4 hidden check4-form">
+                                    <label for="input4-displaymoment">Moment wyświetlenia</label>
+                                    <input type="number" id="input4-displaymoment" class="form-control form-control-lg">
+                                </div>
+                                <div class="form-group col-md-4 hidden check4-form">
+                                    <label for="input4-type">Typ reklamy</label>
+                                    <select id="input4-type" class="form-control">
+                                        <option selected>Wybierz...</option>
+                                        <option>Wyłaniająca się</option>
+                                        <option>Poprzedzona bodźcem</option>       
+                                        <option>Normalna</option>                                 
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 hidden check4-form">
-                                    <label for="input4-size">Rozmiar</label>
-                                    <select id="input4-size" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>x1</option>
-                                      <option>x2</option>                                    
-                                    </select>
-                                </div>    
-                            </div>
+                                    <label for="input4-teaserdisplay">Czas zajawki</label>
+                                    <input type="number" id="input4-teaserdisplay" class="form-control form-control-lg">
+                                </div>
+                            </div>    
+
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="check5">
                                 <label class="form-check-label" for="check5">
                                 Prawy dolny róg
                                 </label>
                             </div>  
+
                             <div class="form-row">
                                 <div class="form-group col-md-4 hidden check5-form">
-                                    <label for="input5">Częstotliwość</label>
-                                    <select id="input5" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>1 Hz</option>
-                                      <option>2 Hz</option>
-                                      <option>4 Hz</option>
+                                    <label for="input5-displaytime">Czas trwania</label>
+                                    <input type="number" id="input5-displaytime" class="form-control form-control-lg">
+                                </div>                                
+                                <div class="form-group col-md-4 hidden check5-form">
+                                    <label for="input5-displaymoment">Moment wyświetlenia</label>
+                                    <input type="number" id="input5-displaymoment" class="form-control form-control-lg">
+                                </div>
+                                <div class="form-group col-md-4 hidden check5-form">
+                                    <label for="input5-type">Typ reklamy</label>
+                                    <select id="input5-type" class="form-control">
+                                        <option selected>Wybierz...</option>
+                                        <option>Wyłaniająca się</option>
+                                        <option>Poprzedzona bodźcem</option>       
+                                        <option>Normalna</option>                                 
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 hidden check5-form">
-                                    <label for="input5-size">Rozmiar</label>
-                                    <select id="input5-size" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>x1</option>
-                                      <option>x2</option>                                    
-                                    </select>
-                                </div>    
-                            </div>
+                                    <label for="input5-teaserdisplay">Czas zajawki</label>
+                                    <input type="number" id="input5-teaserdisplay" class="form-control form-control-lg">
+                                </div>
+                            </div>    
+
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="check6">
                                 <label class="form-check-label" for="check6">
                                 Dół środek
                                 </label>
                             </div>  
+
                             <div class="form-row">
                                 <div class="form-group col-md-4 hidden check6-form">
-                                    <label for="input6">Częstotliwość</label>
-                                    <select id="input6" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>1 Hz</option>
-                                      <option>2 Hz</option>
-                                      <option>4 Hz</option>
+                                    <label for="input6-displaytime">Czas trwania</label>
+                                    <input type="number" id="input6-displaytime" class="form-control form-control-lg">
+                                </div>                                
+                                <div class="form-group col-md-4 hidden check6-form">
+                                    <label for="input6-displaymoment">Moment wyświetlenia</label>
+                                    <input type="number" id="input6-displaymoment" class="form-control form-control-lg">
+                                </div>
+                                <div class="form-group col-md-4 hidden check6-form">
+                                    <label for="input6-type">Typ reklamy</label>
+                                    <select id="input6-type" class="form-control">
+                                        <option selected>Wybierz...</option>
+                                        <option>Wyłaniająca się</option>
+                                        <option>Poprzedzona bodźcem</option>       
+                                        <option>Normalna</option>                                 
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 hidden check6-form">
-                                    <label for="input6-size">Rozmiar</label>
-                                    <select id="input6-size" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>x1</option>
-                                      <option>x2</option>                                    
-                                    </select>
-                                </div>    
-                            </div>
+                                    <label for="input6-teaserdisplay">Czas zajawki</label>
+                                    <input type="number" id="input6-teaserdisplay" class="form-control form-control-lg">
+                                </div>
+                            </div>    
+
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="check7">
                                 <label class="form-check-label" for="check7">
                                 Lewy dolny róg
                                 </label>
                             </div>  
+
                             <div class="form-row">
                                 <div class="form-group col-md-4 hidden check7-form">
-                                    <label for="input7">Częstotliwość</label>
-                                    <select id="input7" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>1 Hz</option>
-                                      <option>2 Hz</option>
-                                      <option>4 Hz</option>
+                                    <label for="input7-displaytime">Czas trwania</label>
+                                    <input type="number" id="input7-displaytime" class="form-control form-control-lg">
+                                </div>                                
+                                <div class="form-group col-md-4 hidden check7-form">
+                                    <label for="input7-displaymoment">Moment wyświetlenia</label>
+                                    <input type="number" id="input7-displaymoment" class="form-control form-control-lg">
+                                </div>
+                                <div class="form-group col-md-4 hidden check7-form">
+                                    <label for="input7-type">Typ reklamy</label>
+                                    <select id="input7-type" class="form-control">
+                                        <option selected>Wybierz...</option>
+                                        <option>Wyłaniająca się</option>
+                                        <option>Poprzedzona bodźcem</option>       
+                                        <option>Normalna</option>                                 
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 hidden check7-form">
-                                    <label for="input7-size">Rozmiar</label>
-                                    <select id="input7-size" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>x1</option>
-                                      <option>x2</option>                                    
-                                    </select>
-                                </div>    
-                            </div>
+                                    <label for="input7-teaserdisplay">Czas zajawki</label>
+                                    <input type="number" id="input7-teaserdisplay" class="form-control form-control-lg">
+                                </div>
+                            </div>    
+
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="check8">
                                 <label class="form-check-label" for="check8">
                                 Lewy środek
                                 </label>
                             </div>  
+
                             <div class="form-row">
                                 <div class="form-group col-md-4 hidden check8-form">
-                                    <label for="input8">Częstotliwość</label>
-                                    <select id="input8" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>1 Hz</option>
-                                      <option>2 Hz</option>
-                                      <option>4 Hz</option>
+                                    <label for="input8-displaytime">Czas trwania</label>
+                                    <input type="number" id="input8-displaytime" class="form-control form-control-lg">
+                                </div>                                
+                                <div class="form-group col-md-4 hidden check8-form">
+                                    <label for="input8-displaymoment">Moment wyświetlenia</label>
+                                    <input type="number" id="input8-displaymoment" class="form-control form-control-lg">
+                                </div>
+                                <div class="form-group col-md-4 hidden check8-form">
+                                    <label for="input8-type">Typ reklamy</label>
+                                    <select id="input8-type" class="form-control">
+                                        <option selected>Wybierz...</option>
+                                        <option>Wyłaniająca się</option>
+                                        <option>Poprzedzona bodźcem</option>       
+                                        <option>Normalna</option>                                 
                                     </select>
                                 </div>
                                 <div class="form-group col-md-4 hidden check8-form">
-                                    <label for="input8-size">Rozmiar</label>
-                                    <select id="input8-size" class="form-control">w
-                                      <option selected>Wybierz...</option>
-                                      <option>x1</option>
-                                      <option>x2</option>                                    
-                                    </select>
-                                </div>    
-                            </div>
+                                    <label for="input8-teaserdisplay">Czas zajawki</label>
+                                    <input type="number" id="input8-teaserdisplay" class="form-control form-control-lg">
+                                </div>
+                            </div>    
+
                             <div class="form-check">
                                 <input class="form-check-input" type="checkbox" value="" id="check9">
                                 <label class="form-check-label" for="check9">
                                 Środek
                                 </label>
                             </div>   
+
                             <div class="form-row">
                                 <div class="form-group col-md-4 hidden check9-form">
-                                    <label for="input9">Częstotliwość</label>
-                                    <select id="input9" class="form-control">
-                                      <option selected>Wybierz...</option>
-                                      <option>1 Hz</option>
-                                      <option>2 Hz</option>
-                                      <option>4 Hz</option>
-                                    </select>
-                                </div>       
+                                    <label for="input9-displaytime">Czas trwania</label>
+                                    <input type="number" id="input9-displaytime" class="form-control form-control-lg">
+                                </div>                                
                                 <div class="form-group col-md-4 hidden check9-form">
-                                    <label for="input9-size">Rozmiar</label>
-                                    <select id="input9-size" class="form-control">
+                                    <label for="input9-displaymoment">Moment wyświetlenia</label>
+                                    <input type="number" id="input9-displaymoment" class="form-control form-control-lg">
+                                </div>
+                                <div class="form-group col-md-4 hidden check9-form">
+                                    <label for="input9-type">Typ reklamy</label>
+                                    <select id="input9-type" class="form-control">
                                         <option selected>Wybierz...</option>
-                                        <option>x1</option>
-                                        <option>x2</option>                                        
+                                        <option>Wyłaniająca się</option>
+                                        <option>Poprzedzona bodźcem</option>       
+                                        <option>Normalna</option>                                 
                                     </select>
-                                </div>                     
-                            </div>
+                                </div>
+                                <div class="form-group col-md-4 hidden check9-form">
+                                    <label for="input9-teaserdisplay">Czas zajawki</label>
+                                    <input type="number" id="input9-teaserdisplay" class="form-control form-control-lg">
+                                </div>
+                            </div>    
+
                             <button type="submit" class="btn btn-success save-btn">Zapisz</button>        
                         </div>     
                     </form>                                        
