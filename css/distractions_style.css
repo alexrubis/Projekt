@@ -1,6 +1,6 @@
 .distraction-box {
-    width: 150px;
-    height: 150px;
+    width: 350px;
+    height: 200px;
     position: absolute;
     background-color: red;
     z-index: 1;

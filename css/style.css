@@ -3,7 +3,6 @@ html, body {
     font-size: 20px;
     font-family: 'Lato', 'Arial', sans-serif;
     height: 100%;
-
     background-color: #7f7f7f;
 }
 
@@ -12,10 +11,19 @@ html, body {
 }
 
 .text-box {
+
+    top: 50%;
+    left: 50%;
+    overflow-x: hidden;
+    width: 600px;
+    height: 500px;
     text-align: justify;
-    /* background: #fff;
-    padding: 10px;
-    border-radius: 4px; */
+    overflow-y: scroll;
+}
+
+#content {
+    min-height: 100%;
+    width: 580px;
 }
 
 .answerInput {
