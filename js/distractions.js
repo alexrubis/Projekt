@@ -123,6 +123,12 @@ $(document).ready(function() {
                 element.css('background-color', 'blue');
             }
 
+            if (id === 'right-center' || id === 'left-center') {
+                element.css('width', '300px');
+                element.css('height', '500px');
+                element.css('background-color', 'red');
+            }
+
             switch(type) {
                 case 'Wyłaniająca się':
                     setTimeout(function() {
