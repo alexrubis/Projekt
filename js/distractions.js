@@ -106,10 +106,10 @@ $(document).ready(function() {
             var displaytime = el[1] * 1000;
             var displaymoment = el[2] * 1000;     
             var type = el[3];
-            var teaserdisplay = el[4];
+            var teaserdisplay = el[4] * 1000;
             var element = $('#'+id);       
             element.addClass('hidden');
-            // var small_element = element;
+            // small_element.addClass('hidden');
 
             // small_element.css('width', '100px');
             // small_element.css('height', '100px');
@@ -123,19 +123,13 @@ $(document).ready(function() {
                 element.css('background-color', 'blue');
             }
 
-            if (id === 'right-center' || id === 'left-center') {
-                element.css('width', '300px');
-                element.css('height', '500px');
-                element.css('background-color', 'red');
-            }
-
             switch(type) {
                 case 'Wyłaniająca się':
                     setTimeout(function() {
                         if(element.hasClass('hidden')){
-                           element.delay(displaymoment).fadeIn(teaserdisplay);
+                           element.fadeIn(teaserdisplay);
                         }
-                    }, displaytime);
+                    }, 100);
                     setTimeout(function() {
                         element.delay(displaytime).hide(0);
                     }, displaytime);
@@ -143,20 +137,21 @@ $(document).ready(function() {
                     
                 case 'Poprzedzona bodźcem':
                     window.setTimeout(function() {
-                        small_element.delay(displaymoment).fadeIn(teaserdisplay);
+                        if(element.hasClass('hidden')){
+                            element.delay(displaymoment).fadeIn(teaserdisplay);
+                        }
                     }, displaytime);
 
-                    setTimeout(function() {
-                        small_element.delay(displaymoment).fadeOut(teaserdisplay);
-                    }, displaytime);
+                    window.setTimeout(function() {
+                        element.delay(displaymoment).fadeOut(teaserdisplay);
+                    }, displaytime/2);
 
-                    setTimeout(function() {
-                        element.fadeIn(teaserdisplay);
-                    }, displaytime);
+                    window.setTimeout(function() {
+                        element.css('width', '200px');
+                        element.css('height', '200px');
+                        element.delay(displaymoment).fadeIn(teaserdisplay);
+                    }, displaytime*2);
 
-                    setTimeout(function() {
-                        element.delay(displaymoment).hide(0);
-                    }, displaytime);
                     break;
 
                 case 'Normalna':
@@ -164,7 +159,7 @@ $(document).ready(function() {
                         if(element.hasClass('hidden')) {
                            element.removeClass('hidden');
                         }
-                    }, displaytime);
+                    }, 100);
                     setTimeout(function() {
                         element.delay(displaytime).hide(0);
                     }, displaytime);
