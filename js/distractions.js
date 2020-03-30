@@ -156,7 +156,7 @@ $(document).ready(function() {
                     case 'Normalna':
                         window.setTimeout(function() {
                             if(element.hasClass('hidden')) {
-                               element.removeClass('hidden');
+                               element.fadeIn(0);
                             }
                         }, 100);
                         setTimeout(function() {
@@ -171,7 +171,7 @@ $(document).ready(function() {
                 }, readingtime);
 
                 maxtimes = maxtimes - 1;
-            }, readingtime);
+            }, readingtime + displaytime);
 
         });
 
