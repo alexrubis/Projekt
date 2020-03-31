@@ -156,17 +156,20 @@ $(document).ready(function() {
                     break;
             }
 
-            var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna']
-            var options_index = [0, 3, 2, 1, 3];
+            var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
             var i = 0;
+            var options_index = [];
+            for (let i = 0; i < 10; i++) {
+                options_index.push((Math.floor(Math.random() * (3)))); 
+            }
             // while (maxtimes > 0){
             //     options_index = (Math.floor(Math.random() * (3 - 0)) + 0);
             // for (let i = 0; i < 3; i++) {
             //     type = options[i];
             setInterval(function() {
-                if (i < 3)
+                if (i < 10)
                 {
-                    type = options[i];
+                    type = options[options_index[i]];
                 }
                 switch(type) {
                     case 'Wyłaniająca się':
