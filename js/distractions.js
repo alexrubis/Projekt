@@ -157,12 +157,18 @@ $(document).ready(function() {
             }
 
             var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna']
-            var options_index = 0;
+            var options_index = [0, 3, 2, 1, 3];
+            var i = 0;
             // while (maxtimes > 0){
             //     options_index = (Math.floor(Math.random() * (3 - 0)) + 0);
-            // for (let i = 0; i < 5; i++) {
+            // for (let i = 0; i < 3; i++) {
+            //     type = options[i];
             setInterval(function() {
-                switch(options[1]) {
+                if (i < 3)
+                {
+                    type = options[i];
+                }
+                switch(type) {
                     case 'Wyłaniająca się':
                         setTimeout(function() {
                             if(element.hasClass('hidden')){
@@ -214,7 +220,10 @@ $(document).ready(function() {
                         }, displaytime);
                         break;
                 }
+                i++;
             }, 15000);
+            // clearInterval(timer);
+        // }
         });
 
     }
