@@ -112,26 +112,66 @@ $(document).ready(function() {
             var displaytime = 5000;
             var displaymoment = 1000;
             var teaserdisplay = 2000;
-            var readingtime = (Math.floor(Math.random() * (15 - 8 + 1)) + 8)*1000;
-            // if (id === 'top-center' || id === 'bottom-center') {
-            //     element.css('width', '400px');
-            //     element.css('height', '50px');
-            //     element.css('background-color', 'blue');
-            // }
+            
+
+            switch(type) {
+                case 'Wyłaniająca się':
+                    setTimeout(function() {
+                        if(element.hasClass('hidden')){
+                           element.fadeIn(teaserdisplay);
+                        }
+                    }, displaytime/8);
+                    setTimeout(function() {
+                        element.delay(displaytime).hide(0);
+                    }, displaytime);
+                    break;
+                    
+                case 'Poprzedzona bodźcem':
+                    window.setTimeout(function() {
+                        element.css('width', '50px');
+                        element.css('height', '50px');
+                        element.css('background-color', 'blue');
+                        if(element.hasClass('hidden')){
+                            element.delay(displaymoment).fadeIn(teaserdisplay);
+                        }
+                    }, displaytime/8);
+
+                    window.setTimeout(function() {
+                        element.css('width', '350px');
+                        element.css('height', '200px');
+                        element.css('background-color', 'red');
+                        element.delay(0).fadeIn(0);
+                    }, displaytime);
+                    break;
+
+                case 'Normalna':
+                    window.setTimeout(function() {
+                        if(element.hasClass('hidden')) {
+                           element.fadeIn(0);
+                        }
+                    }, 0);
+                    setTimeout(function() {
+                        element.delay(0).hide(0);
+                    }, displaytime);
+                    break;
+            }
+
             var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna']
             var options_index = 0;
-
+            // while (maxtimes > 0){
+            //     options_index = (Math.floor(Math.random() * (3 - 0)) + 0);
+            // for (let i = 0; i < 5; i++) {
             setInterval(function() {
-                options_index = (Math.floor(Math.random() * (3 - 0)) + 0);
-                switch(options[2]) {
+                switch(options[1]) {
                     case 'Wyłaniająca się':
                         setTimeout(function() {
                             if(element.hasClass('hidden')){
                                element.fadeIn(teaserdisplay);
                             }
-                        }, displaytime);
+                        }, displaytime/8);
                         setTimeout(function() {
                             element.delay(displaytime).hide(0);
+                            element.addClass('hidden');
                         }, displaytime);
                         break;
                         
@@ -141,15 +181,19 @@ $(document).ready(function() {
                             element.css('height', '50px');
                             element.css('background-color', 'blue');
                             if(element.hasClass('hidden')){
-                                element.delay(displaymoment).fadeIn(teaserdisplay);
+                                element.delay(displaymoment/100).fadeIn(200);
+                                element.addClass('hidden');
                             }
-                        }, displaytime/8);
+                        }, displaytime/100);
 
                         window.setTimeout(function() {
-                            element.css('width', '350px');
-                            element.css('height', '200px');
-                            element.css('background-color', 'red');
-                            element.delay(0).fadeIn(0);
+                            if(element.hasClass('hidden')){
+                                element.css('width', '350px');
+                                element.css('height', '200px');
+                                element.css('background-color', 'red');
+                                element.delay(0).fadeIn(0);
+                            }
+                            element.addClass('hidden');
                         }, displaytime);
                         break;
 
@@ -158,21 +202,14 @@ $(document).ready(function() {
                             if(element.hasClass('hidden')) {
                                element.fadeIn(0);
                             }
-                        }, 100);
+                        }, 0);
                         setTimeout(function() {
                             element.delay(0).hide(0);
+                            element.addClass('hidden');
                         }, displaytime);
                         break;
                 }
-                element.addClass('hidden');
-                setTimeout(function() {
-                    element.addClass('hidden');
-                    element.delay(0).hide(0);
-                }, readingtime);
-
-                maxtimes = maxtimes - 1;
-            }, readingtime + displaytime);
-
+            }, 15000);
         });
 
     }
