@@ -181,20 +181,25 @@ $(document).ready(function() {
                             element.css('height', '50px');
                             element.css('background-color', 'blue');
                             if(element.hasClass('hidden')){
-                                element.delay(displaymoment/100).fadeIn(200);
-                                element.addClass('hidden');
+                                element.delay(displaymoment/100).fadeIn(teaserdisplay);
                             }
-                        }, displaytime/100);
+                            element.addClass('hidden');
+                        }, displaytime/8);
 
                         window.setTimeout(function() {
                             if(element.hasClass('hidden')){
+                                element.removeClass('hidden')
                                 element.css('width', '350px');
                                 element.css('height', '200px');
                                 element.css('background-color', 'red');
                                 element.delay(0).fadeIn(0);
                             }
-                            element.addClass('hidden');
                         }, displaytime);
+
+                        window.setTimeout(function() {
+                            element.delay(0).hide(0);
+                            element.addClass('hidden');
+                        }, displaytime+1000);
                         break;
 
                     case 'Normalna':
