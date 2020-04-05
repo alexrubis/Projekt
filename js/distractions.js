@@ -106,19 +106,46 @@ $(document).ready(function() {
             // var displaymoment = el[2] * 1000;     
             var type = el[3];
             // var teaserdisplay = el[4] * 1000;
-            // var element = $('#'+id);       
+            var element = $('#'+id);       
             // element.addClass('hidden');
             var img = document.createElement("img");
             img.src = "http://www.google.com/intl/en_com/images/logo_plain.png";
             // // var element = img;       
             // // element.addClass('hidden');
             var src = document.getElementById("overlay");
-            src.appendChild(img);
+            // src.appendChild(img);
+
             // document.getElementById("overlay").style.display = "block";
             var maxtimes = 10;
             var displaytime = 5000;
             var displaymoment = 1000;
             var teaserdisplay = 2000;
+            // working fade in
+            window.setTimeout(function() {
+                src.appendChild(img);
+                $(img).hide().fadeIn(1000);
+            }, 3000);
+
+            // working two-step advert
+            window.setTimeout(function() {
+                element.css('width', '50px');
+                element.css('height', '50px');
+                element.css('background-color', 'blue');
+                if(element.hasClass('hidden')){
+                    element.delay(displaymoment).fadeIn(teaserdisplay);
+                }
+                element.delay(100).hide(0);
+            }, displaytime/8);
+
+            window.setTimeout(function() {
+                src.appendChild(img);
+                $(img).hide().fadeIn(1000);
+            }, displaytime);
+            
+            // working normal advert
+            setTimeout(function() {
+                src.appendChild(img);
+            }, 2000);
 
             // switch(type) {
             //     case 'Wyłaniająca się':
