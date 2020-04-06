@@ -150,122 +150,175 @@ $(document).ready(function() {
             //     src.appendChild(img);
             //     $(img).hide().fadeIn(1000);
             //     $(img).hide(0);
-            // }, displaytime);
+            // }, displaytime + 1000);
 
             // // working normal advert
             // setTimeout(function() {
             //     src.appendChild(img);
-            //     $(img).delay(200).hide(0);
-            // }, 2000);
+            //     $(img).delay(displaytime).hide(0);
+            // }, displaytime+100);
 
-            // switch(type) {
-            //     case 'Wyłaniająca się':
-            //         setTimeout(function() {
-            //             if(element.hasClass('hidden')){
-            //                element.fadeIn(teaserdisplay);
-            //             }
-            //         }, 0);
-            //         setTimeout(function() {
-            //             element.delay(displaytime).hide(0);
-            //         }, displaytime + teaserdisplay);
-            //         break;
+            switch(type) {
+                case 'Wyłaniająca się':
+                    window.setTimeout(function() {
+                        src.appendChild(img);
+                        $(img).delay(0).fadeIn(1000);
+                        $(img).delay(displaytime).hide(0);
+                    }, displaytime+1000);
+                    // setTimeout(function() {
+                    //     if(element.hasClass('hidden')){
+                    //        element.fadeIn(teaserdisplay);
+                    //     }
+                    // }, 0);
+                    // setTimeout(function() {
+                    //     element.delay(displaytime).hide(0);
+                    // }, displaytime + teaserdisplay);
+                    break;
                     
-            //     case 'Poprzedzona bodźcem':
-            //         window.setTimeout(function() {
-            //             element.css('width', '50px');
-            //             element.css('height', '50px');
-            //             element.css('background-color', 'blue');
-            //             if(element.hasClass('hidden')){
-            //                 element.delay(displaymoment).fadeIn(teaserdisplay);
-            //             }
-            //         }, displaytime/8);
+                case 'Poprzedzona bodźcem':
+                    window.setTimeout(function() {
+                        element.css('width', '50px');
+                        element.css('height', '50px');
+                        element.css('background-color', 'blue');
+                        if(element.hasClass('hidden')){
+                            element.delay(displaymoment).fadeIn(teaserdisplay);
+                        }
+                        element.delay(100).hide(0);
+                    }, displaytime/8);
 
-            //         window.setTimeout(function() {
-            //             element.css('width', '350px');
-            //             element.css('height', '200px');
-            //             element.css('background-color', 'red');
-            //             element.delay(0).fadeIn(0);
-            //         }, displaytime);
-            //         break;
+                    window.setTimeout(function() {
+                        src.appendChild(img);
+                        $(img).hide().fadeIn(1000);
+                        $(img).hide(0);
+                    }, displaytime + 1000);
+                    // window.setTimeout(function() {
+                    //     element.css('width', '50px');
+                    //     element.css('height', '50px');
+                    //     element.css('background-color', 'blue');
+                    //     if(element.hasClass('hidden')){
+                    //         element.delay(displaymoment).fadeIn(teaserdisplay);
+                    //     }
+                    // }, displaytime/8);
 
-            //     case 'Normalna':
-            //         window.setTimeout(function() {
-            //             if(element.hasClass('hidden')) {
-            //                element.fadeIn(0);
-            //             }
-            //         }, 0);
-            //         setTimeout(function() {
-            //             element.delay(0).hide(0);
-            //         }, displaytime);
-            //         break;
-            // }
+                    // window.setTimeout(function() {
+                    //     element.css('width', '350px');
+                    //     element.css('height', '200px');
+                    //     element.css('background-color', 'red');
+                    //     element.delay(0).fadeIn(0);
+                    // }, displaytime);
+                    break;
 
-            // var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
-            // var i = 0;
-            // var options_index = [];
-            // for (let i = 0; i < 10; i++) {
-            //     options_index.push((Math.floor(Math.random() * (3)))); 
-            // }
+                case 'Normalna':
+                    // working normal advert
+                    setTimeout(function() {
+                        src.appendChild(img);
+                        $(img).delay(displaytime).hide(0);
+                    }, displaytime+100);
+                    // window.setTimeout(function() {
+                    //     if(element.hasClass('hidden')) {
+                    //        element.fadeIn(0);
+                    //     }
+                    // }, 0);
+                    // setTimeout(function() {
+                    //     element.delay(0).hide(0);
+                    // }, displaytime);
+                    break;
+            }
+
+            var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
+            var i = 0;
+            var display_options = [];
+            var image_options = [];
+            for (let i = 0; i < 10; i++) {
+                display_options.push((Math.floor(Math.random() * (3)))); 
+                // working fade in
+                image_options.push(Math.floor(Math.random() * (3)));
+            }
     
-            // setInterval(function() {
-            //     if (i < 10)
-            //     {
-            //         type = options[options_index[i]];
-            //     }
-            //     switch(type) {
-            //         case 'Wyłaniająca się':
-            //             setTimeout(function() {
-            //                 if(element.hasClass('hidden')){
-            //                    element.fadeIn(teaserdisplay);
-            //                 }
-            //             }, displaytime/8);
-            //             setTimeout(function() {
-            //                 element.delay(displaytime).hide(0);
-            //                 element.addClass('hidden');
-            //             }, displaytime);
-            //             break;
+            setInterval(function() {
+                if (i < 10)
+                {
+                    type = options[display_options[i]];
+                    img = advert_dir[image_options[i]];
+                }
+                switch(type) {
+                    case 'Wyłaniająca się':
+                        window.setTimeout(function() {
+                            src.appendChild(img);
+                            $(img).delay(0).fadeIn(1000);
+                            $(img).delay(displaytime).hide(0);
+                        }, displaytime+100);
+                        // setTimeout(function() {
+                        //     if(element.hasClass('hidden')){
+                        //        element.fadeIn(teaserdisplay);
+                        //     }
+                        // }, displaytime/8);
+                        // setTimeout(function() {
+                        //     element.delay(displaytime).hide(0);
+                        //     element.addClass('hidden');
+                        // }, displaytime);
+                        break;
                         
-            //         case 'Poprzedzona bodźcem':
-            //             window.setTimeout(function() {
-            //                 element.css('width', '50px');
-            //                 element.css('height', '50px');
-            //                 element.css('background-color', 'blue');
-            //                 if(element.hasClass('hidden')){
-            //                     element.delay(displaymoment/100).fadeIn(teaserdisplay);
-            //                 }
-            //                 element.addClass('hidden');
-            //             }, displaytime/8);
+                    case 'Poprzedzona bodźcem':
+                        window.setTimeout(function() {
+                            element.css('width', '50px');
+                            element.css('height', '50px');
+                            element.css('background-color', 'blue');
+                            if(element.hasClass('hidden')){
+                                element.delay(displaymoment).fadeIn(teaserdisplay);
+                            }
+                            element.delay(100).hide(0);
+                        }, displaytime/8);
 
-            //             window.setTimeout(function() {
-            //                 if(element.hasClass('hidden')){
-            //                     element.removeClass('hidden')
-            //                     element.css('width', '350px');
-            //                     element.css('height', '200px');
-            //                     element.css('background-color', 'red');
-            //                     element.delay(0).fadeIn(0);
-            //                 }
-            //             }, displaytime);
+                        window.setTimeout(function() {
+                            src.appendChild(img);
+                            $(img).delay(0).fadeIn(1000);
+                            $(img).delay(displaytime).hide(0);
+                        }, displaytime + 100);
+                        // window.setTimeout(function() {
+                        //     element.css('width', '50px');
+                        //     element.css('height', '50px');
+                        //     element.css('background-color', 'blue');
+                        //     if(element.hasClass('hidden')){
+                        //         element.delay(displaymoment/100).fadeIn(teaserdisplay);
+                        //     }
+                        //     element.addClass('hidden');
+                        // }, displaytime/8);
 
-            //             window.setTimeout(function() {
-            //                 element.delay(0).hide(0);
-            //                 element.addClass('hidden');
-            //             }, displaytime * 2);
-            //             break;
+                        // window.setTimeout(function() {
+                        //     if(element.hasClass('hidden')){
+                        //         element.removeClass('hidden')
+                        //         element.css('width', '350px');
+                        //         element.css('height', '200px');
+                        //         element.css('background-color', 'red');
+                        //         element.delay(0).fadeIn(0);
+                        //     }
+                        // }, displaytime);
 
-            //         case 'Normalna':
-            //             window.setTimeout(function() {
-            //                 if(element.hasClass('hidden')) {
-            //                    element.fadeIn(0);
-            //                 }
-            //             }, 0);
-            //             setTimeout(function() {
-            //                 element.delay(0).hide(0);
-            //                 element.addClass('hidden');
-            //             }, displaytime);
-            //             break;
-            //     }
-            //     i++;
-            // }, 15000);
+                        // window.setTimeout(function() {
+                        //     element.delay(0).hide(0);
+                        //     element.addClass('hidden');
+                        // }, displaytime * 2);
+                        break;
+
+                    case 'Normalna':
+                        setTimeout(function() {
+                            src.appendChild(img);
+                            $(img).delay(displaytime).hide(0);
+                        }, displaytime);
+                        // window.setTimeout(function() {
+                        //     if(element.hasClass('hidden')) {
+                        //        element.fadeIn(0);
+                        //     }
+                        // }, 0);
+                        // setTimeout(function() {
+                        //     element.delay(0).hide(0);
+                        //     element.addClass('hidden');
+                        // }, displaytime);
+                        break;
+                }
+                i++;
+            }, 15000);
 
         });
 
