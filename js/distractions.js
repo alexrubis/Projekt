@@ -108,44 +108,55 @@ $(document).ready(function() {
             // var teaserdisplay = el[4] * 1000;
             var element = $('#'+id);       
             // element.addClass('hidden');
-            var img = document.createElement("img");
-            img.src = "http://www.google.com/intl/en_com/images/logo_plain.png";
-            // // var element = img;       
-            // // element.addClass('hidden');
+            var img_static1 = document.createElement("img");
+            img_static1.src = "http://www.google.com/intl/en_com/images/logo_plain.png";
+
+            var img_static2 = document.createElement("img");
+            img_static2.src = "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/lady-beetle.png";
+
+            var img_static3 = document.createElement("img");
+            img_static3.src = "https://media.giphy.com/media/UvIApNhjzIEhi/giphy.gif";
+
+            var advert_dir = [img_static1, img_static2, img_static3];
+
             var src = document.getElementById("overlay");
             // src.appendChild(img);
-
             // document.getElementById("overlay").style.display = "block";
             var maxtimes = 10;
             var displaytime = 5000;
             var displaymoment = 1000;
             var teaserdisplay = 2000;
+            var pick =(Math.floor(Math.random() * (3)));
             // working fade in
-            window.setTimeout(function() {
-                src.appendChild(img);
-                $(img).hide().fadeIn(1000);
-            }, 3000);
+            var img = advert_dir[2];
+            // window.setTimeout(function() {
+            //     src.appendChild(img);
+            //     $(img).delay(0).fadeIn(1000);
+            //     $(img).delay(displaytime).hide(0);
+            // }, displaytime+1000);
 
-            // working two-step advert
-            window.setTimeout(function() {
-                element.css('width', '50px');
-                element.css('height', '50px');
-                element.css('background-color', 'blue');
-                if(element.hasClass('hidden')){
-                    element.delay(displaymoment).fadeIn(teaserdisplay);
-                }
-                element.delay(100).hide(0);
-            }, displaytime/8);
+            // // working two-step advert
+            // window.setTimeout(function() {
+            //     element.css('width', '50px');
+            //     element.css('height', '50px');
+            //     element.css('background-color', 'blue');
+            //     if(element.hasClass('hidden')){
+            //         element.delay(displaymoment).fadeIn(teaserdisplay);
+            //     }
+            //     element.delay(100).hide(0);
+            // }, displaytime/8);
 
-            window.setTimeout(function() {
-                src.appendChild(img);
-                $(img).hide().fadeIn(1000);
-            }, displaytime);
-            
-            // working normal advert
-            setTimeout(function() {
-                src.appendChild(img);
-            }, 2000);
+            // window.setTimeout(function() {
+            //     src.appendChild(img);
+            //     $(img).hide().fadeIn(1000);
+            //     $(img).hide(0);
+            // }, displaytime);
+
+            // // working normal advert
+            // setTimeout(function() {
+            //     src.appendChild(img);
+            //     $(img).delay(200).hide(0);
+            // }, 2000);
 
             // switch(type) {
             //     case 'Wyłaniająca się':
