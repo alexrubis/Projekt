@@ -5,7 +5,7 @@ function saveCompleteLog()
     var atag = document.createElement("a");
     var file = new Blob([JSON.stringify(sessionStorage.getItem("contentArray")).replace('"','').replace('[','').replace(']','').replace(']','').replace('/','')], {type: 'text/plain'});
     atag.href = URL.createObjectURL(file);
-    atag.download = "symulacjaKompletnyLog.txt";
+    atag.download = "stymulacjaKompletnyLog.txt";
     atag.click();
 }
 

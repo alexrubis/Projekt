@@ -10,7 +10,7 @@ function logEvent(eventType) {
     var atag = document.createElement("a");
     var file = new Blob([content], {type: 'text/plain'});
     atag.href = URL.createObjectURL(file);
-    atag.download = "symulacja.txt";
+    atag.download = "stymulacja.txt";
     atag.click();
     //tworzenie kompletnego logu
     contentArray.push(content);
