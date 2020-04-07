@@ -2,7 +2,7 @@ contentArray = [];
 function logEvent(eventType) {
     //czas
     var today = new Date();
-    var time = today.getFullYear().toString()+(("0" + (today.getMonth() + 1)).slice(-2))+(("0" + today.getDate()).slice(-2))+today.getHours()+ today.getMinutes()+ today.getSeconds()+Math.round(today.getMilliseconds()/10);
+    var time = today.getFullYear().toString()+(("0" + (today.getMonth() + 1)).slice(-2))+(("0" + today.getDate()).slice(-2))+today.getHours()+ today.getMinutes()+ today.getSeconds()+today.getMilliseconds();
     //tworzenie pliku
     content = time+","+eventType;        
 
