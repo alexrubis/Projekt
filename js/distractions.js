@@ -12,6 +12,30 @@ function logEvent(eventType) {
         atag.click();
 }
 
+function allPossibleCases(arr) {
+  if (arr.length == 1) {
+    return arr[0];
+  } else {
+    var result = [];
+    var allCasesOfRest = allPossibleCases(arr.slice(1));  // recur with the rest of array
+    for (var i = 0; i < allCasesOfRest.length; i++) {
+      for (var j = 0; j < arr[0].length; j++) {
+        result.push([arr[0][j], allCasesOfRest[i]]);
+      }
+    }
+    return result;
+    //console.log(result);
+  }
+}
+
+function shuffleArray(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+    return array;
+}
+
 $(document).ready(function() { 
     $('#check1').change(function() {
         this.checked ? $('.check1-form').removeClass('hidden') : $('.check1-form').addClass('hidden');
@@ -150,6 +174,7 @@ $(document).ready(function() {
             var pick = (Math.floor(Math.random() * (3)));
 
             var img = advert_dir[2];
+
             switch(type) {
                 case 'Wyłaniająca się':
                     window.setTimeout(function() {
@@ -198,12 +223,12 @@ $(document).ready(function() {
                 display_options.push((Math.floor(Math.random() * (3))));
                 image_options.push(Math.floor(Math.random() * (6)));
             }
-    
+            perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
             setInterval(function() {
                 if (i < 10)
                 {
-                    type = options[display_options[i]];
-                    img = advert_dir[image_options[i]];
+                    type = perm_array[i][1];
+                    img = perm_array[i][0];
                 }
                 switch(type) {
                     case 'Wyłaniająca się':
