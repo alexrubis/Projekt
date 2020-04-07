@@ -1,6 +1,18 @@
+function saveCompleteLog() 
+{
+    // var storedLog = JSON.parse(localStorage.getItem("contentArray"));
+     
+    var atag = document.createElement("a");
+    var file = new Blob([JSON.stringify(sessionStorage.getItem("contentArray")).replace('"','').replace('[','').replace(']','').replace(']','').replace('/','')], {type: 'text/plain'});
+    atag.href = URL.createObjectURL(file);
+    atag.download = "symulacjaKompletnyLog.txt";
+    atag.click();
+}
+
 $(document).ready(function() {
     if(window.location.pathname.indexOf("/result.html") >= 0) {
         displayTimes();
+        saveCompleteLog();
     }
 
     /*  
