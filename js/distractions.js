@@ -1,3 +1,17 @@
+function logEvent(eventType) {
+        //czas
+        var today = new Date();
+        var time = today.getFullYear().toString()+(today.getMonth()+1)+today.getDate()+today.getHours()+ today.getMinutes()+ today.getSeconds()+Math.round(today.getMilliseconds()/10);
+        //tworzenie pliku
+        content = time+","+eventType;
+        //zapisywanie do pliku
+        var atag = document.createElement("a");
+        var file = new Blob([content], {type: 'text/plain'});
+        atag.href = URL.createObjectURL(file);
+        atag.download = "symulacja.txt";
+        atag.click();
+}
+
 $(document).ready(function() { 
     $('#check1').change(function() {
         this.checked ? $('.check1-form').removeClass('hidden') : $('.check1-form').addClass('hidden');
@@ -117,66 +131,38 @@ $(document).ready(function() {
             var img_static3 = document.createElement("img");
             img_static3.src = "https://media.giphy.com/media/UvIApNhjzIEhi/giphy.gif";
 
-            var advert_dir = [img_static1, img_static2, img_static3];
+            var img_static4 = document.createElement("img");
+            img_static4.src = "https://media.giphy.com/media/6m7qSfzFKtAOY/giphy.gif";
+
+            var img_static5 = document.createElement("img");
+            img_static5.src = "https://media.giphy.com/media/SDiYrM9eONjaM/giphy.gif";
+
+            var img_static6 = document.createElement("img");
+            img_static6.src = "https://pbs.twimg.com/profile_images/650328426344239104/fYnlRCXy_400x400.jpg";
+
+            var advert_dir = [img_static1, img_static2, img_static3, img_static4, img_static5, img_static6];
 
             var src = document.getElementById("overlay");
-            // src.appendChild(img);
-            // document.getElementById("overlay").style.display = "block";
             var maxtimes = 10;
             var displaytime = 5000;
             var displaymoment = 1000;
             var teaserdisplay = 2000;
-            var pick =(Math.floor(Math.random() * (3)));
-            // working fade in
+            var pick = (Math.floor(Math.random() * (3)));
+
             var img = advert_dir[2];
-            // window.setTimeout(function() {
-            //     src.appendChild(img);
-            //     $(img).delay(0).fadeIn(1000);
-            //     $(img).delay(displaytime).hide(0);
-            // }, displaytime+1000);
-
-            // // working two-step advert
-            // window.setTimeout(function() {
-            //     element.css('width', '50px');
-            //     element.css('height', '50px');
-            //     element.css('background-color', 'blue');
-            //     if(element.hasClass('hidden')){
-            //         element.delay(displaymoment).fadeIn(teaserdisplay);
-            //     }
-            //     element.delay(100).hide(0);
-            // }, displaytime/8);
-
-            // window.setTimeout(function() {
-            //     src.appendChild(img);
-            //     $(img).hide().fadeIn(1000);
-            //     $(img).hide(0);
-            // }, displaytime + 1000);
-
-            // // working normal advert
-            // setTimeout(function() {
-            //     src.appendChild(img);
-            //     $(img).delay(displaytime).hide(0);
-            // }, displaytime+100);
-
             switch(type) {
                 case 'Wyłaniająca się':
                     window.setTimeout(function() {
+                        // logEvent("Wylaniajacasie,none,start,test,none,Plik_txt,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).delay(0).fadeIn(1000);
                         $(img).delay(displaytime).hide(0);
                     }, displaytime+1000);
-                    // setTimeout(function() {
-                    //     if(element.hasClass('hidden')){
-                    //        element.fadeIn(teaserdisplay);
-                    //     }
-                    // }, 0);
-                    // setTimeout(function() {
-                    //     element.delay(displaytime).hide(0);
-                    // }, displaytime + teaserdisplay);
                     break;
                     
                 case 'Poprzedzona bodźcem':
                     window.setTimeout(function() {
+                        // logEvent("Poprzedzonabodzcem,none,start,test,none,Plik_txt,none,none,none,none,none,none,none,none");
                         element.css('width', '50px');
                         element.css('height', '50px');
                         element.css('background-color', 'blue');
@@ -191,37 +177,15 @@ $(document).ready(function() {
                         $(img).hide().fadeIn(1000);
                         $(img).hide(0);
                     }, displaytime + 1000);
-                    // window.setTimeout(function() {
-                    //     element.css('width', '50px');
-                    //     element.css('height', '50px');
-                    //     element.css('background-color', 'blue');
-                    //     if(element.hasClass('hidden')){
-                    //         element.delay(displaymoment).fadeIn(teaserdisplay);
-                    //     }
-                    // }, displaytime/8);
-
-                    // window.setTimeout(function() {
-                    //     element.css('width', '350px');
-                    //     element.css('height', '200px');
-                    //     element.css('background-color', 'red');
-                    //     element.delay(0).fadeIn(0);
-                    // }, displaytime);
                     break;
 
                 case 'Normalna':
                     // working normal advert
                     setTimeout(function() {
+                        // logEvent("Normalna,none,start,test,none,Plik_txt,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).delay(displaytime).hide(0);
                     }, displaytime+100);
-                    // window.setTimeout(function() {
-                    //     if(element.hasClass('hidden')) {
-                    //        element.fadeIn(0);
-                    //     }
-                    // }, 0);
-                    // setTimeout(function() {
-                    //     element.delay(0).hide(0);
-                    // }, displaytime);
                     break;
             }
 
@@ -229,10 +193,10 @@ $(document).ready(function() {
             var i = 0;
             var display_options = [];
             var image_options = [];
+
             for (let i = 0; i < 10; i++) {
-                display_options.push((Math.floor(Math.random() * (3)))); 
-                // working fade in
-                image_options.push(Math.floor(Math.random() * (3)));
+                display_options.push((Math.floor(Math.random() * (3))));
+                image_options.push(Math.floor(Math.random() * (6)));
             }
     
             setInterval(function() {
@@ -244,23 +208,16 @@ $(document).ready(function() {
                 switch(type) {
                     case 'Wyłaniająca się':
                         window.setTimeout(function() {
+                            // logEvent("Wylaniajacasie,none,start,test,none,Plik_txt,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).delay(0).fadeIn(1000);
                             $(img).delay(displaytime).hide(0);
                         }, displaytime+100);
-                        // setTimeout(function() {
-                        //     if(element.hasClass('hidden')){
-                        //        element.fadeIn(teaserdisplay);
-                        //     }
-                        // }, displaytime/8);
-                        // setTimeout(function() {
-                        //     element.delay(displaytime).hide(0);
-                        //     element.addClass('hidden');
-                        // }, displaytime);
                         break;
                         
                     case 'Poprzedzona bodźcem':
                         window.setTimeout(function() {
+                            // logEvent("Normalna,none,start,test,none,Plik_txt,none,none,none,none,none,none,none,none");
                             element.css('width', '50px');
                             element.css('height', '50px');
                             element.css('background-color', 'blue');
@@ -275,46 +232,14 @@ $(document).ready(function() {
                             $(img).delay(0).fadeIn(1000);
                             $(img).delay(displaytime).hide(0);
                         }, displaytime + 100);
-                        // window.setTimeout(function() {
-                        //     element.css('width', '50px');
-                        //     element.css('height', '50px');
-                        //     element.css('background-color', 'blue');
-                        //     if(element.hasClass('hidden')){
-                        //         element.delay(displaymoment/100).fadeIn(teaserdisplay);
-                        //     }
-                        //     element.addClass('hidden');
-                        // }, displaytime/8);
-
-                        // window.setTimeout(function() {
-                        //     if(element.hasClass('hidden')){
-                        //         element.removeClass('hidden')
-                        //         element.css('width', '350px');
-                        //         element.css('height', '200px');
-                        //         element.css('background-color', 'red');
-                        //         element.delay(0).fadeIn(0);
-                        //     }
-                        // }, displaytime);
-
-                        // window.setTimeout(function() {
-                        //     element.delay(0).hide(0);
-                        //     element.addClass('hidden');
-                        // }, displaytime * 2);
                         break;
 
                     case 'Normalna':
                         setTimeout(function() {
+                            // logEvent("Normalna,none,start,test,none,Plik_txt,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).delay(displaytime).hide(0);
                         }, displaytime);
-                        // window.setTimeout(function() {
-                        //     if(element.hasClass('hidden')) {
-                        //        element.fadeIn(0);
-                        //     }
-                        // }, 0);
-                        // setTimeout(function() {
-                        //     element.delay(0).hide(0);
-                        //     element.addClass('hidden');
-                        // }, displaytime);
                         break;
                 }
                 i++;
