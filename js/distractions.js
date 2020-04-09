@@ -184,11 +184,13 @@ $(document).ready(function() {
             var pick = (Math.floor(Math.random() * (3)));
 
             var img = advert_dir[0];
-            document.getElementById("firstQuestion").disabled = false;
+            // document.getElementById("firstQuestion").disabled = false;
+            $("#question-data :input").prop('disabled', false);
+
             switch(type) {
                 case 'Wyłaniająca się':
-
                     window.setTimeout(function() {
+                        $("#question-data :input").prop('disabled', true);
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).delay(0).fadeIn(1000);
@@ -196,6 +198,7 @@ $(document).ready(function() {
                     }, displaytime);
 
                     window.setTimeout(function() {
+                        $("#question-data :input").prop('disabled', false);
                         $(img).delay(0).hide(0);
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                     }, displaytime*2);
@@ -203,9 +206,9 @@ $(document).ready(function() {
                     break;
                     
                 case 'Poprzedzona bodźcem':
-                    
                     window.setTimeout(function() {
-                        document.getElementById("firstQuestion").disabled = true;
+                        $("#question-data :input").prop('disabled', true);
+                        // document.getElementById("firstQuestion").disabled = true;
                         // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.css('width', '50px');
                         element.css('height', '50px');
@@ -216,20 +219,23 @@ $(document).ready(function() {
                     }, displaytime/8);
 
                     window.setTimeout(function() {
-                        document.getElementById("firstQuestion").disabled = true;
+                        $("#question-data :input").prop('disabled', true);
+                        // document.getElementById("firstQuestion").disabled = true;
                         // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.delay(100).hide(0);
                     }, displaytime/8);
 
                     window.setTimeout(function() {
-                        document.getElementById("firstQuestion").disabled = true;
+                        $("#question-data :input").prop('disabled', true);
+                        // document.getElementById("firstQuestion").disabled = true;
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).hide().fadeIn(1000);
                     }, displaytime);
 
                     window.setTimeout(function() {
-                        document.getElementById("firstQuestion").disabled = false;
+                        $("#question-data :input").prop('disabled', false);
+                        // document.getElementById("firstQuestion").disabled = false;
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
                     }, displaytime*2);
@@ -239,12 +245,14 @@ $(document).ready(function() {
                 case 'Normalna':
                     // working normal advert
                     setTimeout(function() {
+                        $("#question-data :input").prop('disabled', true);
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).delay(0).hide(0);
                     }, displaytime);
 
                     setTimeout(function() {
+                        $("#question-data :input").prop('disabled', false);
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
                     }, displaytime*2);
@@ -272,12 +280,14 @@ $(document).ready(function() {
                 switch(type) {
                     case 'Wyłaniająca się':
                         window.setTimeout(function() {
+                            $("#question-data :input").prop('disabled', true);
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).delay(0).fadeIn(1000);
                             // $(img).delay(displaytime).hide(0);
                         }, displaytime);
                         window.setTimeout(function() {
+                            $("#question-data :input").prop('disabled', false);
                             $(img).delay(0).hide(0);
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         }, displaytime*2);
@@ -285,6 +295,7 @@ $(document).ready(function() {
                         
                     case 'Poprzedzona bodźcem':
                         window.setTimeout(function() {
+                            $("#question-data :input").prop('disabled', true);
                             // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                             element.css('width', '50px');
                             element.css('height', '50px');
@@ -295,17 +306,20 @@ $(document).ready(function() {
                         }, displaytime/8);
 
                         window.setTimeout(function() {
+                            $("#question-data :input").prop('disabled', true);
                             // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                             element.delay(100).hide(0);
                         }, displaytime/8);
 
                         window.setTimeout(function() {
+                            $("#question-data :input").prop('disabled', true);
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).hide().fadeIn(1000);
                         }, displaytime);
 
                         window.setTimeout(function() {
+                            $("#question-data :input").prop('disabled', false);
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
                         }, displaytime*2);
@@ -314,12 +328,14 @@ $(document).ready(function() {
                     case 'Normalna':
                         // working normal advert
                         setTimeout(function() {
+                            $("#question-data :input").prop('disabled', true);
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).delay(0).hide(0);
                         }, displaytime);
 
                         setTimeout(function() {
+                            $("#question-data :input").prop('disabled', false);
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
                         }, displaytime*2);
