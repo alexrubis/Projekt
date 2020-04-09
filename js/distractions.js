@@ -184,9 +184,10 @@ $(document).ready(function() {
             var pick = (Math.floor(Math.random() * (3)));
 
             var img = advert_dir[0];
-
+            document.getElementById("firstQuestion").disabled = false;
             switch(type) {
                 case 'Wyłaniająca się':
+
                     window.setTimeout(function() {
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
@@ -202,7 +203,9 @@ $(document).ready(function() {
                     break;
                     
                 case 'Poprzedzona bodźcem':
+                    
                     window.setTimeout(function() {
+                        document.getElementById("firstQuestion").disabled = true;
                         // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.css('width', '50px');
                         element.css('height', '50px');
@@ -213,17 +216,20 @@ $(document).ready(function() {
                     }, displaytime/8);
 
                     window.setTimeout(function() {
+                        document.getElementById("firstQuestion").disabled = true;
                         // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.delay(100).hide(0);
                     }, displaytime/8);
 
                     window.setTimeout(function() {
+                        document.getElementById("firstQuestion").disabled = true;
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).hide().fadeIn(1000);
                     }, displaytime);
 
                     window.setTimeout(function() {
+                        document.getElementById("firstQuestion").disabled = false;
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
                     }, displaytime*2);
@@ -245,6 +251,7 @@ $(document).ready(function() {
 
                     break;
             }
+            
             
             var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
             var i = 0;
@@ -320,7 +327,7 @@ $(document).ready(function() {
                         break;
                 }
                 i++;
-            }, 15000);
+            }, 12000);
 
         });
 
