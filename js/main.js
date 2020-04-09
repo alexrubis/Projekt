@@ -12,7 +12,7 @@ function saveCompleteLog()
 $(document).ready(function() {
     if(window.location.pathname.indexOf("/result.html") >= 0) {
         displayTimes();
-        saveCompleteLog();
+        // saveCompleteLog();
     }
 
     /*  

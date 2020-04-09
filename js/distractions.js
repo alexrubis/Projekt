@@ -184,7 +184,7 @@ $(document).ready(function() {
             switch(type) {
                 case 'Wyłaniająca się':
                     window.setTimeout(function() {
-                        logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).delay(0).fadeIn(1000);
                         // $(img).delay(displaytime).hide(0);
@@ -192,14 +192,14 @@ $(document).ready(function() {
 
                     window.setTimeout(function() {
                         $(img).delay(0).hide(0);
-                        logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                     }, displaytime*2);
 
                     break;
                     
                 case 'Poprzedzona bodźcem':
                     window.setTimeout(function() {
-                        logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                        // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.css('width', '50px');
                         element.css('height', '50px');
                         element.css('background-color', 'blue');
@@ -209,18 +209,18 @@ $(document).ready(function() {
                     }, displaytime/8);
 
                     window.setTimeout(function() {
-                        logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                        // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.delay(100).hide(0);
                     }, displaytime/8);
 
                     window.setTimeout(function() {
-                        logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).hide().fadeIn(1000);
                     }, displaytime);
 
                     window.setTimeout(function() {
-                        logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
                     }, displaytime*2);
 
@@ -229,13 +229,13 @@ $(document).ready(function() {
                 case 'Normalna':
                     // working normal advert
                     setTimeout(function() {
-                        logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).delay(0).hide(0);
                     }, displaytime);
 
                     setTimeout(function() {
-                        logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
                     }, displaytime*2);
 
@@ -261,20 +261,20 @@ $(document).ready(function() {
                 switch(type) {
                     case 'Wyłaniająca się':
                         window.setTimeout(function() {
-                            logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).delay(0).fadeIn(1000);
                             // $(img).delay(displaytime).hide(0);
                         }, displaytime);
                         window.setTimeout(function() {
                             $(img).delay(0).hide(0);
-                            logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         }, displaytime*2);
                         break;
                         
                     case 'Poprzedzona bodźcem':
                         window.setTimeout(function() {
-                            logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                            // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                             element.css('width', '50px');
                             element.css('height', '50px');
                             element.css('background-color', 'blue');
@@ -284,18 +284,18 @@ $(document).ready(function() {
                         }, displaytime/8);
 
                         window.setTimeout(function() {
-                            logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                            // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                             element.delay(100).hide(0);
                         }, displaytime/8);
 
                         window.setTimeout(function() {
-                            logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).hide().fadeIn(1000);
                         }, displaytime);
 
                         window.setTimeout(function() {
-                            logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
                         }, displaytime*2);
                         break;
@@ -303,13 +303,13 @@ $(document).ready(function() {
                     case 'Normalna':
                         // working normal advert
                         setTimeout(function() {
-                            logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).delay(0).hide(0);
                         }, displaytime);
 
                         setTimeout(function() {
-                            logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
                         }, displaytime*2);
 
