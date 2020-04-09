@@ -153,25 +153,29 @@ $(document).ready(function() {
             var element = $('#'+id);       
             // element.addClass('hidden');
             var img_static1 = document.createElement("img");
-            img_static1.src = "http://www.google.com/intl/en_com/images/logo_plain.png";
+            img_static1.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Carved_by_Massive_Stars.jpg/300px-Carved_by_Massive_Stars.jpg";
 
             var img_static2 = document.createElement("img");
-            img_static2.src = "https://s3.amazonaws.com/pix.iemoji.com/images/emoji/apple/ios-12/256/lady-beetle.png";
+            img_static2.src = "https://b.rgbimg.com/users/v/vo/vorfay/300/mllmu58.jpg";
 
             var img_static3 = document.createElement("img");
-            img_static3.src = "https://media.giphy.com/media/UvIApNhjzIEhi/giphy.gif";
+            img_static3.src = "https://media.giphy.com/media/WcddPgiWWsUFO/giphy.gif";
 
             var img_static4 = document.createElement("img");
-            img_static4.src = "https://media.giphy.com/media/6m7qSfzFKtAOY/giphy.gif";
+            img_static4.src = "https://media.giphy.com/media/RYKFEEjtYpxL2/giphy.gif";
 
             var img_static5 = document.createElement("img");
-            img_static5.src = "https://media.giphy.com/media/SDiYrM9eONjaM/giphy.gif";
+            img_static5.src = "https://media.giphy.com/media/WiTFa9I5AfrEY/giphy.gif";
 
             var img_static6 = document.createElement("img");
-            img_static6.src = "https://pbs.twimg.com/profile_images/650328426344239104/fYnlRCXy_400x400.jpg";
+            img_static6.src = "https://kids.kiddle.co/images/thumb/a/a8/Bees_Collecting_Pollen_2004-08-14.jpg/300px-Bees_Collecting_Pollen_2004-08-14.jpg";
 
             var advert_dir = [img_static1, img_static2, img_static3, img_static4, img_static5, img_static6];
 
+            for (var i = 0; i < advert_dir.length; i++) {
+                advert_dir[i].style.height = "210px";
+                advert_dir[i].style.width = "350px";
+            }
             var src = document.getElementById("overlay");
             var maxtimes = 10;
             var displaytime = 5000;
@@ -253,7 +257,7 @@ $(document).ready(function() {
             }
             perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
             setInterval(function() {
-                if (i < 10)
+                if (i < perm_array.length)
                 {
                     type = perm_array[i][1];
                     img = perm_array[i][0];
