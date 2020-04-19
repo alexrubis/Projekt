@@ -23,58 +23,138 @@
     <div class="distraction-box hidden" id="centered"></div>
     <!-- <div class="frame"></div> -->
 
+
+
+
     <div class="container h-100 d-flex align-items-center justify-content-center">
         <div>
-        <div class="row justify-content-center">
-            <div class="col-md-auto">
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
                 <div class="text-center">
-                    <h2 class="question-no"></h2>
-                    <p>Oblicz</p>
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Adopcja królika miniaturowego </h4>
+                        <p>
+                        W wieku ośmiu do dziesięciu tygodni młody królik jest już gotowy, by opuścić matkę i rodzeństwo i zacząć odkrywać świat. Nierzadko w tym właśnie wieku te małe zwierzęta wprowadzają się do nowej rodziny. Ta, by królik mógł rozwijać się prawidłowo i żyć w zdrowiu, musi zapewnić mu optymalne warunki. Do uwzględnienia jest kilka kwestii
+                        </p>
+                        <h5> Przed zakupem</h5>
+                        <p>
+                        Najpierw zastanów się, jaka rasa królika domowego najlepiej będzie się dla Ciebie nadawała. Czy będziesz trzymał zwierzątko przez cały rok na zewnątrz? Doinformuj się o potrzebach różnych ras, gdyż nie każdy królik nadaje się do trzymania w ogrodzie.
+                        </p>
+                        <p>
+                        Przed zakupem zastanów się też, czy dysponujesz wystarczającą ilością czasu na pielęgnację zwierzęcia. Zajmowanie się królikiem - pielęgnacja, karmienie i zabawa, powinny zajmować w ciągu dnia około dwóch godzin.
+                        </p>
+                        <p>
+                        Przy zakupie zwróć uwagę na to, w jakich warunkach przebywał królik, gdyż nieprawidłowe utrzymanie mogło wykształcić nawet u bardzo młodego królika problemy zdrowotne.
+                        </p>
+                        <h5>Pierwsze chwile w nowym domu</h5>
+                        <p>
+                        Po przetransportowaniu królika do domu, włóż go do klatki  najlepiej z pudełkiem czy transporterem, w którym został przywieziony. Dasz mu w ten sposób swobodę, by mógł sam zdecydował się wyjść i zapoznać z nowym otoczeniem. W pierwszych dniach w nowym domu królik będzie niespokojny. Daj mu czas na zaklimatyzowanie się i nie przeszkadzaj mu nadmiernymi pieszczotami. Z czasem zacznij ośmielać go i przyzwyczajać do siebie, w tym celu podawaj mu na przykład smakołyki. W końcu na pewno się do Ciebie przekona, ale pamiętaj, by dać mu tyle czasu, ile będzie potrzebował!
+                        </p>
+                        <p>
+                        Przypilnuj także dzieci, by nie od razu chciały zacząć zabawę z nowym pupilem. Aklimatyzacja królika wymaga dość długiego czasu. Jeśli nawet królik przyzwyczai się już do nowego domu i jego mieszkańców, zawsze należy być wobec niego spokojnym w obejściu, gdyż inaczej szybko się zestresuje
+                        </p>
+                        <h5> Podstawy w hodowli królika </h5>
+                        <p>
+                        1. Króliki dobrze czują się wyłącznie w stadzie, dlatego zadbaj o towarzystwo dla niego w podobnym wieku. Najlepiej zaadoptuj od razu dwa!
+                        </p>
+                        <p>
+                        2. Spraw swojemu królikowi dużą klatkę dla królików, która oferuje co najmniej metr kwadratowy przestrzeni dla jednego zwierzęcia.
+                        </p>
+                        <p>
+                        3. Wybieg dla królika jest koniecznością! Jeśli puszczasz królika po domu, zwracaj uwagę na trujące rośliny doniczkowe, leżące swobodnie przewody elektryczne i inne źródła niebezpieczeństwa. Zdecydowana większość królików ucieszy się z wybiegu na świeżym powietrzu, o ile tylko możesz mu taki zapewnić.
+                        </p>
+                        <p>
+                        4. Nie zapominaj o kontrolach zdrowia i pielęgnacji. Regularnie sprawdzaj wagę swojego królika. Szybki, duży spadek wagi może wskazywać na chorobę pasożytniczą. Obserwuj także jego pazury i sierść. Jeśli pazury są za długie lub sierść zlepiona, najlepiej odwiedź ze swoim pupilem weterynarza.
+                        </p>
+                        <p>
+                        5. Odżywiaj swojego królika w odpowiedni dla niego sposób. Głównym pożywieniem królika jest siano, może być ono uzupełnianie paszą zieloną.
+                        </p>
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Czy kot zostały wzięty do biura z powodu myszy?</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Czy kot gromadził pieniądze ponieważ przechodznie wrzucali banknoty przez szczelinę?
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Co odkryli naukowcy?
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Nowy rodzaj katalizatora</option>
+                                    <option>Nowoczesny sposób syntezy tlenku wodoru </option>
+                                    <option>Materiał pozwalający usuwać z atmosfery zanieczyszczenia</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Czy w artykule przwiduje się, ze odkrycie będzie miało wpływ na motoryzację?
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+                                <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-auto">
-                <form id="question-data" method="POST">
-                    <div class="form-group row">
-                        <label for="math1" class="col-7 col-form-label question">3 + 4 - 5 = </label>
-                        <div class="col-5">
-                            <input id="firstQuestion" type="number" name="math1" class="form-control mt-3">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="math1" class="col-7 col-form-label question">4 * 5 / 2 = </label>
-                        <div class="col-5">
-                            <input type="number" name="math2" class="form-control mt-3">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="math1" class="col-7 col-form-label question">4 - 1 + 2 = </label>
-                        <div class="col-5">
-                            <input type="number" name="math3" class="form-control mt-3">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <label for="math1" class="col-7 col-form-label question">8 / 4 * 2 = </label>
-                        <div class="col-5">
-                            <input id="lastQuestion" type="number" name="math4" class="form-control mt-3">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
-                            <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
-    </div>
+    
+
     
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>

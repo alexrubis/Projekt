@@ -28,38 +28,124 @@
     <div class="distraction-box hidden" id="left-center"></div>
     <div class="distraction-box hidden" id="centered"></div>
     <!-- <div class="frame"></div> -->
-
     <div class="container h-100 d-flex align-items-center justify-content-center">
         <div>
             <div class="row justify-content-center">
                 <div class="col-md-auto">
                     <div class="text-center">
                         <h2 class="question-no"></h2>
-                        <p>Gra</p>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="col-12">
-                    <div id="overlay"></div>
-                    <!-- <div id="win-screen"></div> -->
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Skąd się wzięła karma dla psów? Oto jej historia!</h4>
+                        <p>
+                        Historia karmy dla psów rozpoczęła się dawno, bo już w 1860 roku. Skąd wziął się pomysł na suche i puszkowane jedzenie dla domowych pupili?
+                        Żywienie psów gotowym jedzeniem jest w dzisiejszych czasach powszechne. Sklepowe półki oferują nam ogromny wybór suchej i mokrej karmy, w rozmaitych smakach i cenach. Jednak nie zawsze tak było. Oto historia, której pewnie nie znacie – historia karmy dla psów!
 
-                    <ul id="cardList" class="deck">
-                    </ul>
-        
+                        </p>
+                        <h5>Karma dla psów ma ponad 150 lat!</h5>
+                        <p>
+                        Historia karmy dla psów rozpoczęła się wraz z rewolucją przemysłową w 1860 roku. W odpowiedzi na potrzeby ówczesnego opiekuna powstał produkt, który nigdy wcześniej nie istniał na rynku. Pochodzący z Wielkiej Brytanii James Spratt wyprodukował ciastka dla psów. Karma ta, nazwana Spratt’s Patent Meat Fibrine Dog Cake, spotkała się z ogromnym zainteresowaniem nie tylko posiadaczy psów, ale także innych przedsiębiorców. W ciągu 10 lat ciastka te zdobyły rynek amerykański.
+                        </p>
+                        <p>
+                        50 lat później F. H. Bennett wpadł na pomysł stworzenia karmy, która spełniałaby wszystkie potrzeby żywieniowe czworonożnych pupili. Wypiekane ciastka o nazwie Milk Bones według ówczesnej wiedzy stanowiły kompletny pokarm dla psów, który nie wymagał podawania zwierzętom żadnych dodatków. Ten sposób żywienia psów znalazł wielu zwolenników, co szybko zwróciło uwagę innych producentów. Wypiekana karma stała się prawdziwym hitem i pozostała nim aż do lat 20. XX wieku.
+                        </p>
+
+                        <h5>Puszki wkraczają na rynek</h5>
+                        <p>
+                        W 1922 roku na rynek amerykański weszła pierwsza karma mokra – konina w puszce. Bracia Chappel wpadli na ten pomysł, gdyż w wyniku rosnącej popularności samochodów konie przestawały być potrzebne, a na rynku istniał ogromny nadmiar ich mięsa. Jednak w 1935 roku ich firmę dotknął kryzys finansowy i została kupiona przez Forresta Marsa. Mars nazwał swój produkt Chappie i szybko wkroczył ze swoją karmą mokrą na rynek brytyjski. Wyprodukował także karmę dla kotów o nazwie KIT-E-RATION. Obydwie te karmy odniosły ogromny sukces w Wielkiej Brytanii.
+                        </p>
+                        <h5>Początek karm ekstrudowanych</h5>
+                        <p>
+                        II Wojna Światowa była okresem, w którym potrzeby żywieniowe psów zeszły na drugi plan. Jednak tuż po jej zakończeniu rozpoczęło się poszukiwanie bardziej efektywnych sposobów na produkcję karm gotowych. Opracowany przez Ralston Purina Company proces ekstruzji okazał się prawdziwym przełomem. Ten nowatorki proces pozwalał na tańsze produkowanie psiego jedzenia w dużo lepszej jakości. Ekstrudowana karma była także bardziej trwała niż wypiekane ciastka. W ciągu 5 lat pierwszy ekstrudowany produkt – Purina Dog Chow – stał się najpopularniejszą karmą dla psów w USA.
+                        </p>
+                        <h5>Karmy weterynaryjne i normy żywieniowe</h5>
+                        <p>
+                        Rosnąca popularność karm suchych sprawiła, że zaczęto opracowywać receptury, z których korzystać mogły także chore psy. Pierwszą karmą weterynaryjną była Raritan Ration B – stworzona przez Marka Morrisa receptura dla psów z niewydolnością nerek. W latach 70. i 80. naukowcy zaczęli badać zapotrzebowanie zwierząt domowych na poszczególne składniki odżywcze i stworzono pierwsze normy żywieniowe dla psów. W tym okresie powstało wiele ośrodków badawczych i organizacji zajmujących się tą tematyką. To dzięki nim nasze domowe czworonogi karmione karmami gotowymi mogą cieszyć się pięknym wyglądem i dobrym zdrowiem!
+                        </p>
+                    </div> 
+                    
                     <form id="question-data" method="POST">
-                        <input id="lastQuestion" type="hidden" name="game" value="game" class="form-control mt-3">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Czy kot zostały wzięty do biura z powodu myszy?</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Czy kot gromadził pieniądze ponieważ przechodznie wrzucali banknoty przez szczelinę?
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Co odkryli naukowcy?
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Nowy rodzaj katalizatora</option>
+                                    <option>Nowoczesny sposób syntezy tlenku wodoru </option>
+                                    <option>Materiał pozwalający usuwać z atmosfery zanieczyszczenia</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Czy w artykule przwiduje się, ze odkrycie będzie miało wpływ na motoryzację?
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
                         <div class="row">
                             <div class="col">
+                                <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
                                 <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
                             </div>
                         </div>
                     </form>
+
                 </div>
             </div>
         </div>
     </div>
-    
+
+
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>
     <script type="text/javascript" src="js/main.js"></script>

@@ -184,7 +184,7 @@ $(document).ready(function() {
             var pick = (Math.floor(Math.random() * (3)));
 
             var img = advert_dir[0];
-            
+
             $("#question-data :input").prop('disabled', false);
 
             switch(type) {
@@ -266,6 +266,7 @@ $(document).ready(function() {
                 image_options.push(Math.floor(Math.random() * (6)));
             }
             perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
+            console.log(perm_array);
             setInterval(function() {
                 if (i < perm_array.length)
                 {

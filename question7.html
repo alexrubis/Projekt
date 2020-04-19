@@ -21,40 +21,138 @@
     <div class="distraction-box hidden" id="bottom-left"></div>
     <div class="distraction-box hidden" id="left-center"></div>
     <div class="distraction-box hidden" id="centered"></div>
-    <div class="frame"></div>
+
+
 
     <div class="container h-100 d-flex align-items-center justify-content-center">
         <div>
-        <div class="row justify-content-center">
-            <div class="col-md-auto">
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
                 <div class="text-center">
-                    <h2 class="question-no"></h2>
-                    <p>Zagraj</p>
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Czarna dziura w kosmosie: co to jest? Naukowcy z NASA opublikowali specjalne wideo. Czarna dziura pochłonęła gwiazdę
+                        </h4>
+                        <p>
+                        Czarna dziura w kosmosie: naukowcy zaobserwowali niezwykle ciekawe zjawisko. Są takie obiekty kosmiczne, do których dotarcie zajęłoby astronautom miliony lat świetlnych. Na szczęście nauka dysponują nowoczesnymi technikami pozwalającymi na obserwację niektórych z nich. Jednym z istotnych elementów a zarazem tajemniczych jest czarna dziura. W jaki sposób naukowcy z NASA uchwycili zjawisko pochłonięcia czarnej dziury w kosmosie? Czym jest czarna dziura? Jak wygląda ten obiekt kosmiczny? O wszystkim dowiecie się z poniższego tekstu.
+                        </p>
+                        <h5>Czym jest czarna dziura w kosmosie? Co to takiego? </h5>
+                        Czarna dziura to nic innego jak pewien obszar czasoprzestrzeni w kosmosie.
+                        <p>
+                        1. Jeżeli jakikolwiek przedmiot wpadnie do czarnej dziury to już nie może go w żaden sposób opuścić. Taka przypadłość związana jest także ze światłem natrafiającym na czarne dziury w przestrzeni kosmicznej.
+                        </p>
+                        <p>
+                        2. Aby powstała czarna dziura konieczne jest nagromadzenie dostatecznie dużej masy w odpowiednio małej objętości. 
+                        </p>
+                        <p>
+                        3. Wokół czarnej dziury istnieje powierzchnia tzw. horyzont zdarzeń. Jest to jednocześnie granica bez powrotu.
+                        </p>
+
+                        <h5>Czarna dziura w kosmosie: jak wygląda?</h5>
+                        <p>
+                        W kwietniu br. naukowcy dopięli swego, w ramach jednego z programów badawczych zrobiono zdjęcie czarnej dziury. Fotografię przechwycił Event Horizon Telescope. To program badawczy, który zajmuje się obserwacją przestrzeni kosmicznej znajdującej się w bezpośredniej bliskości czarnej dziury.
+                        </p>
+                        <p>
+                        Obserwowano czarną dziurę Sagittarius A* znajdującą się w centrum Drogi Mlecznej. Jest ona przynajmniej 30 razy większa od Słońca, widziana jednak z Ziemi ma rozmiary kątowe takie same jak pomarańcza na Księżycu widziana z Ziemi. Obserwacje tak małego obiektu wymagało niespotykanej do tej pory precyzji. W programie uczestniczyło wiele radioteleskopów z całego świata pracujących na falach milimetrowych i submilimetrowych przy pomocy techniki znanej jako interferometria wielkobazowa.
+                        </p>
+                        <p>
+                        Istnienie obiektów o polu grawitacyjnym, które nie pozwala na ucieczkę światła rozważali już w XVIII wieku John Michell i Pierre Simon de Laplace. Pierwsze rozwiązanie równania Einsteina ogólnej teorii względności opisujące czarną dziurę znalazł w 1916 roku Karl Schwarzschild, ale dopiero w latach 60. ubiegłego wieku prace teoretyczne wykazały, że istnienie czarnych dziur jest konsekwencją obowiązywania ogólnej teorii względności.
+                        </p>
+                        <h5>Czarna dziura w kosmosie: jak pochłania gwiazdy?</h5>
+                        <p>
+                        Naukowcy z NASA zaobserwowali po raz pierwszy zjawisko pochłonięcia gwiazdy przez czarną dziurę. Wszystko dzięki teleskopowi kosmicznemu. O wydarzeniu poinformowało amerykańskie czasopismo naukowe "Astrophysical Journal".
+                        </p>
+                        <p>
+                        Jak wyglądało wchłonięcie gwiazdy przez czarną dziurę? Otóż gwiazda znajdowała się aż 375 mln lat świetlnych od Ziemi!. Dzięki teleskopowi do wyszukiwania planet pozasłonecznych (TESS) naukowcy zobaczyli jak ciało niebieskie odkształca się i porusza się ruchem spiralnym, przyciągana przez ogromną czarną dziurę. Gwiazda została następnie wciągnięta przez czarną dziurę. Jest to bardzo rzadkie zjawisko. W nauce o kosmosie określa się je jako TDE (tidal disruption event).
+                        </p>
+                        <p>
+                        To była kombinacja bycia dobrym i bycia szczęściarzem, tego czasem potrzeba, by nauka zrobiła krok do przodu - powiedział Thomas Holoien, astronom z Carnegie Institution for Science, kierownik badań.
+                        Tak naprawdę do uchwycenia zjawiska potrzeba było całej sieci teleskopów, a ostatecznie zobaczenie zjawiska pochłonięcia gwiazdy przez czarną dziurę było możliwe dzięki teleskopowi TESS.
+                        </p>
+                        <p>
+                        Kiedy czarne dziury wchłaniają gwiazdy? Tylko w jednym przypadku - kiedy te za bardzo się do nich zbliżą. Czarne dziury są położone w centralnej części większości galaktyk. Podczas zjawiska pochłonięcia czarna dziura rozrywa gwiazdę i możliwe jest, że część jej materii "wypluje" w przestrzeń kosmiczną, a resztę pochłonie. 
+                        </p>
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Czy kot zostały wzięty do biura z powodu myszy?</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Czy kot gromadził pieniądze ponieważ przechodznie wrzucali banknoty przez szczelinę?
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Co odkryli naukowcy?
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Nowy rodzaj katalizatora</option>
+                                    <option>Nowoczesny sposób syntezy tlenku wodoru </option>
+                                    <option>Materiał pozwalający usuwać z atmosfery zanieczyszczenia</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Czy w artykule przwiduje się, ze odkrycie będzie miało wpływ na motoryzację?
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+                                <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
-        <div class="row justify-content-center">
-            <div class="col-md-auto">
-                <!-- <form id="game-data" method="POST">
-                    <div class="row">
-                        <div class="col">
-                            <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block">
-                            <button type="submit" class="btn btn-dark btn-block next-question game-data">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </form> -->
-
-                <form id="question-data" method="POST">
-                    <input id="lastQuestion" type="hidden" name="game" value="game" class="form-control mt-3">
-                    <div class="row">
-                        <div class="col">
-                            <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
     </div>
     
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
