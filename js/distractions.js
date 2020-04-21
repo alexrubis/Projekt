@@ -213,8 +213,6 @@ $(document).ready(function() {
                     
                 case 'Poprzedzona bodźcem':
                     window.setTimeout(function() {
-                        $(':input[type="submit"]').prop('disabled', true);
-                        $("#question-data :input").prop('disabled', true);
                         // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.css('width', '11px');
                         element.css('height', '11px');
@@ -225,8 +223,6 @@ $(document).ready(function() {
                     }, displaytime/8);
 
                     window.setTimeout(function() {
-                        $(':input[type="submit"]').prop('disabled', true);
-                        $("#question-data :input").prop('disabled', true);
                         // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.delay(100).hide(0);
                     }, displaytime/8);
@@ -299,7 +295,6 @@ $(document).ready(function() {
                         
                     case 'Poprzedzona bodźcem':
                         window.setTimeout(function() {
-                            $(':input[type="submit"]').prop('disabled', true);
                             // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                             element.css('width', '11px');
                             element.css('height', '11px');
@@ -310,8 +305,6 @@ $(document).ready(function() {
                         }, displaytime/8);
 
                         window.setTimeout(function() {
-                            $(':input[type="submit"]').prop('disabled', true);
-                            $("#question-data :input").prop('disabled', true);
                             // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                             element.delay(100).hide(0);
                         }, displaytime/8);
