@@ -175,7 +175,7 @@ $(document).ready(function() {
             for (var i = 0; i < advert_dir.length; i++) {
                 advert_dir[i].style.height = "210px";
                 advert_dir[i].style.width = "350px";
-                advert_dir[i].style.display = "inline";
+                // advert_dir[i].style.display = "inline";
             }
             var src = document.getElementById("overlay");
             var maxtimes = 10;
@@ -288,8 +288,8 @@ $(document).ready(function() {
                         window.setTimeout(function() {
                             $("#question-data :input").prop('disabled', true);
                             // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
-                            element.css('width', '50px');
-                            element.css('height', '50px');
+                            element.css('width', '11px');
+                            element.css('height', '11px');
                             element.css('background-color', 'green');
                             // if(element.hasClass('hidden')){
                             element.delay(displaymoment).fadeIn(teaserdisplay);
