@@ -181,7 +181,7 @@ $(document).ready(function() {
 
             var src = document.getElementById("overlay");
             var maxtimes = 10;
-            var displaytime = 5000;
+            var displaytime = 10000;
             var displaymoment = 1000;
             var teaserdisplay = 2000;
             var pick = (Math.floor(Math.random() * (3)));
@@ -198,7 +198,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('disabled', true);
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
-                        $(img).hide().fadeIn(1000);
+                        $(img).hide().fadeIn(5000);
                         // $(img).delay(displaytime).hide(0);
                     }, displaytime);
 
@@ -282,7 +282,7 @@ $(document).ready(function() {
                             $("#question-data :input").prop('disabled', true);
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
-                            $(img).hide().fadeIn(1000);
+                            $(img).hide().fadeIn(5000);
                             // $(img).delay(displaytime).hide(0);
                         }, displaytime);
                         window.setTimeout(function() {
