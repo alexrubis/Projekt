@@ -210,8 +210,8 @@ $(document).ready(function() {
                     window.setTimeout(function() {
                         $("#question-data :input").prop('disabled', true);
                         // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
-                        element.css('width', '50px');
-                        element.css('height', '50px');
+                        element.css('width', '11px');
+                        element.css('height', '11px');
                         element.css('background-color', 'green');
                         // if(element.hasClass('hidden')){
                         element.delay(displaymoment).fadeIn(teaserdisplay);
