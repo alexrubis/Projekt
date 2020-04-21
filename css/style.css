@@ -11,12 +11,11 @@ html, body {
 }
 
 .text-box {
-
     top: 50%;
     left: 50%;
     overflow-x: hidden;
     width: 725px;
-    height: 400px;
+    height: 200px;
     text-align: justify;
     overflow-y: scroll;
 }

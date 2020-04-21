@@ -1,6 +1,6 @@
 .distraction-box {
     width: 350px;
-    height: 200px;
+    height: 210px;
     position: absolute;
     background-color: red;
     z-index: 1;
@@ -10,6 +10,7 @@
     top: 10%;
     left: 10%;
 }
+
 #top-center {
     top: 5%;
     left: 50%;
@@ -46,12 +47,23 @@
     left: 10%;
     transform: translate(0, -50%);
 }
+
 #centered {
-    top: 50%;
-    bottom: 50%;
+    top: 52%;
     left: 50%;
-    right: 50%;
     transform: translate(-50%, -50%);
+}
+
+#overlay {
+    pointer-events: none;
+    position: fixed; /* Sit on top of the page content */
+    /*display: none;  Hidden by default */
+    width: 350px; /* Full width (cover the whole page) */
+    height: 210px; /* Full height (cover the whole page) */
+    transition: 3.0 ease;
+    /*background-color: rgba(0,0,0,0.5);  /*Black background with opacity */
+    z-index: 2; /* Specify a stack order in case you're using a different order for other elements */
+    /*cursor: pointer; /* Add a pointer on hover */ 
 }
 
 .save-btn {

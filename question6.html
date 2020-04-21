@@ -32,18 +32,99 @@
                 <div class="col-md-auto">
                     <div class="text-center">
                         <h2 class="question-no"></h2>
-                        <p>Gra</p>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
                     </div>
                 </div>
             </div>
-            <div class="row">
-                <div class="game-finished"></div>
-                <div class="col-12">
-                    <canvas id="root"></canvas>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Droga Mleczna i Galaktyka Andromedy zderzą się później, niż sądzono</h4>
+                        <p>
+                        Galaktyka Andromedy zderzy się z Drogą Mleczną, ale nastąpi to później, niż sądzono bo za 4,5 miliarda lat - wykazały dane zebrane przez satelitę Gaia. O wynikach obserwacji poinformowała Europejska Agencja Kosmiczna (ESA).
+                        </p>
+                        <p>
+                        Droga Mleczna należy do zgrupowania kilkudziesięciu galaktyk zwanego Grupą Lokalną. Przy czym jest ona jednym z największych obiektów w zgrupowaniu. Razem z galaktykami M31 i M33, znanymi jako Galaktyka Andromedy i Galaktyka Trójkąta stanowią większość masy Grupy Lokalnej. Galaktyki te znajdują się pomiędzy 2,5 milionami, a 3 milionami lat świetlnych od nas. Są na tyle blisko siebie, że mogą ze sobą oddziaływać.
+                        </p>
+                        <p>
+                        Wiadomo iż M31 i Droga Mleczna zbliżają się od siebie i za jakiś czas się zderzą, ale aby dokładnie przewidzieć to zdarzenie potrzebne są dane o ruchach w Grupie Lokalnej w trzech wymiarach. Najnowszy zestaw danych z misji Gaia, opublikowany w kwietniu 2018, umożliwia takie analizy.
+                        </p>
+                        <p>
+                        Wcześniejsze badania tego, jak w czasie zmieniały się orbity M31 i M33 były oparte na obserwacjach m.in. z Kosmicznego Teleskopu Hubble’a oraz z naziemnej sieci radioteleskopów VLBI.
+                        </p>
+                        <h5>Możliwości zderzenia</h5>
+                        <p>
+                        Istniały dwie możliwości: Galaktyka Trójkąta znajduje się na bardzo długiej orbicie wokół Galaktyki w Andromedzie, z okresem 6 miliardów lat i już spadała na nią, a drugi wariant – zachodzi dopiero pierwsze zderzenie obiektów. Scenariusze te oznaczają różne trajektorie orbitalne oraz różną historię i przyszłość obu galaktyk.
+                        </p>
+                        <p>
+                        Zmierzone przez obserwatorium Gaia ruchy gwiazd pokazały nie tylko, w jaki sposób obie galaktyki poruszają się w przestrzeni kosmicznej, ale także jak obracają się dookoła swojej osi. Po raz pierwszy udało się zmierzyć rotację M31 i M33.
+                        </p>
+                        <p>
+                        Łącząc dane z obserwatorium Gaia i istniejące obserwacje, naukowcy ustalili w jaki sposób galaktyki te poruszają się na niebie oraz obliczyli ich trajektorie na miliardy lat wstecz i w przyszłości. Okazało się, że M33 nie może znajdować się na długiej orbicie wokół M31, zamiast tego mamy do czynienia z pierwszym spadkiem M33 na M31.
+                        </p>
+                        <p>
+                        W przypadku oczekiwanego zderzenia M31 i Drogi Mlecznej, dane z obserwatorium Gaia potwierdzają, że ono nastąpi, ale będzie wyglądało inaczej niż do tej pory sądzono. Będzie to raczej uderzenie bokiem, a nie czołowe i nastąpi nie za 3,9 miliarda lat, a za 4,5 miliarda lat.
+                        </p>
+                        <p>
+                        Dodatkowo astronomowie zwracają uwagę, że w M31 i M33 obserwowane są zakręcone strumienie gazu i gwiazd. A skoro obie galaktyki nie zderzyły się jeszcze ze sobą, to struktury te musiały powstać w inny sposób, być może na skutek oddziaływań z innymi galaktykami albo przez procesy zachodzące w ich wnętrzach.
+                        </p>
+                        <h5>Satelita Gaia</h5>
+                        <p>
+                        Satelita Gaia został wystrzelony w 2013 roku. Jest misją Europejskiej Agencji Kosmicznej (ESA). Podstawowym zadaniem projektu jest wyznaczenie odległości i wykonanie trójwymiarowej mapy rozmieszczenia miliarda gwiazd w Drodze Mlecznej. Jak dotąd opublikowano dwa zestawy danych – 14 września 2016 r. i 25 kwietnia 2018 r., a kolejne planowane są na najbliższe lata.
+                        </p>
+                    </div> 
+                    
                     <form id="question-data" method="POST">
-                        <input id="lastQuestion" type="hidden" name="game" value="game" class="form-control mt-3">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Nastąpi czołowie zderzenie galaktyk</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Zderzenie nastąpi wcześniej niż sądzono
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Jak nazywała satelita, która zbierała dane?
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Gaia</option>
+                                    <option>Juno</option>
+                                    <option>Hubble</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
                         <div class="row">
                             <div class="col">
+                                <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
                                 <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
                             </div>
                         </div>
@@ -52,6 +133,9 @@
             </div>
         </div>
     </div>
+
+
+
     
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>

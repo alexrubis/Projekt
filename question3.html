@@ -23,59 +23,118 @@
     <div class="distraction-box hidden" id="left-center"></div>
     <div class="distraction-box hidden" id="centered"></div>
     <!-- <div class="frame"></div> -->
-
     <div class="container h-100 d-flex align-items-center justify-content-center">
         <div>
-        <div class="row justify-content-center">
-            <div class="col-md-auto">
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
                 <div class="text-center">
-                    <h2 class="question-no"></h2>
-                    <p>Oblicz</p>
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Historia chleba </h4>
+                        <p>
+                        Ludzie wypiekają i jedzą chleb już od 12 tysięcy lat. Prawdopodobnie pierwszym chlebem było pieczywo zbożowe w postaci ugotowanej pasty, która była mieszanką różnych zbóż i wody. W jaki sposób owa pasta powstała? Czy był to zamierzony eksperyment? Czy może dzieło przypadku? Tego do dziś dnia nie wiadomo.
+                        Najstarszy chleb jaki udało się odnaleźć archeologom pochodzi z Krety, a jego wiek określa się na 6100 lat.
+                        </p>
+                        <h5> Jak powstał chleb?</h5>
+                        <p>
+                        Początkowo bochenki były płaskie i twarde. W dzisiejszych czasach uznano by zapewne, że nie nadają się do jedzenia. Czy kiedyś smakował ludziom? Nie wiem, na pewno jednak zaspokajał ich głód.  Dopiero Egipcjanie około 2600 lat p.n.e. wpadli na to, w jaki sposób uczynić chleb pulchnym. To oni ponad 4000 lat temu po raz pierwszy upiekli chleb na zakwasie. Jest wiele opowieści na temat powstania zakwasu. Jedna z nich mówi, że pewna niewolnica zapomniała o papce zbożowej pozostawionej na słońcu. Miała z niej upiec placki dla swojego pana. Kiedy okazało się, że owa papka zaczęła fermentować, wystraszyła się, że zostanie ukarana za zmarnowanie ciasta. Postanowiła więc mimo to upiec placki. I okazało się, że były bardziej pulchne i smaczniejsze niż poprzednie. Opisana legenda opisuje powstanie zakwasu jako dzieło przypadku, jednak równie dobrze mógł on powstać w wyniku eksperymentu. Tego nie wiemy. Faktem jest, iż ów zakwas jest wytwarzany do dziś w formie niezmienionej od ponad 4000 lat.
+                        </p>
+                        <h5>Jak się robi chleb?</h5>
+                        <p>
+                        Zakwas zawsze robiło się i robi tak samo. Należy zmieszać wodę z odpowiednią ilością mąki i pozostawić w cieple, aż zacznie fermentować. Jednak w różnych kulturach można znaleźć i takie przepisy, które dość znacznie różnią się od podanego wyżej. W jednej z kultur taką wodę się zagotowywało z ziołami (chmiel, liść bobkowy, kminek itp.), a następnie po odcedzeniu i dodaniu starego pieczywa oraz otrębów i dokładnym wymieszaniu, formowało się kulki. Następnie były one suszone w słońcu przez tydzień. Po tym czasie kruszono kulki i suszono zakwas jeszcze raz. W ten sposób można było przechowywać go bezpiecznie przez cały rok. Myślę, że taki sposób przygotowywania jest dość pracochłonny, a wynikał raczej z braku lodówki, w którym ów zakwas mógłby przetrwać do następnego pieczenia. W teraźniejszych czasach nie ma już z tym problemu, przez co zrobienie zakwasu jest dziecinnie proste.
+                        </p>
+                        <p>
+                        Obecnie w sklepach rzadko można spotkać chleb tylko na zakwasie. Z reguły dodawane są też drożdże, albo bochenki pieczone są tylko na drożdżach z mnóstwem dodatków spulchniających. Smak chleba na zakwasie jest nieporównywalnie lepszy niż tego ze sklepu, pieczonego z chemicznymi dodatkami.
+                        </p>
+                        <h5>Jakie znaczenie ma zakwas?</h5>
+                        <p>
+                        Zakwas jest zupełnie naturalną substancją spulchniającą. Ma jeszcze jedną zaletę, która jest bardzo ważna szczególnie w przypadku chlebów razowych. Wszyscy wiemy, że mąka razowa jest zdrowsza od mąki białej, ponieważ zawiera bardzo dużo mikroelementów (m.in. żelazo, cynk, mangan, wapń, magnez). Niestety zawiera też kwas fitynowy, który tworzy z nimi nierozpuszczalne sole, powodując bardzo małą przyswajalność owych pierwiastków. I właśnie bakterie mlekowe, które tworzą się w zakwasie powodują rozkład owego kwasu, przez co wchłanialność pierwiastków jest bardzo duża. Chcąc więc w pełni cieszyć się dobrodziejstwami zbóż, chleb powinien być pieczony na zakwasie, w przeciwnym razie nasz organizm i tak nie skorzysta z minerałów w nich zawartych.
+                        </p>
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Ludzie wypiekają chleb od</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>12 tysięcy let</option>
+                                    <option>14 tysięcy let</option>
+                                    <option>16 tysięcy let</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Zakwas należy dopuścić do fermentacji
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Za małą przyswajalność pierwiastów odpowiada
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>kwas fitynowy</option>
+                                    <option>bakterie mlekowe</option>
+                                    <option>Materiał pozwalający usuwać z atmosfery zanieczyszczenia</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Zakwas robiono w dawnych czasach tylko ze zboża
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+                                <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+                            </div>
+                        </div>
+                    </form>
+
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-12">
-                <form id="question-data" method="POST">
-                    <div class="form-group row">
-                        <p class="col question">2 + 2 * 2 = </p>
-                        <div class="col ml-auto">
-                            <input id="firstQuestion" type="number" name="math1" class="form-control mt-2 answerInput">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <p class="col question">5 + (3 - 2) = </p>
-                        <div class="col ml-auto">
-                            <input type="number" name="math2" class="form-control mt-2 answerInput">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <p class="col question">4 – 3 / 3 = </p>
-                        <div class="col ml-auto">
-                            <input type="number" name="math3" class="form-control mt-3 answerInput">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                    </div>
-                    <div class="form-group row">
-                        <p class="col-md-auto question">7 + 8 – 4 / 2 = </p>
-                        <div class="col ml-auto">
-                            <input id="lastQuestion" type="number" name="math4" class="form-control mt-3 answerInput">
-                            <span class="invalid-feedback"></span>
-                        </div>
-                    </div>
-                    <div class="row">
-                        <div class="col">
-                            <!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
-                            <button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
-                        </div>
-                    </div>
-                </form>
-            </div>
-        </div>
     </div>
-    </div>
+    
     
     <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
     <script type="text/javascript" src="js/bootstrap.js"></script>

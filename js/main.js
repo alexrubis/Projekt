@@ -1,6 +1,18 @@
+function saveCompleteLog() 
+{
+    // var storedLog = JSON.parse(localStorage.getItem("contentArray"));
+     
+    var atag = document.createElement("a");
+    var file = new Blob([JSON.stringify(sessionStorage.getItem("contentArray")).replace('"','').replace('[','').replace(']','').replace(']','').replace('/','')], {type: 'text/plain'});
+    atag.href = URL.createObjectURL(file);
+    atag.download = "stymulacjaKompletnyLog.txt";
+    atag.click();
+}
+
 $(document).ready(function() {
     if(window.location.pathname.indexOf("/result.html") >= 0) {
         displayTimes();
+        // saveCompleteLog();
     }
 
     /*  
@@ -14,7 +26,7 @@ $(document).ready(function() {
     var firstQuestionTime, lastQuestionTime, totalTime;
     var firstQuestionTimeSaved = false;
     var lastQuestionTimeSaved = false;
-    var userName
+    var userName;
 
     // Save time that user took to start answering question
     $('#firstQuestion').focus(function() {
@@ -72,9 +84,9 @@ $(document).ready(function() {
     
     // Get current question number
     questionNo = localStorage.getItem("questionNo");
-    $(".question-no").html("Zadanie " + questionNo);
+    $(".question-no").html("Zadanie " + questionNo + "/10");
 
-    if(questionNo == "1") {
+    if(questionNo == "10") {
         $(".next-question").html("Zakończ &nbsp;<i class='fas fa-check'></i>");
         $(".next-question").removeClass("btn-dark");
         $(".next-question").addClass("btn-success");
@@ -119,7 +131,7 @@ $(document).ready(function() {
         // console.log(data)
         if(inputValidation(data)) {
             addReportParam(reportParam);
-            if(questionNo == "1") {
+            if(questionNo == "10") {
                 // Show results and clear local storage
                 window.location.replace("result.html");       
                 localStorage.setItem("questionNo", "");
