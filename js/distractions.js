@@ -175,6 +175,7 @@ $(document).ready(function() {
             for (var i = 0; i < advert_dir.length; i++) {
                 advert_dir[i].style.height = "210px";
                 advert_dir[i].style.width = "350px";
+                advert_dir[i].style.display = "inline";
             }
             var src = document.getElementById("overlay");
             var maxtimes = 10;
@@ -212,9 +213,9 @@ $(document).ready(function() {
                         element.css('width', '50px');
                         element.css('height', '50px');
                         element.css('background-color', 'blue');
-                        if(element.hasClass('hidden')){
-                            element.delay(displaymoment).fadeIn(teaserdisplay);
-                        }
+                        // if(element.hasClass('hidden')){
+                        element.delay(displaymoment).fadeIn(teaserdisplay);
+                        // }
                     }, displaytime/8);
 
                     window.setTimeout(function() {
@@ -243,8 +244,8 @@ $(document).ready(function() {
                         $("#question-data :input").prop('disabled', true);
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
-                        $(img).delay(0).hide(0);
-                    }, displaytime);
+                        $(img).delay(100);
+                    }, 0);
 
                     setTimeout(function() {
                         $("#question-data :input").prop('disabled', false);
@@ -258,13 +259,7 @@ $(document).ready(function() {
             
             var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
             var i = 0;
-            var display_options = [];
-            var image_options = [];
 
-            for (let i = 0; i < 10; i++) {
-                display_options.push((Math.floor(Math.random() * (3))));
-                image_options.push(Math.floor(Math.random() * (6)));
-            }
             perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
             console.log(perm_array);
             setInterval(function() {
@@ -296,9 +291,9 @@ $(document).ready(function() {
                             element.css('width', '50px');
                             element.css('height', '50px');
                             element.css('background-color', 'blue');
-                            if(element.hasClass('hidden')){
-                                element.delay(displaymoment).fadeIn(teaserdisplay);
-                            }
+                            // if(element.hasClass('hidden')){
+                            element.delay(displaymoment).fadeIn(teaserdisplay);
+                            // }
                         }, displaytime/8);
 
                         window.setTimeout(function() {
@@ -327,8 +322,8 @@ $(document).ready(function() {
                             $("#question-data :input").prop('disabled', true);
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
-                            $(img).delay(0).hide(0);
-                        }, displaytime);
+                            $(img).delay(100);
+                        }, 0);
 
                         setTimeout(function() {
                             $("#question-data :input").prop('disabled', false);
