@@ -178,6 +178,7 @@ $(document).ready(function() {
                 advert_dir[i].style.display = "inline";
                 advert_dir[i].style.position = "fixed";
             }
+
             var src = document.getElementById("overlay");
             var maxtimes = 10;
             var displaytime = 5000;
@@ -245,8 +246,8 @@ $(document).ready(function() {
                         $("#question-data :input").prop('disabled', true);
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
-                        $(img).delay(100);
-                    }, 0);
+                        $(img).delay(100).fadeIn(0);
+                    }, displaytime);
 
                     setTimeout(function() {
                         $("#question-data :input").prop('disabled', false);
@@ -323,8 +324,8 @@ $(document).ready(function() {
                             $("#question-data :input").prop('disabled', true);
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
-                            $(img).delay(100);
-                        }, 0);
+                            $(img).delay(100).fadeIn(0);
+                        }, displaytime);
 
                         setTimeout(function() {
                             $("#question-data :input").prop('disabled', false);
@@ -334,8 +335,9 @@ $(document).ready(function() {
 
                         break;
                 }
+                $("#question-data :input").prop('disabled', false);
                 i++;
-            }, 12000);
+            }, 15000);
 
         });
 
