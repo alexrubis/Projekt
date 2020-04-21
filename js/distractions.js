@@ -216,7 +216,7 @@ $(document).ready(function() {
                         // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.css('width', '11px');
                         element.css('height', '11px');
-                        element.css('background-color', 'green');
+                        element.css('background-color', 'lime');
                         // if(element.hasClass('hidden')){
                         element.delay(displaymoment).fadeIn(teaserdisplay);
                         // }
