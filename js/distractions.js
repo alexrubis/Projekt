@@ -212,7 +212,7 @@ $(document).ready(function() {
                         // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.css('width', '50px');
                         element.css('height', '50px');
-                        element.css('background-color', 'blue');
+                        element.css('background-color', 'green');
                         // if(element.hasClass('hidden')){
                         element.delay(displaymoment).fadeIn(teaserdisplay);
                         // }
@@ -290,7 +290,7 @@ $(document).ready(function() {
                             // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                             element.css('width', '50px');
                             element.css('height', '50px');
-                            element.css('background-color', 'blue');
+                            element.css('background-color', 'green');
                             // if(element.hasClass('hidden')){
                             element.delay(displaymoment).fadeIn(teaserdisplay);
                             // }
