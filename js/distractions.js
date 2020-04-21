@@ -175,7 +175,8 @@ $(document).ready(function() {
             for (var i = 0; i < advert_dir.length; i++) {
                 advert_dir[i].style.height = "210px";
                 advert_dir[i].style.width = "350px";
-                // advert_dir[i].style.display = "inline";
+                advert_dir[i].style.display = "inline";
+                advert_dir[i].style.position = "fixed";
             }
             var src = document.getElementById("overlay");
             var maxtimes = 10;
