@@ -191,6 +191,17 @@ $(document).ready(function() {
             $("#question-data :input").prop('disabled', false);
             $(':input[type="submit"]').prop('disabled', false);
 
+            var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
+            var i = 0;
+
+            perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
+            console.log(perm_array);
+            if (i < perm_array.length)
+            {
+                type = perm_array[i][1];
+                img = perm_array[i][0];
+                console.log(i);
+            }
             switch(type) {
                 case 'Wyłaniająca się':
                     window.setTimeout(function() {
@@ -206,6 +217,7 @@ $(document).ready(function() {
                         $(':input[type="submit"]').prop('disabled', false);
                         $("#question-data :input").prop('disabled', false);
                         $(img).delay(0).hide(0);
+                        i++;
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                     }, displaytime*2);
 
@@ -240,6 +252,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('disabled', false);
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
+                        i++;
                     }, displaytime*2);
 
                     break;
@@ -258,17 +271,14 @@ $(document).ready(function() {
                         $("#question-data :input").prop('disabled', false);
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
+                        i++;
                     }, displaytime*2);
 
                     break;
             }
             
             
-            var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
-            var i = 0;
 
-            perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
-            console.log(perm_array);
             setInterval(function() {
                 if (i < perm_array.length)
                 {
