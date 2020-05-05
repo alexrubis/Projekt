@@ -183,15 +183,26 @@ $(document).ready(function() {
             var maxtimes = 10;
             var displaytime = 10000;
             var displaymoment = 1000;
-            var teaserdisplay = 2000;
+            var teaserdisplay = 7000;
             var pick = (Math.floor(Math.random() * (3)));
 
             var img = advert_dir[0];
 
             $("#question-data :input").prop('disabled', false);
-                        $("#question-data :input").prop('style', "visibility: visible");
             $(':input[type="submit"]').prop('disabled', false);
-            $("#question-data :input").prop('style', "visibility: visible");
+
+            var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
+            var i = 0;
+
+            perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
+            console.log(perm_array);
+            if (i < perm_array.length)
+            {
+                type = perm_array[i][1];
+                img = perm_array[i][0];
+                console.log(i);
+            }
+
             switch(type) {
                 case 'Wyłaniająca się':
                     window.setTimeout(function() {
@@ -200,7 +211,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('style', "visibility: hidden");
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
-                        $(img).hide().fadeIn(5000);
+                        $(img).hide().fadeIn(teaserdisplay);
                         // $(img).delay(displaytime).hide(0);
                     }, displaytime);
 
@@ -209,6 +220,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('disabled', false);
                         $("#question-data :input").prop('style', "visibility: visible");
                         $(img).delay(0).hide(0);
+                        i++;
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                     }, displaytime*2);
 
@@ -247,6 +259,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('style', "visibility: visible");
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
+                        i++;
                     }, displaytime*2);
 
                     break;
@@ -258,7 +271,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('style', "visibility: hidden");
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
-                        $(img).delay(100).fadeIn(0);
+                        $(img).delay(0).fadeIn(0);
                     }, displaytime);
 
                     setTimeout(function() {
@@ -267,22 +280,20 @@ $(document).ready(function() {
                         $("#question-data :input").prop('style', "visibility: visible");
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
+                        i++;
                     }, displaytime*2);
 
                     break;
             }
             
             
-            var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
-            var i = 0;
 
-            perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
-            console.log(perm_array);
             setInterval(function() {
                 if (i < perm_array.length)
                 {
                     type = perm_array[i][1];
                     img = perm_array[i][0];
+                    console.log(i);
                 }
                 switch(type) {
                     case 'Wyłaniająca się':
@@ -300,6 +311,7 @@ $(document).ready(function() {
                             $("#question-data :input").prop('disabled', false);
                         $("#question-data :input").prop('style', "visibility: visible");
                             $(img).delay(0).hide(0);
+                            i++;
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         }, displaytime*2);
                         break;
@@ -337,6 +349,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('style', "visibility: visible");
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
+                            i++;
                         }, displaytime*2);
                         break;
 
@@ -357,12 +370,13 @@ $(document).ready(function() {
                         $("#question-data :input").prop('style', "visibility: visible");
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
+                            i++;
                         }, displaytime*2);
-
                         break;
+
                 }
-                i++;
-            }, 15000);
+                
+            }, 29000);
 
         });
 
