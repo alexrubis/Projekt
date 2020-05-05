@@ -183,7 +183,7 @@ $(document).ready(function() {
             var maxtimes = 10;
             var displaytime = 10000;
             var displaymoment = 1000;
-            var teaserdisplay = 2000;
+            var teaserdisplay = 7000;
             var pick = (Math.floor(Math.random() * (3)));
 
             var img = advert_dir[0];
@@ -198,7 +198,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('disabled', true);
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
-                        $(img).hide().fadeIn(5000);
+                        $(img).hide().fadeIn(teaserdisplay);
                         // $(img).delay(displaytime).hide(0);
                     }, displaytime);
 
@@ -341,11 +341,10 @@ $(document).ready(function() {
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
                         }, displaytime*2);
-
                         break;
                 }
                 i++;
-            }, 15000);
+            }, 29000);
 
         });
 
