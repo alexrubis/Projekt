@@ -190,7 +190,8 @@ $(document).ready(function() {
 
             $("#question-data :input").prop('disabled', false);
             $(':input[type="submit"]').prop('disabled', false);
-
+            $("#question-data :input").prop('style', "visibility: visible");
+            
             var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
             var i = 0;
 
