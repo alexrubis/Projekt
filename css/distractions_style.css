@@ -88,3 +88,13 @@
     border: solid 150px rgb(62, 62, 62);
     overflow: auto;
 }
+
+.blink_me {
+    animation: blinker 0.5s linear infinite;
+  }
+  
+  @keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
