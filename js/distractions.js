@@ -250,7 +250,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('disabled', true);
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
-                        $(img).delay(100).fadeIn(0);
+                        $(img).delay(0).fadeIn(0);
                     }, displaytime);
 
                     setTimeout(function() {
@@ -274,6 +274,7 @@ $(document).ready(function() {
                 {
                     type = perm_array[i][1];
                     img = perm_array[i][0];
+                    console.log(i);
                 }
                 switch(type) {
                     case 'Wyłaniająca się':
@@ -289,6 +290,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', false);
                             $("#question-data :input").prop('disabled', false);
                             $(img).delay(0).hide(0);
+                            i++;
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         }, displaytime*2);
                         break;
@@ -322,6 +324,7 @@ $(document).ready(function() {
                             $("#question-data :input").prop('disabled', false);
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
+                            i++;
                         }, displaytime*2);
                         break;
 
@@ -340,10 +343,12 @@ $(document).ready(function() {
                             $("#question-data :input").prop('disabled', false);
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
+                            i++;
                         }, displaytime*2);
                         break;
+
                 }
-                i++;
+                
             }, 29000);
 
         });
