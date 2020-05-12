@@ -190,6 +190,7 @@ $(document).ready(function() {
 
             $("#question-data :input").prop('disabled', false);
             $(':input[type="submit"]').prop('disabled', false);
+            $("#question-data :input").prop('style', "visibility: visible");
 
             var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
             var i = 0;
@@ -208,7 +209,7 @@ $(document).ready(function() {
                     window.setTimeout(function() {
                         $(':input[type="submit"]').prop('disabled', true);
                         $("#question-data :input").prop('disabled', true);
-                        $("#question-data :input").prop('style', "visibility: hidden");
+                        $("#question-data :input").prop('style', "visibility: visible");
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).hide().fadeIn(teaserdisplay);
@@ -246,7 +247,7 @@ $(document).ready(function() {
                     window.setTimeout(function() {
                         $(':input[type="submit"]').prop('disabled', true);
                         $("#question-data :input").prop('disabled', true);
-                        $("#question-data :input").prop('style', "visibility: hidden");
+                        $("#question-data :input").prop('style', "visibility: visible");
                         
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
@@ -268,11 +269,11 @@ $(document).ready(function() {
                     setTimeout(function() {
                         $(':input[type="submit"]').prop('disabled', true);
                         $("#question-data :input").prop('disabled', true);
-                        $("#question-data :input").prop('style', "visibility: hidden");
+                        $("#question-data :input").prop('style', "visibility: visible");
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
-                        $(img).delay(0).fadeIn(0);
-                    }, displaytime);
+                        $(img).delay(1000).fadeIn(0);
+                    }, 1000);
 
                     setTimeout(function() {
                         $(':input[type="submit"]').prop('disabled', false);
@@ -281,7 +282,7 @@ $(document).ready(function() {
                         // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         $(img).delay(0).hide(0);
                         i++;
-                    }, displaytime*2);
+                    }, displaytime);
 
                     break;
             }
@@ -300,7 +301,7 @@ $(document).ready(function() {
                         window.setTimeout(function() {
                             $(':input[type="submit"]').prop('disabled', true);
                             $("#question-data :input").prop('disabled', true);
-                        $("#question-data :input").prop('style', "visibility: hidden");
+                            $("#question-data :input").prop('style', "visibility: visible");
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).hide().fadeIn(5000);
@@ -309,7 +310,7 @@ $(document).ready(function() {
                         window.setTimeout(function() {
                             $(':input[type="submit"]').prop('disabled', false);
                             $("#question-data :input").prop('disabled', false);
-                        $("#question-data :input").prop('style', "visibility: visible");
+                            $("#question-data :input").prop('style', "visibility: visible");
                             $(img).delay(0).hide(0);
                             i++;
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
@@ -337,7 +338,7 @@ $(document).ready(function() {
                         window.setTimeout(function() {
                             $(':input[type="submit"]').prop('disabled', true);
                             $("#question-data :input").prop('disabled', true);
-                        $("#question-data :input").prop('style', "visibility: hidden");
+                            $("#question-data :input").prop('style', "visibility: visible");
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).hide().fadeIn(2000);
@@ -346,7 +347,7 @@ $(document).ready(function() {
                         window.setTimeout(function() {
                             $(':input[type="submit"]').prop('disabled', false);
                             $("#question-data :input").prop('disabled', false);
-                        $("#question-data :input").prop('style', "visibility: visible");
+                            $("#question-data :input").prop('style', "visibility: visible");
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
                             i++;
@@ -358,16 +359,16 @@ $(document).ready(function() {
                         setTimeout(function() {
                             $(':input[type="submit"]').prop('disabled', true);
                             $("#question-data :input").prop('disabled', true);
-                        $("#question-data :input").prop('style', "visibility: hidden");
+                            $("#question-data :input").prop('style', "visibility: visible");
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).delay(100).fadeIn(0);
-                        }, displaytime);
+                        }, 3000);
 
                         setTimeout(function() {
-                            $(':input[type="submit"]').prop('disabled', true);
+                            $(':input[type="submit"]').prop('disabled', false);
                             $("#question-data :input").prop('disabled', false);
-                        $("#question-data :input").prop('style', "visibility: visible");
+                            $("#question-data :input").prop('style', "visibility: visible");
                             // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
                             i++;
@@ -375,7 +376,9 @@ $(document).ready(function() {
                         break;
 
                 }
-                
+                $(':input[type="submit"]').prop('disabled', false);
+                $("#question-data :input").prop('disabled', false);
+                $("#question-data :input").prop('style', "visibility: visible");
             }, 29000);
 
         });
