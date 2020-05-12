@@ -210,7 +210,8 @@ $(document).ready(function() {
                         $(':input[type="submit"]').prop('disabled', true);
                         $("#question-data :input").prop('disabled', true);
                         $("#question-data :input").prop('style', "visibility: visible");
-                        // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+
+                            ",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).hide().fadeIn(teaserdisplay);
                         // $(img).delay(displaytime).hide(0);
@@ -302,7 +303,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', true);
                             $("#question-data :input").prop('disabled', true);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).hide().fadeIn(5000);
                             // $(img).delay(displaytime).hide(0);
@@ -313,13 +314,13 @@ $(document).ready(function() {
                             $("#question-data :input").prop('style', "visibility: visible");
                             $(img).delay(0).hide(0);
                             i++;
-                            // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         }, displaytime*2);
                         break;
                         
                     case 'Poprzedzona bodźcem':
                         window.setTimeout(function() {
-                            // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                            logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                             element.css('width', '11px');
                             element.css('height', '11px');
                             element.css('background-color', 'lime');
@@ -331,7 +332,7 @@ $(document).ready(function() {
                         }, displaytime/8);
 
                         window.setTimeout(function() {
-                            // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                            logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                             element.delay(100).hide(0);
                         }, displaytime/8);
 
@@ -339,7 +340,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', true);
                             $("#question-data :input").prop('disabled', true);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).hide().fadeIn(2000);
                         }, displaytime);
@@ -348,7 +349,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', false);
                             $("#question-data :input").prop('disabled', false);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
                             i++;
                         }, displaytime*2);
@@ -360,7 +361,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', true);
                             $("#question-data :input").prop('disabled', true);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
                             $(img).delay(100).fadeIn(0);
                         }, 3000);
@@ -369,7 +370,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', false);
                             $("#question-data :input").prop('disabled', false);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             $(img).delay(0).hide(0);
                             i++;
                         }, displaytime*2);
