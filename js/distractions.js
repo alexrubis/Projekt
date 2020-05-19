@@ -185,7 +185,7 @@ $(document).ready(function() {
 
             var src = document.getElementById("overlay");
             var maxtimes = 10;
-            var displaytime = 10000;
+            var displaytime = 3000;
             var displaymoment = 1000;
             var teaserdisplay = 7000;
             var pick = (Math.floor(Math.random() * (3)));
