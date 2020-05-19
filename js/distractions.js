@@ -246,13 +246,13 @@ $(document).ready(function() {
                         element.css('background-color', 'lime');
                         $("#centered").addClass("blink_me");
                         // if(element.hasClass('hidden')){
-                        element.delay(displaymoment).fadeIn(teaserdisplay);
+                        element.delay(0).fadeIn(0);
                         // }
                     }, displaytime/8);
 
                     window.setTimeout(function() {
                         // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
-                        element.delay(100).hide(0);
+                        element.delay(1000).hide(0);
                     }, displaytime/8);
 
                     window.setTimeout(function() {
