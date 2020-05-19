@@ -203,10 +203,10 @@ $(document).ready(function() {
             
             var i = 0;
 
-            perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
-            perm_array = perm_array.concat(shuffleArray(allPossibleCases([advert_dir, options])), shuffleArray(allPossibleCases([advert_dir, options])), 
-                                            shuffleArray(allPossibleCases([advert_dir, options])), shuffleArray(allPossibleCases([advert_dir, options])),
-                                            shuffleArray(allPossibleCases([advert_dir, options])), shuffleArray(allPossibleCases([advert_dir, options])));
+            var perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
+            // perm_array = perm_array.concat(shuffleArray(allPossibleCases([advert_dir, options])), shuffleArray(allPossibleCases([advert_dir, options])), 
+            //                                 shuffleArray(allPossibleCases([advert_dir, options])), shuffleArray(allPossibleCases([advert_dir, options])),
+            //                                 shuffleArray(allPossibleCases([advert_dir, options])), shuffleArray(allPossibleCases([advert_dir, options])));
             console.log(perm_array);
             if (i < perm_array.length)
             {
