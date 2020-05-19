@@ -4,6 +4,7 @@ function logEvent(eventType) {
     var today = new Date();
     var time = today.getFullYear().toString()+(("0" + (today.getMonth() + 1)).slice(-2))+(("0" + today.getDate()).slice(-2))+today.getHours()+ today.getMinutes()+ today.getSeconds()+today.getMilliseconds().toString().padEnd(3, "0");
     //tworzenie pliku
+    
     content = time+","+eventType;        
 
     //zapisywanie do pliku
@@ -98,10 +99,11 @@ $(document).ready(function() {
 
         for(var i=0; i<active.length; i++) {
             if (active[i]) {                                
-                var displaytime = $('#input'+(i+1)+'-displaytime').val();
-                var displaymoment = $('#input'+(i+1)+'-displaymoment').val();
-                var type = $('#input'+(i+1)+'-type').val();
-                var teaserdisplay = $('#input'+(i+1)+'-teaserdisplay').val();
+                // var displaytime = $('#input'+(i+1)+'-displaytime').val();
+                // var displaymoment = $('#input'+(i+1)+'-displaymoment').val();
+                // var type = $('#input'+(i+1)+'-type').val();
+                // var teaserdisplay = $('#input'+(i+1)+'-teaserdisplay').val();
+                var block_teaser = $('#input'+(i+1)+'-blockTeaser').val();
                 var name = '';
 
                 switch(i) {
@@ -133,7 +135,8 @@ $(document).ready(function() {
                         name = 'centered';
                         break;
                 }
-                distractions.push(new Array(name, displaytime, displaymoment, type, teaserdisplay));
+                // distractions.push(new Array(name, displaytime, displaymoment, type, teaserdisplay));
+                distractions.push(new Array(name, block_teaser));
             }
         }                      
         localStorage.setItem('distractions', JSON.stringify(distractions));
@@ -148,8 +151,9 @@ $(document).ready(function() {
             var id = el[0];
             // var displaytime = el[1] * 1000;
             // var displaymoment = el[2] * 1000;     
-            var type = el[3];
+            // var type = el[3];
             // var teaserdisplay = el[4] * 1000;
+            var blockTeaser = el[1];
             var element = $('#'+id);       
             // element.addClass('hidden');
             var img_static1 = document.createElement("img");
@@ -181,7 +185,7 @@ $(document).ready(function() {
 
             var src = document.getElementById("overlay");
             var maxtimes = 10;
-            var displaytime = 10000;
+            var displaytime = 3000;
             var displaymoment = 1000;
             var teaserdisplay = 7000;
             var pick = (Math.floor(Math.random() * (3)));
@@ -191,11 +195,18 @@ $(document).ready(function() {
             $("#question-data :input").prop('disabled', false);
             $(':input[type="submit"]').prop('disabled', false);
             $("#question-data :input").prop('style', "visibility: visible");
-
-            var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
+            if (blockTeaser == "Nie") {
+                var options = ['Wyłaniająca się', 'Poprzedzona bodźcem', 'Normalna'];
+            } else {
+                var options = ['Wyłaniająca się', 'Normalna'];
+            }
+            
             var i = 0;
 
-            perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
+            var perm_array = shuffleArray(allPossibleCases([advert_dir, options]));
+            // perm_array = perm_array.concat(shuffleArray(allPossibleCases([advert_dir, options])), shuffleArray(allPossibleCases([advert_dir, options])), 
+            //                                 shuffleArray(allPossibleCases([advert_dir, options])), shuffleArray(allPossibleCases([advert_dir, options])),
+            //                                 shuffleArray(allPossibleCases([advert_dir, options])), shuffleArray(allPossibleCases([advert_dir, options])));
             console.log(perm_array);
             if (i < perm_array.length)
             {
@@ -235,14 +246,14 @@ $(document).ready(function() {
                         element.css('background-color', 'lime');
                         $("#centered").addClass("blink_me");
                         // if(element.hasClass('hidden')){
-                        element.delay(displaymoment).fadeIn(teaserdisplay);
+                        element.delay(0).fadeIn(0);
                         // }
-                    }, displaytime/8);
+                    }, 0);
 
                     window.setTimeout(function() {
                         // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
-                        element.delay(100).hide(0);
-                    }, displaytime/8);
+                        element.delay(0).hide(0);
+                    }, displaytime);
 
                     window.setTimeout(function() {
                         $(':input[type="submit"]').prop('disabled', true);
@@ -326,14 +337,14 @@ $(document).ready(function() {
                             $("#centered").addClass("blink_me");
 
                             // if(element.hasClass('hidden')){
-                            element.delay(displaymoment).fadeIn(teaserdisplay);
+                            element.delay(0).fadeIn(0);
                             // }
-                        }, displaytime/8);
+                        }, 0);
 
                         window.setTimeout(function() {
                             // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
-                            element.delay(100).hide(0);
-                        }, displaytime/8);
+                            element.delay(0).hide(0);
+                        }, displaytime);
 
                         window.setTimeout(function() {
                             $(':input[type="submit"]').prop('disabled', true);
