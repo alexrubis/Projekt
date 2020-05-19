@@ -248,12 +248,12 @@ $(document).ready(function() {
                         // if(element.hasClass('hidden')){
                         element.delay(0).fadeIn(0);
                         // }
-                    }, displaytime/8);
+                    }, 0);
 
                     window.setTimeout(function() {
                         // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
-                        element.delay(1000).hide(0);
-                    }, displaytime/8);
+                        element.delay(0).hide(0);
+                    }, displaytime);
 
                     window.setTimeout(function() {
                         $(':input[type="submit"]').prop('disabled', true);
@@ -337,14 +337,14 @@ $(document).ready(function() {
                             $("#centered").addClass("blink_me");
 
                             // if(element.hasClass('hidden')){
-                            element.delay(displaymoment).fadeIn(teaserdisplay);
+                            element.delay(0).fadeIn(0);
                             // }
-                        }, displaytime/8);
+                        }, 0);
 
                         window.setTimeout(function() {
                             // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
-                            element.delay(100).hide(0);
-                        }, displaytime/8);
+                            element.delay(0).hide(0);
+                        }, displaytime);
 
                         window.setTimeout(function() {
                             $(':input[type="submit"]').prop('disabled', true);
