@@ -186,8 +186,8 @@ $(document).ready(function() {
             var src = document.getElementById("overlay");
             var maxtimes = 10;
             var displaytime = 3000;
-            var displaymoment = 1000;
-            var teaserdisplay = 7000;
+            var displaymoment = 3000;
+            var teaserdisplay = 5000;
             var pick = (Math.floor(Math.random() * (3)));
 
             var img = advert_dir[0];
@@ -223,9 +223,9 @@ $(document).ready(function() {
                         $("#question-data :input").prop('style', "visibility: visible");
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
-                        $(img).hide().fadeIn(teaserdisplay);
+                        $(img).hide().fadeIn(displaymoment);
                         // $(img).delay(displaytime).hide(0);
-                    }, displaytime);
+                    }, displaymoment);
 
                     window.setTimeout(function() {
                         $(':input[type="submit"]').prop('disabled', false);
@@ -240,6 +240,9 @@ $(document).ready(function() {
                     
                 case 'Poprzedzona bodźcem':
                     window.setTimeout(function() {
+                        $(':input[type="submit"]').prop('disabled', true);
+                        $("#question-data :input").prop('disabled', true);
+                        $("#question-data :input").prop('style', "visibility: visible");
                         // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
                         element.css('width', '11px');
                         element.css('height', '11px');
@@ -256,10 +259,6 @@ $(document).ready(function() {
                     }, displaytime);
 
                     window.setTimeout(function() {
-                        $(':input[type="submit"]').prop('disabled', true);
-                        $("#question-data :input").prop('disabled', true);
-                        $("#question-data :input").prop('style', "visibility: visible");
-                        
                         // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                         src.appendChild(img);
                         $(img).hide().fadeIn(2000);
@@ -315,9 +314,9 @@ $(document).ready(function() {
                             $("#question-data :input").prop('style', "visibility: visible");
                             // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
                             src.appendChild(img);
-                            $(img).hide().fadeIn(5000);
+                            $(img).hide().fadeIn(teaserdisplay);
                             // $(img).delay(displaytime).hide(0);
-                        }, displaytime);
+                        }, teaserdisplay);
                         window.setTimeout(function() {
                             $(':input[type="submit"]').prop('disabled', false);
                             $("#question-data :input").prop('disabled', false);
