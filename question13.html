@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="distraction-box hidden" id="top-left"></div>
+    <div class="distraction-box hidden" id="top-center"></div>
+    <div class="distraction-box hidden" id="top-right"></div>
+    <div class="distraction-box hidden" id="right-center"></div>
+    <div class="distraction-box hidden" id="bottom-right"></div>
+    <div class="distraction-box hidden" id="bottom-center"></div>
+    <div class="distraction-box hidden" id="bottom-left"></div>
+    <div class="distraction-box hidden" id="left-center"></div>
+    <div class="distraction-box hidden" id="centered"></div>
+    <!-- <div class="frame"></div> -->
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Amerykanie budują nowy superkomputer </h4>
+                        <p>
+						Na całym świecie trwa superkomputerowy wyścig. Tak, jak kiedyś osiągnięcia nuklearne czy kosmiczne (te nadal), tak dziś posiadanie najszybszego komputera jest wyrazem technologicznej mocarstwowości. Jeszcze do niedawna dwa najszybsze komputery znajdowały się w Chinach – Tianhe-2 o mocy 33,86 PFLOPS (petaflop/s, liczba operacji na sekundę na poziomie bilionów, czyli 1015) i Sunway TaihuLight o mocy 93,01 PFLOPS. Dopiero pod koniec 2018 roku na prowadzenie wysunął się niesamowity amerykański Summit, o którym pisaliśmy rok temu w artykule Najszybszy komputer na świecie. Wówczas osiągał 122,3 PFLOPS, teraz (czerwiec 2019) jego najwyższym osiągnięciem jest 148,6 PFLOPS.
+                        </p>
+                        
+                        <p>
+						Na liście Top500 najszybszych komputerów świata od zeszłego roku zaszła tylko jedna zmiana – amerykański komputer Sierra osiągnął drugie miejsce (94,64 PFLOPS), wyprzedzając dwie chińskie maszyny. W pierwszej dziesiątce są tylko trzy komputery z innych krajów – Piz Daint ze Szwajcarii, japoński AI Bridging Cloud Infrastructure i niemiecki SuperMUC-NG. Najszybszy polski komputer, Prometheus, pracujący dla Akademickiego Centrum Komputerowego Cyfront krakowskiej AGH, znajduje się na 174 miejscu i osiąga 1,67 PFLOPS (kiedy rozpoczynał swoją pracę w 2015 roku był na 38 miejscu na świecie).
+                        </p>
+                        
+                        <p>
+						Powstający komputer nie będzie więc tylko nieco lepszym sprzętem – jego siła ma wyprzedzać dotychczasowe o całą skalę – pierwsza setka najszybszych komputerów osiąga w tej chwili 0,98 EFLOPS (eksaflop/s). Aurora, kiedy już zostanie wybudzona, ma sama być zdolna do przekroczenia tej liczby. Będzie więc pierwszym (jeśli inny jej nie wyprzedzi) komputerem, który osiągnie eksasakalę, trylion, czyli 1018 – 1,000,000,000,000,000,000 – operacji zmiennoprzecinkowych na sekundę.
+                        </p>
+                        <p>
+						Do czego jednak, poza poczuciem przewagi nad innymi krajami, potrzebne są tak szybkie komputery? Większa moc obliczeniowa to nie tylko szybsze wykonywanie tych samych czynności, ale także działania po prostu niedostępne dla zwykłych komputerów, polegające przede wszystkim na modelowaniu i testowaniu niezwykle złożonych czynności. Eksperymenty, takie jak testy zderzeniowe samochodów, czy starty rakiet są niezwykle drogie i bardzo niebezpieczne. Tymczasem odpowiednio przygotowany komputer jest w stanie przeprowadzić wiele wirtualnych symulacji takich eksperymentów i jeszcze na bieżąco proponować udoskonalenia. Nie trudno sobie wyobrazić, że lepiej, aby rozruch elektrowni atomowej albo testy nowej broni były jednak wykonywanie w przestrzeni wirtualnej a nie „na żywo”.
+                        </p>
+                        <p>
+						Aurora ma być komputerem dostępnym dla naukowców. Moc obliczeniowa, którą osiągnie Aurora będzie wystarczająca, aby projektować coraz doskonalsze turbiny wiatrowe, a nawet aby na większą skalę prowadzić badania klimatyczne.
+                        </p>
+						<p>
+						– Nie możemy zamknąć świata w probówce i w laboratorium testować, co się stanie gdy postąpimy tak lub inaczej – mówi Steve Scott, chief technical officer w Cray Inc., jednej z firm budujących Aurorę. Superszybki komputer może nam taką butelkę zastąpić.
+						</p>
+						<p>
+						Aurora, bazująca na procesorach firmy Intel, wyceniona na 500 milionów dolarów, ma być dostępna on-line w 2021 roku i z pewnością będzie wtedy najszybszym komputerem w USA. Czy również na świecie – tego nie możemy być pewni. Nawet jeśli tak, to za pewne nie na długo. Chociaż budowanie superkomputerów to niezwykle drogie i trudne przedsięwzięcie, to presja opinii i korzyści są równie wielkie. Szczególnie w zakresie rozwijającej się technologii zwanej sztuczną inteligencją albo maszynami uczącymi się – tutaj prędkość przetwarzania jest po prostu wyznacznikiem tego jak szybko, jak wiele, jak trudnych kwestii może się nauczyć komputer. Summit, obecnie najszybszy komputer, działa już prawie całkowicie na algorytmach uczących się, należy się więc spodziewać, że Aurora pójdzie w tym zakresie jeszcze dalej.
+						</p>
+						
+						
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Jakie jest najwyższe osiągnięcie superkomputera Summit</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>33,86 PFLOPS</option>
+                                    <option>93,01 PFLOPS</option>
+                                    <option>148,6 PFLOPS</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Jak nazywa się lista najszypszych superkomputerów?
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>top 200</option>
+                                    <option>top 500</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Jaki wynik osiąga setka najszybszych superkomputerów
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>0,98 EFLOPS</option>
+                                    <option>1,03 EFLOPS</option>
+                                    <option>2,33 EFLOPS</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Koszt Aurory szacuje się na:
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>200 milionów dolarów</option>
+                                    <option>500 milionów dolarów</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+								<div class="przycisk">
+									<!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+									<button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+								</div>
+							</div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/distractions.js"></script>
+</body>
+</html>

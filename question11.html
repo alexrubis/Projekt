@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="distraction-box hidden" id="top-left"></div>
+    <div class="distraction-box hidden" id="top-center"></div>
+    <div class="distraction-box hidden" id="top-right"></div>
+    <div class="distraction-box hidden" id="right-center"></div>
+    <div class="distraction-box hidden" id="bottom-right"></div>
+    <div class="distraction-box hidden" id="bottom-center"></div>
+    <div class="distraction-box hidden" id="bottom-left"></div>
+    <div class="distraction-box hidden" id="left-center"></div>
+    <div class="distraction-box hidden" id="centered"></div>
+    <!-- <div class="frame"></div> -->
+
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">1. Papuga - kolorowe ptaszysko, które można np. nauczyć przeklinać w kilku językach świata. Ale na tym zdecydowanie nie kończą się jego możliwości…</h4>
+                        <p>
+						W całej historii ludzkości bardzo wiele nauczyliśmy się od zwierząt. Dzisiaj naukowcy często zadają sobie pytanie, jak wiele zwierzęta są w stanie nauczyć się od nas. I okazuje się, że więcej, niż mogliśmy sądzić. Znany jest przypadek papugi o imieniu Alex, która nie tylko poznała ponad 100 słów, ale w dodatku wydawała się rozumieć znaczenie tego, co mówiła! Było to pierwsze zwierzę, które zadało pytanie egzystencjalne („Jakiego jestem koloru? Szarego”).
+                        </p>
+                        <p>
+						Papugi nie tylko zastanawiają się czasem nad sensem życia, wykazują się też poczuciem humoru - zgodnie z całkowicie ludzkimi standardami. Pewna papuga o imieniu N’kisi spotkała kiedyś Jane Goodall, znaną badaczkę szympansów, którą wcześniej widziała jedynie na zdjęciach. Wypaliła ni z tego, ni z owego „o cześć, masz szympansa?”. Naukowcy twierdzą, że był to pierwszy przejaw poczucia humoru u zwierzęcia.
+                        </p>
+                        <p>
+						Papugi potrafią rozwiązywać zadania, a niektórym… zdarza się nawet zeznawać w procesach sądowych. Pewna papuga, którą zapewne nie bez powodu nazwano „Echo”, trafiła nawet do programu ochrony świadków po tym, jak jej zeznania przyczyniły się do aresztowania jej właścicieli. Nie, to nie żart. Cała sytuacja miała miejsce w połowie lat 90., a papuga trafiła (anonimowo!) do ośrodka rehabilitacji zwierząt w Luizjanie.
+                        </p>
+						Są papugi, o których nikt nie pamięta, a są i takie, które na trwałe zapisują się w historii… tak jak Charlie. Ta akurat papuga nie zagrzała długo miejsca w sklepie zoologicznym - właściciel sklepu musiał zabrać ją do domu, ponieważ jej częste przeklinanie odstraszało klientów. Stamtąd Charlie trafił w ręce… Winstona Churchilla, który postanowił zrobić dobry użytek z talentów papugi. Nauczył ją kierować soczyste wiązanki w stronę Hitlera i nazistów.
+                        <p>
+						Sezon na opite papugi? To możliwe w Australii… Każdego roku, około października, następuje taki moment, kiedy spragnione atrakcji ptaszyska obżerają się na wpół sfermentowanymi owocami, a potem, cóż… zaczynają się dzikie harce. Wstawione papugi widać dosłownie na każdym kroku. Ale nie ma tak dobrze. Papugi, tak samo zresztą jak ludzie, muszą potem przecierpieć kaca.
+                        </p>
+                        <p>
+                        Podobnie jak ludzie, papugi również chętniej posługują się jedną stroną - tak jak ludzie bywają prawo- lub leworęczni, tak samo papugi mają swoją preferowaną nogę. W przeciwieństwie jednak do ludzi, których zdecydowana większość jest praworęczna, papugi w większości chętniej posługują się lewą kończyną.
+                        </p>
+						<p>
+						Kakapo to największa i najcięższa papuga na świecie - jako jedyna też nie umie latać. Prowadzi nocny tryb życia, żywi się wyłącznie roślinami, a także jest jednym z najdłużej żyjących ptaków na Ziemi. Średnio kakapo dożywa 95 lat, co jednak wcale nie poprawia jego sytuacji. To endemiczny gatunek z Nowej Zelandii, krytycznie zagrożony wyginięciem. Szacuje się, że żyje nie więcej niż ok. 120 osobników.
+						</p>
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Jak nazywała się papuga która zadała pytanie egzystencjalne</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Janek</option>
+                                    <option>Alex</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Kto był właścicielem papugi Charlie
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Hitler</option>
+                                    <option>Churchill</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Gdzie Upijają się papugi?
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>W Polsce</option>
+                                    <option>W USA </option>
+                                    <option>W Australii</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Jak nazywa się największa Papuga na ziemi
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Karłówka Płowolicowa</option>
+                                    <option>Kakapo</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+								<div class="przycisk">
+									<!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+									<button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+								</div>
+							</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>    
+    <script type="text/javascript" src="js/distractions.js"></script>    
+</body>
+</html>

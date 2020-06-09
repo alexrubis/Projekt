@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="distraction-box hidden" id="top-left"></div>
+    <div class="distraction-box hidden" id="top-center"></div>
+    <div class="distraction-box hidden" id="top-right"></div>
+    <div class="distraction-box hidden" id="right-center"></div>
+    <div class="distraction-box hidden" id="bottom-right"></div>
+    <div class="distraction-box hidden" id="bottom-center"></div>
+    <div class="distraction-box hidden" id="bottom-left"></div>
+    <div class="distraction-box hidden" id="left-center"></div>
+    <div class="distraction-box hidden" id="centered"></div>
+    <!-- <div class="frame"></div> -->
+
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Sztuczna inteligencja odczytała fragment tajemniczego manuskryptu. Naukowcy nie potrafili tego zrobić przez 100 lat</h4>
+                        <p>
+                            240-stronicowy manuskrypt Wojnicza, wypełniony zakodowanym językiem i niezrozumiałymi ilustracjami wprowadził w zakłopotanie naukowców. Przez ponad 100 lat lingwiści i kryptolodzy nie byli w stanie rozszyfrować jego znaczenia. Wykorzystując sztuczną inteligencję, kanadyjscy badacze zrobili ogromny krok naprzód.                        </p>
+                        
+                        <p>
+                            Dokument został nazwany na cześć Michała "Wilfreda" Wojnicza, polskiego sprzedawcy książek, który nabył go w 1912 roku. Napisano go w nieznanym szyfrze oraz języku. Manuskrypt składa się z setek delikatnych kartek, z czego niektórych brakuje, lub są już zniszczone, a pisany tekst czasem przechodzi ze strony prawej na lewą.                        </p>
+                        
+                        <p>
+                            Większość stron jest ozdobiona ilustracjami roślin, nagich postaci i symboli astronomicznych. Te elementy kryptolodzy byli w stanie odkodować, ale w kwestii znaczenia tekstu byli bezradni. Nawet najlepsi eksperci z czasów II wojny światowej nie dali rady złamać tego kodu. Wówczas powstały to teorie, że tekst jest po prostu wielkim oszustwem.                        </p>
+                        
+                        <p>
+                            Greg Kondrak, ekspert w dziedzinie lingwistyki i przetwarzania języka naturalnego na Uniwersytecie w Albercie, stwierdził, że rozszyfrowanie kodu to idealne zajęcie dla sztucznej inteligencji. Z pomocą jednego z absolwentów, Bradleya Hauera, zajął się analizą tekstu. Sztuczna inteligencja szybko odkryła, że tekst został napisany w... języku hebrajskim, a litery są ułożone w ustalonym wzorze. Naukowcy nie rozszyfrowali jeszcze znaczenia manuskryptu, ten etap jest przewidziany dla innych ekspertów, którzy mają dołączyć do drużyny.                        </p>
+                        <p>
+                            Aby rozszyfrować język zaszyfrowanego tekstu AI przestudiowała tekst "Powszechnej Deklaracji Praw Człowieka", napisany w 380 różnych językach. W ten sposób poznała wzorce, którymi potem się inspirowała, szukając odniesienia w tekście manuskryptu. Po przeanalizowaniu manuskryptu Wojnicza, doszła do wniosku, że z duża pewnością tekst został napisany w języku hebrajskim.                        </p>
+                        <p>
+                            "Okazało się, że ponad 80 procent słów było w słowniku hebrajskim, ale nie wiedzieliśmy, czy mają sens" - powiedział Kondrak.                        </p>
+                        <p>
+                            Naukowcy zdekodowali początkową frazę manuskryptu i zaprezentowali ją informatykowi, który doskonale mówi po hebrajsku. Stwierdził on, że to nie było spójne zdanie, a brzmiało tak: "She made recommendations to the priest, man of the house and me and people" - w wolnym tłumaczeniu daje nam to "Poleciła księdzu, panu domu, mnie i ludziom".                        </p>
+                            <p>Na pełne znaczenie tego tajemniczego tekstu trzeba będzie jeszcze poczekać. Aby odtworzyć 240-stronicowy manuskrypt, potrzebna będzie pomoc historyków znających język hebrajski w stopniu najwyższym jak to możliwe.</p>
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">W czym pomogło zastosowanie sztucznej inteligencji?</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>W poznaniu starożytnego alfabetu</option>
+                                    <option>W odczytniu dziwnej księgi</option>
+                                    <option>W skatalogowaniu zbiorów muzeum</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Czym jest wspomniany w tekście manuskrypt Wojnicza?
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Średniowieczną księgą niemożliwą do odczytania</option>
+                                    <option>500-letnim lichtarzem</option>
+                                    <option > Pierwszą polską kopią Biblii</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Dzięki AI odkryto, że manuskrypt Wojnicza został napisany w jakim języku?
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Polskim</option>
+                                    <option>Hebrajskim</option>
+                                    <option>Staroruskim</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Czy naukowcy będą w dalszym ciągu badać księgę?
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Tak</option>
+                                    <option>Nie</option>
+
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+								<div class="przycisk">
+									<!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+									<button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+								</div>
+							</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>    
+    <script type="text/javascript" src="js/distractions.js"></script>    
+</body>
+</html>

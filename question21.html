@@ -1,0 +1,145 @@
+<html lang="en"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&amp;display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="distraction-box hidden" id="top-left"></div>
+    <div class="distraction-box hidden" id="top-center"></div>
+    <div class="distraction-box hidden" id="top-right"></div>
+    <div class="distraction-box hidden" id="right-center"></div>
+    <div class="distraction-box hidden" id="bottom-right"></div>
+    <div class="distraction-box hidden" id="bottom-center"></div>
+    <div class="distraction-box hidden" id="bottom-left"></div>
+    <div class="distraction-box hidden" id="left-center"></div>
+    <div class="distraction-box hidden" id="centered"></div>
+    <!-- <div class="frame"></div> -->
+
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">W ludzkim mikrobiomie jest więcej genów niż gwiazd we Wszechświecie</h4>
+                        <p>
+                            U progu lat 20. XXI wieku, ludzkość dysponuje już odpowiednimi technologiami, które pozwalają nam w końcu rozpocząć historyczny projekt polegający na skatalogowaniu wszystkich genów w naszym mikrobiomie.
+                        </p>
+                        
+                        <p>
+                            Naukowcy z Harvard Medical School i Joslin Diabetes Center zamierzają stworzyć Arkę Noego wszystkich genów znajdujących się organizmach blisko 8 miliardów ludzi zamieszkujących naszą piękną planetę. Trzeba tutaj podkreślić, że każdy z nas posiada inne geny, które są odpowiedzialne za najróżniejsze funkcje. Zadanie to nie będzie więc proste w realizacji, ale naukowcy mają narzędzia, czas i zapał do pracy, bo w grę wchodzi poznanie jednej z największych tajemnic skrywanych przez nasze ciała.
+                        </p>
+                        
+                        <p>
+                            Mamy do czynienia z rosnącym globalnym kryzysem zdrowotnym, który wymaga, abyśmy uchwycili i zachowali różnorodność ludzkiej mikroflory, dopóki jeszcze istnieje. Te mikroorganizmy ewoluowały wspólnie z ludźmi przez setki tysięcy lat. Pomagają nam trawić jedzenie, wzmacniają nasz układ odpornościowy i chronią przed atakami zarazków” - powiedziała Maria Gloria Dominguez-Bello, profesor biochemii na Rutgers University.
+                        </p>
+                        
+                        <p>
+                            Ta cenna wiedza pozwoli medycynie przyszłości tworzyć o wiele skuteczniejsze specyfiki na najgroźniejsze choroby i leczyć każdą osobę indywidualnie. Cel jest ambitny. Światowa Organizacja Zdrowia chce do roku 2050 wyeliminować wszystkie najgroźniejsze choroby i wady genetyczne dręczące ludzkość od zarania dziejów. Dlatego projekt realizowany przez naukowców z Harvard Medical School i Joslin Diabetes Center jest tak ważny.
+                        </p>
+                        <p>
+                            Przeprowadzona pierwsza części badań bardzo zaskoczyła naukowców. Okazuje się bowiem, że w próbkach pobranych od zaledwie 3500 osób znalazło się aż 46 milionów genów. Jest to spowodowane tym, że bakterie mają zdolność do szybkiej ewolucji swojego DNA w odpowiedzi na warunki środowiskowe, w jakich funkcjonują. Każdy mieszkaniec Ziemi ma więc w swoim organiźmie zupełnie inny mikrobiom, a to właśnie on odpowiada za nasze samopoczucie, indywidualne przyswajanie pokarmów oraz odporność na ataki bakterii i wirusów.
+                        </p>
+                        <p>Naukowcy zamierzają dalej prowadzić swoje badania i co jakiś czas publikować efekty swojej pracy. Co ciekawe, nie jest to jedyny historyczny i zakrojony na szeroką skalę projekt związany z poznaniem tajemnic genomów. Od jakiegoś czasu w USA powstaje globalny bank DNA wszystkich organizmów żywych. Biolodzy spodziewają się odkryć największe tajemnice ewolucji i przyspieszyć badania nad technologiami wykorzystywanymi w weterynarii i rolnictwie. Jednym z głównych celów jest lepsza ochrona zwierząt przed degradacyjną działalnością ludzkości.</p>
+                        <p>Projekt Earth BioGenome potrwa przynajmniej dekadę i jego realizacja pochłonie ok. 4,7 miliarda dolarów, ale w jego ramach mają w tym czasie zostać zarchiwizowane genomy wszystkich organizmów zbudowanych z komórek, a dokładnie posiadających jądro zawierające materiał genetyczny i oddzielone błoną jądrową od cytoplazmy. Szacuje się, że zebrane dane zajmą ok. 200 petabajtów w wirtualnej przestrzeni globalnej sieci. Zadanie to nie będzie łatwe, ponieważ na naszej planecie żyje blisko 10 milionów takich istot.</p>
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Czego dotyczył artykuł?</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Kosmosu</option>
+                                    <option>Ludzkiego genomu</option>
+                                    <option>Kryzysu zdrowotnego</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Czy według artykułu w ludzkim mikrobiomie jest więcej genów niż gwiazd w Wszechświecie?
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Co odkryli naukowcy?
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Nowy rodzaj katalizatora</option>
+                                    <option>Nowoczesny sposób syntezy tlenku wodoru </option>
+                                    <option>Materiał pozwalający usuwać z atmosfery zanieczyszczenia</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Co jest celem projektu  Earth BioGenome?
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Zarchiwizowanie genomów wszystkich organizmów</option>
+                                    <option>Zbadanie DNA człowieka</option>
+                                    <option>Opracowanie lepszych metod analizy genomu</option>
+
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </form></div>
+                        <div class="row">
+                            <div class="col">
+								<div class="przycisk">
+									<!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+									<button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+								</div>
+							</div>
+                        </div>
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>    
+    <script type="text/javascript" src="js/distractions.js"></script>    
+
+</body></html>

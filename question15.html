@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/memory.css">
+
+    <link rel="stylesheet prefetch" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.1/css/font-awesome.min.css">
+    <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css'>
+
+</head>
+<body>
+
+    <div class="distraction-box hidden" id="top-left"></div>
+    <div class="distraction-box hidden" id="top-center"></div>
+    <div class="distraction-box hidden" id="top-right"></div>
+    <div class="distraction-box hidden" id="right-center"></div>
+    <div class="distraction-box hidden" id="bottom-right"></div>
+    <div class="distraction-box hidden" id="bottom-center"></div>
+    <div class="distraction-box hidden" id="bottom-left"></div>
+    <div class="distraction-box hidden" id="left-center"></div>
+    <div class="distraction-box hidden" id="centered"></div>
+    <!-- <div class="frame"></div> -->
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Ciekawostki o pociągach</h4>
+                        <p>
+						Czy wiecie, z jaką prędkością potrafi pędzić najszybszy pociąg świata i jak się to ma do "naszego" Pendolino? Która trasa kolejowa jest najdłuższa, a która najpiękniejsza? W tym tekście znajdziecie wiele ciekawostek o pociągach pasażerskich. 
+                        </p>
+                        W 2017 roku upływa 187 lat od startu pierwszej kolei wprawianej w ruch energią mechaniczną. Jej ojczyzną jest Wielka Brytania. Pierwszy pociąg kursujący wg rozkładu jazdy i ciągnięty przez parowóz wyjechał na tory w 1830 roku na trasę Liverpool – Manchester. 
+                        <p>
+						Pierwsza linia na ternie dzisiejszej Polski wystartowała w 1842 roku między Wrocławiem i Oławą, które wówczas znajdowały się na terytorium Prus. Natomiast pierwszy pociąg na terenie Królestwa Polskiego ruszył w 1845 roku na trasie z Warszawy do Grodziska Mazowieckiego. 
+                        </p>
+                        <p>
+						Najszybszy pociąg kursujący aktualnie po Polsce to Pendolino. W drodze z Warszawy do Katowic i Krakowa rozpędza się do 200 km/h. Podczas testów na linii zaczynającej się w Grodzisku Mazowieckim a kończącej się w Zawierciu osiągnął jednak zawrotną prędkość 293 km/h i był to rekord tego typu pociągu. Jednak w praktyce – np. na trasie z Warszawy do Trójmiasta Pendolino nie przekracza 160 km/h. 
+                        </p>
+                        <p>
+						Najszybszym pociągiem kołowym na świecie jest TGV. Skrót ten po francusku oznacza pociąg wielkiej prędkości. Pierwszą linię otwarto w 1981 na trasie Paryż-Lyon, a z czasem do istniejącej sieci torów dołączono wiele innych miast. Pociągi TGV na co dzień pędzą 320 km/h, ale ich rekordowa szybkość to aż 574,8 km/h. 
+                        </p>
+                        <p>
+						Najdłuższa linia kolejowa na świecie to kolej transsyberyjska. Startuje z Dworca Jarosławskiego w Moskwie, a bieg kończy na dworcu we Władywostoku. Całkowita długość linii wynosi prawie 9300 km i przebiega przez osiem stref czasowych. Jej pokonanie w całości zajmuje ponad 6 dni. W 2016 roku kolej ta obchodziła swoje 100. urodziny. 
+                        </p>
+                        <p>
+						Najdłuższa podróż, jaką można by odbyć pociągiem (zakładając, że przesiadalibyśmy się wyłącznie w obrębie dworca w danej lokalizacji, bez dojazdów pośrednich) liczy około 17 tysięcy kilometrów i przebiega przez dwa kontynenty. Zaczynałaby się w Portugalii, a kończyła w Wietnamie i trwałaby w sumie dwa tygodnie. Gdyby wybrać się w taką megapodróż kolejową, za bilety trzeba by zapłacić przynajmniej 2 tysiące dolarów. 
+                        </p>
+						<p>
+						Nieformalnie za najbardziej malowniczą trasę kolejową w Europie, a nawet na świecie uznano West Highland Line w Szkocji. Odcinek o długości 164 mil z Glasgow do Mallaig znalazł się w towarzystwie Kolei Transsyberyjskiej i Silk Road na prestiżowej liście najwspanialszych tras podróżniczych na świecie według wydawnictwa Lonely Planet. W letnich miesiącach linia działa jako Hogwarts Express, jako że zdjęcia z tej właśnie trasy pojawiają się w serii filmów o Harrym Potterze. 
+                        </p>
+						<p>
+						Największym przewoźnikiem świata są Koleje Indyjskie. Rocznie przewożą ponad 7 mld pasażerów. Koleje te to także jeden z największych światowych pracodawców. Zatrudniają ponad 1,6 mln osób. 
+                        </p>
+						
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Ile lat upłyneło w 2017 roku od pierwszej kolei?</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>167</option>
+                                    <option>187</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Jak nazywa się najszybszy pociąg kursujący w Polsce
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>shinkansen</option>
+                                    <option>TGV</option>
+                                    <option>Pendolino</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Jak nazywa się najdłuższa linia kolejowa
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Linia transatlantycka</option>
+                                    <option>kolej transsyberyjska</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+								<div class="przycisk">
+									<!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+									<button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+								</div>
+						   </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/distractions.js"></script>     
+</body>
+</html>

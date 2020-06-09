@@ -175,8 +175,18 @@ $(document).ready(function() {
         //         break;
         //     }   
         // }
+        
         var num = localStorage.getItem('questionNo');
-        window.location.replace("question" + num + ".html");
+        //CZY WYBRANO WERSJĘ Z ZAJAWKĄ LUB BEZ
+        if(localStorage.getItem("distractions").includes("Tak"))
+        { 
+            num = parseInt(num)+10;
+            window.location.replace("question" + num.toString() + ".html");            
+        }   
+        if(localStorage.getItem("distractions").includes("Nie"))
+        { 
+            window.location.replace("question" + num + ".html");            
+        }
         // addAskedQuestion(rand);
     }
 

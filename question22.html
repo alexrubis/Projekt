@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="distraction-box hidden" id="top-left"></div>
+    <div class="distraction-box hidden" id="top-center"></div>
+    <div class="distraction-box hidden" id="top-right"></div>
+    <div class="distraction-box hidden" id="right-center"></div>
+    <div class="distraction-box hidden" id="bottom-right"></div>
+    <div class="distraction-box hidden" id="bottom-center"></div>
+    <div class="distraction-box hidden" id="bottom-left"></div>
+    <div class="distraction-box hidden" id="left-center"></div>
+    <div class="distraction-box hidden" id="centered"></div>
+    <!-- <div class="frame"></div> -->
+
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Najnowsze badania pokazują, że picie wody z kranu może obniżyć poziom inteligencji</h4>
+                        <p>
+                            Jak bumerang powrócił do nas właśnie temat wody z kranu, która za sprawą obecności fluoru przyczyniać ma się do niskiego poziomu IQ u dzieci. Czy to naprawdę jest możliwe? Wszystko wskazuje na to, że tak!                        </p>
+                        
+                        <p>
+                            Nowe badania kanadyjskich naukowców ponownie podnoszą temat związku pomiędzy fluorem w wodzie i niskim poziomem inteligencji u dzieci, a mówiąc precyzyjniej wynikać ma z nich, że spożywanie wody z kranu przez kobiety w ciąży skutkować ma znacznie niższym niż u innych dzieci poziomem inteligencji takiego potomstwa. Co prawda część środowiska naukowego szybko zareagowała na te rewelacje, twierdząc że dowody są słaby i nieznaczące, ale nie da się ukryć, że nie wszyscy podzielają to stanowisko.                        </p>
+                        
+                        <p>
+                            Naukowcy zaprosili do badań 500 par matka-dziecko, kobiety spożywały przez okres ciąży wodę z kranu, a badacze sprawdzali poziom fluoru w ich moczu, uzupełniając dane o deklarowane przez kobiety spożycie wody. Poziom inteligencji dzieci został oceniony między trzecim i czwartym rokiem ich życia, co pozwoliło badaczom na następujące wnioski. 1-mg/L wzrost fluoru w moczu matki w czasie ciąży powoduje 4,5 punktu redukcji w poziomie IQ jej dziecka - co ciekawe, taki związek zaobserwowano jedynie u chłopców. Jeżeli zaś chodzi o samodzielne śledzenie spożycia fluoru, wzrost o 1 mg powodował spadek IQ o 3,7 punktu, zarówno u chłopców, jak i dziewczynek.                        </p>
+                        
+                        <p>
+                            Już na pierwszy rzut oka zauważyć można tu pewne nieścisłości, które wytyka m.in. Stuart Ritchie z King's College London: - W pierwszej analizie mamy znaczący wpływ na chłopców, a w drugiej efekt nie jest u nich silniejszy niż u dziewczynek, czyli wyniki te są niekonsekwentne. Inni wskazują na metodologię, która została tak dobrana, by pozwoliła udowodnić teorię, a kolejni na fakt, że do czasu badań, czyli osiągnięcia przez dzieci wieku 3-4 lat, te mogły być wystawione na działanie wielu dewastujących czynników, które mogły wywołać obniżenie poziomu inteligencji, np. ołowiu.                        </p>
+                        <p>
+                            Jak twierdzą jednak badacze i wydawca, który zdecydował się na publikację tych badań, doskonale zdają sobie sprawę z dzielącej środowisko natury tego tematu. Wskazują jednak, że teorii dotyczącej wpływu wody z kranu na inteligencję dziecka nie można jednoznacznie obalić, więc ze względu na potencjalną neurotoksyczność fluoru zasługuje ona na dalsze badania, stąd decyzja o publikacji wyników badań. Nie pozostaje nam więc innego niż tylko czekać na kolejne badania, bo nie da się ukryć, że kwestia ta interesuje z pewnością wiele przyszłych mam.</p>
+                        
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">O czym była mowa w artykule?</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>O oczyszczalniach ścieków</option>
+                                    <option>O Składzie wody z kranu</option>
+                                    <option>O wpływie wody z kranu na inteligencję dzieci</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label"> Jaka substancja zawarta w wodzie z kranu ma wpływać na dzieci?
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Chlor</option>
+                                    <option>Fluor</option>
+                                    <option>Monotlenek diwodoru</option>
+
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Czy środowisko naukowe było zgodne co do przeprowadzonego badania?
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Tak</option>
+                                    <option>Nie </option>                                    
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Na czym polegało opisane w tekście badanie?
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Na podawaniu kobietom w ciąży wody z kranu</option>
+                                    <option>Na podawaniu dzieciom wody z kranu</option>
+                                    <option>Na badaniu składu wody z kranu</option>
+
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+								<div class="przycisk">
+									<!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+									<button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+								</div>
+							</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>    
+    <script type="text/javascript" src="js/distractions.js"></script>    
+</body>
+</html>

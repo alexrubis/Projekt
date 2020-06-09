@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="distraction-box hidden" id="top-left"></div>
+    <div class="distraction-box hidden" id="top-center"></div>
+    <div class="distraction-box hidden" id="top-right"></div>
+    <div class="distraction-box hidden" id="right-center"></div>
+    <div class="distraction-box hidden" id="bottom-right"></div>
+    <div class="distraction-box hidden" id="bottom-center"></div>
+    <div class="distraction-box hidden" id="bottom-left"></div>
+    <div class="distraction-box hidden" id="left-center"></div>
+    <div class="distraction-box hidden" id="centered"></div>
+
+
+
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">8K nikogo już nie zaskakuje. 16K, Crystal LED i znaczek Sony – robi wrażenie
+                        </h4>
+                        <p>
+						Obecnie rynek jest już zdominowany przez nowe telewizory o rozdzielczości 4K, a nieśmiało do sprzedaży wchodzą również modele 8K. Sony postanowiło jednak teraz pokazać, kto jest w czołówce. 
+                        </p>
+                        <p>
+						16K? Zwykłe prężenie muskułów
+                        </p>
+                        <p>
+						Na razie trwa dopiero popularyzacja treści 4K. Nie da się zresztą ukryć, że wciąż dominują tu materiały Full HD, a na wyższą ich jakość będziemy musieli jeszcze trochę poczekać. Owszem, różne firmy próbują ten proces przyspieszyć, ale finalnie niewiele z tego wychodzi. Szczególnie przy streamingu różnych materiałów największym ograniczeniem okazuje się być wydajność sieci. Tu ogromne nadzieje wiązane są z 5G, które może rzeczywiście zrewolucjonizować ten segment. Tym bardziej że powoli nadchodzą usługi streamingowe z grami z prawdziwego zdarzenia, więc może się sporo zmienić.
+                        </p>
+                        <p>
+                        Jaki jest zatem sens telewizora o rozdzielczości 16K? Panel o tak wysokiej rozdzielczości ma o 64 razy więcej pikseli niż Full HD i o 16 razy więcej niż 4K. Dokładniej pisząc, mówimy tu o rozdzielczości 15360 x 8640. Z racji na to, że coś takiego w ogóle by nie miało sensu w zastosowaniach domowych, Sony postanowiło takie urządzenie wkrótce zaimplementować w centrum badań w mieście Yokohama w Japonii, które to zostało zbudowane dla tamtejszej firmy kosmetycznej, a na razie pochwalili się nim w Las Vegas. Jeszcze większe wrażenie robią wymiary tego sprzętu. Producent miał stworzyć coś niezwykłego, zwracającego uwagę, więc nie mógł postawić na przekątne spotykane w zwykłych telewizorach. Jako że w takich modelach można poszaleć, wymiary wynoszą 19,2 na 5,4 m, co daje aż 785 cali. Rozciąga się on przez pierwsze i drugie piętro.
+                        </p>
+                        <p>
+						OLED wiecznie niegotowy
+                        </p>
+                        <p>
+						Ciekawsze w tym wszystkim jest jednak coś innego. Mianowicie chodzi tu o technologię, w jakiej wykonano matrycę. Panel to Crystal LED. Warto w tym miejscu wspomnieć, że nad tym rozwiązaniem pracuje również Samsung, więc wydaje się, że może być ono realną alternatywą dla OLED-ów. Co więcej, w przypadku pokazu możliwości Sony udało się nawet stworzyć produkt bez konieczności wyposażania go w jakiekolwiek podświetlenie za matrycą.
+                        </p>
+                        <p>
+						Technologia ta nazywana jest również micro LED. Na jakiej zasadzie jednak działa? Jej wyróżnikiem pozostaje fakt, że każdy pojedynczy subpiksel emituje światło, dokładnie tak samo jak w przypadku matryc OLED. Dzięki temu możliwe jest uzyskanie głębokich czerni oraz wysokiego kontrastu. Materiałem wykorzystywanym do stworzenia panelu jest azotek galu. Tu mamy właśnie największą różnicę w porównaniu do OLED-ów, gdzie z kolei stawia się na organiczne elementy. Poszczególne komponenty micro LED wyróżniają się niezwykle małymi wymiarami. Najlepszym dowodem na to jest ich wielkość, wynosząca mniej niż 100 µm, czyli pozostają mniejsze od ludzkiego włosa.
+                        </p>
+                        <p>
+						Obecnie największą przeszkodą na drodze do popularyzacji pozostają koszty produkcji. Myślę, że za kilka lat firmom uda się je obniżyć do odpowiednio atrakcyjnego poziomu i wtedy Crystal LED rozpocznie swoją karierę.
+                        </p>
+                        <p>
+						Zastanawiacie się tu, czy w ogóle są treści na telewizory 16K? Ogółem ich nie ma, więc Sony musiało stworzyć własną produkcję. Zgodnie z tym, co możemy najczęściej zobaczyć na pokazowych filmach, również teraz zdecydowano się zaprezentować życie dzikich zwierząt
+                        </p>
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Jakiego formatu trwa obecnie popukaryzacja</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>720p</option>
+                                    <option>1080p</option>
+                                    <option>4k</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Jaką rozdzielczość ma 16k
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>16000 x 16000</option>
+                                    <option>15360 x 8640</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Co jest alternatywą dla OLED
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Crystal LED</option>
+                                    <option>LCD</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Kto pracuje na crystal LED
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Fiat</option>
+                                    <option>Samsung</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+								<div class="przycisk">
+									<!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+									<button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+								</div>
+							</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>   
+    <script type="text/javascript" src="js/distractions.js"></script>   
+</body>
+</html>

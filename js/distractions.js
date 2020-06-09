@@ -156,23 +156,50 @@ $(document).ready(function() {
             var blockTeaser = el[1];
             var element = $('#'+id);       
             // element.addClass('hidden');
+            // var img_static1 = document.createElement("img");
+            // img_static1.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Carved_by_Massive_Stars.jpg/300px-Carved_by_Massive_Stars.jpg";
+
+            // var img_static2 = document.createElement("img");
+            // img_static2.src = "https://b.rgbimg.com/users/v/vo/vorfay/300/mllmu58.jpg";
+
+            // var img_static3 = document.createElement("img");
+            // img_static3.src = "https://media.giphy.com/media/WcddPgiWWsUFO/giphy.gif";
+
+            // var img_static4 = document.createElement("img");
+            // img_static4.src = "https://media.giphy.com/media/RYKFEEjtYpxL2/giphy.gif";
+
+            // var img_static5 = document.createElement("img");
+            // img_static5.src = "https://media.giphy.com/media/WiTFa9I5AfrEY/giphy.gif";
+
+            // var img_static6 = document.createElement("img");
+            // img_static6.src = "https://kids.kiddle.co/images/thumb/a/a8/Bees_Collecting_Pollen_2004-08-14.jpg/300px-Bees_Collecting_Pollen_2004-08-14.jpg";
+            
             var img_static1 = document.createElement("img");
-            img_static1.src = "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/Carved_by_Massive_Stars.jpg/300px-Carved_by_Massive_Stars.jpg";
-
             var img_static2 = document.createElement("img");
-            img_static2.src = "https://b.rgbimg.com/users/v/vo/vorfay/300/mllmu58.jpg";
-
             var img_static3 = document.createElement("img");
-            img_static3.src = "https://media.giphy.com/media/WcddPgiWWsUFO/giphy.gif";
-
             var img_static4 = document.createElement("img");
-            img_static4.src = "https://media.giphy.com/media/RYKFEEjtYpxL2/giphy.gif";
-
             var img_static5 = document.createElement("img");
-            img_static5.src = "https://media.giphy.com/media/WiTFa9I5AfrEY/giphy.gif";
-
             var img_static6 = document.createElement("img");
-            img_static6.src = "https://kids.kiddle.co/images/thumb/a/a8/Bees_Collecting_Pollen_2004-08-14.jpg/300px-Bees_Collecting_Pollen_2004-08-14.jpg";
+            //CZY WYBRANO WERSJĘ Z ZAJAWKĄ LUB BEZ
+            if(localStorage.getItem("distractions").includes("Tak"))
+            { 
+                img_static1.src = "exp1_images/1_1.gif";
+                img_static2.src = "exp1_images/2_1.gif";
+                img_static3.src = "exp1_images/3_1.gif";
+                img_static4.src = "exp1_images/4_1.gif";
+                img_static5.src = "exp1_images/5_1.gif";
+                img_static6.src = "exp1_images/6_1.gif";      
+            }   
+            if(localStorage.getItem("distractions").includes("Nie"))
+            { 
+                img_static1.src = "exp1_images/10_1.gif";
+                img_static2.src = "exp1_images/11_1.gif";
+                img_static3.src = "exp1_images/12_1.gif";
+                img_static4.src = "exp1_images/13_1.gif";
+                img_static5.src = "exp1_images/14_1.gif";
+                img_static6.src = "exp1_images/15_1.gif"; 
+            }
+           
 
             var advert_dir = [img_static1, img_static2, img_static3, img_static4, img_static5, img_static6];
 

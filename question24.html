@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Projekt</title>
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="css/distractions_style.css">
+    <link rel="stylesheet" type="text/css" href="fontawesome/css/all.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato:300,300i,400,400i,700,700i,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="distraction-box hidden" id="top-left"></div>
+    <div class="distraction-box hidden" id="top-center"></div>
+    <div class="distraction-box hidden" id="top-right"></div>
+    <div class="distraction-box hidden" id="right-center"></div>
+    <div class="distraction-box hidden" id="bottom-right"></div>
+    <div class="distraction-box hidden" id="bottom-center"></div>
+    <div class="distraction-box hidden" id="bottom-left"></div>
+    <div class="distraction-box hidden" id="left-center"></div>
+    <div class="distraction-box hidden" id="centered"></div>
+    <!-- <div class="frame"></div> -->
+
+    <div class="container h-100 d-flex align-items-center justify-content-center">
+        <div>
+            <div class="row justify-content-center">
+                <div class="col-md-auto">
+                    <div class="text-center">
+                        <h2 class="question-no"></h2>
+                        <p>Przeczytaj i odpowiedz na pytania</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+            <div id="overlay"></div>
+                <div class="text-center">
+                    <div class="text-box mb-4">
+                    <div id="content">
+                        <h4 style="text-align: center">Naukowcy alarmują: 2300 trzęsień w miesiącu. Rekordowa aktywność superwulkanu w Yellowstone</h4>
+                        <p>
+                            Jego erupcja może być silniejsza od wszystkich odnotowanych w dziejach ludzkości. Zmieni połowę kuli ziemskiej w "krainę wiecznej zimy".                        </p>
+                        
+                        <p>
+                            Najsilniejsze z 2300 sierpniowych trzęsień miało siłę 3,3 w skali Richtera. Pozostałe nie były aż tak silne. Tylko 11 z nich osiągnęło moc równą 3 jednostkom. Jednak naukowcy alarmują, że to ewidentny znak, że superwulkan w parku Yellowstone w zasadzie już się obudził - donosi "Daily Mail".                        </p>
+                        
+                        <p>
+                            Geolodzy, którzy badają aktywność Yellowstone, nie potrafią przewidzieć daty erupcji superwulkanu Mają nadzieję, że dzieli ją od nas wiele lat, ale aktywność superwulkanu coraz bardziej ich niepokoi. Przypominają, że już w czerwcu odnotowano ogromną aktywność sejsmiczną w regionie. Wtedy w zaledwie tydzień było prawie 500 trzęsień ziemi, ale później sytuacja się uspokoiła.                        </p>
+                        
+                        <p>
+                            Erupcja tak wielkiego wulkanu mogłaby wpłynąć na atmosferę całej Ziemi. Trudno przewidzieć jej skutki, ale zmiany klimatyczne mogłyby na kolejnych kilkadziesiąt lat zamienić połowę kuli ziemskiej w "krainę wiecznej zimy" - ostrzegają naukowcy.                        </p>
+                        <p>
+                            W niedawnych badaniach odkryto, że wulkan z Parku Narodowego Yellowstone może gromadzić pokłady wrzącej lawy na przestrzeni o rozmiarach 90x30 km.* Jeszcze kilkanaście lat temu uważano, że jest jej 2,5 raza mniej.*                        </p>
+                        <p>
+                            Ostatnia erupcja tego wulkanu miała miejsce ok. 70 tys. lat temu. Zanim dojdzie do kolejnej, na pewno w porę to zauważymy - czytamy w oświadczeniu zespołu z Uniwersytetu w Utah.                        </p>
+                        <p>
+                            Wybuch Yellowstone może być 1000 razy bardziej groźny od erupcji Mount St. Helens. Jej skutki, w 1980 roku, było widać w 48 stanach USA. Poprzedziły ją dwa miesiące nieustannych trzęsień ziemi. Jest to jedna z największych katastrof sejsmicznych w Stanach Zjednoczonych. Zginęło wówczas 57 osób.                        </p>
+                            <p>Najbardziej śmiercionoścną, odnotowaną dotychczas erupcją, jest wybuch wulkanu Tambora w Indonezji. W 1815 r. w powietrze wyleciało tam 140 mld ton pyłów i skał, pozostawiając po sobie zagłębienie o głębokości 600 m i średnicy kilku kilometrów. Skutki było czuć na całym świecie, czyniąc rok 1816 "rokiem bez lata", kiedy nawet w czerwcu w USA notowano ujemne temperatury. W Europie skończyło się to największym głodem w XIX stuleciu.</p>
+                    </div> 
+                    
+                    <form id="question-data" method="POST">
+                        <div class="form-group row">
+                            <label for="text1" class="col-9 col-form-label">Czego dotyczył artykuł?</label>
+                            <div class="col-3">
+                                <select id="firstQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Rekordowej aktywności wulkanu Yellowstone</option>
+                                    <option>Aktywności wulkanicznej w USA</option>
+                                    <option>Kryzysu zdrowotnego</option>
+                                </select>
+                                <!-- <input id="firstQuestion" type="text" name="text1" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text2" class="col-9 col-form-label">Czy erupcja którą prognozują naukowcy może wpłynąć na atmosferę całej planety?
+                            </label>
+                            <div class="col-3">
+                                <select id="secondQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="text3" class="col-9 col-form-label">Co jest najbardziej śmiercionoścną, odnotowaną dotychczas erupcją?
+                            </label>
+                            <div class="col-3">
+                                <select id="thirdQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>Tambora w Indonezji</option>
+                                    <option>Wezuwjusz we Włoszech </option>
+                                    <option>Krakatau</option>
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        <div class="form-group row">
+                            <label for="text4" class="col-9 col-form-label">Czy geolodzy potrafią przewidzieć date erupcji Yellowstone?
+                            </label>
+                            <div class="col-3">
+                                <select id="lastQuestion" name="text1" class="form-control">
+                                    <option></option>
+                                    <option>tak</option>
+                                    <option>nie</option>
+
+                                </select>
+                                <!-- <input id="lastQuestion" type="text" name="text2" class="form-control mt-3"> -->
+                                <span class="invalid-feedback"></span>
+                            </div>
+                        </div>
+
+
+                        </div>
+                        <div class="row">
+                            <div class="col">
+								<div class="przycisk">
+									<!-- <input type="submit" value="Następne zadanie" class="btn btn-dark btn-block"> -->
+									<button type="submit" class="btn btn-dark btn-block next-question">Następne zadanie &nbsp;<i class="fas fa-arrow-right"></i></button>
+								</div>
+							</div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script type="text/javascript" src="js/jquery-3.4.1.min.js"></script>
+    <script type="text/javascript" src="js/bootstrap.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>    
+    <script type="text/javascript" src="js/distractions.js"></script>    
+</body>
+</html>
