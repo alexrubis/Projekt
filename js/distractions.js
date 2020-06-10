@@ -1,25 +1,46 @@
 contentArray = [];
 function logEvent(eventType) {
     //czas
-    var today = new Date();
-    var time = today.getFullYear().toString()+(("0" + (today.getMonth() + 1)).slice(-2))+(("0" + today.getDate()).slice(-2))+today.getHours()+ today.getMinutes()+ today.getSeconds()+today.getMilliseconds().toString().padEnd(3, "0");
+    var today = new Date(); 
+
+    var time =      	      		     	 
+    +today.getFullYear()
+    +(today.getMonth() < 10 ? '0' : '')     	      		         
+    +today.getMonth()
+    +(today.getDate() < 10 ? '0' : '')     	      		         
+    +today.getDate()
+    +(today.getHours() < 10 ? '0' : '')     	      		         
+    +today.getHours()
+    +(today.getMinutes() < 10 ? '0' : '')     	      		       
+    +today.getMinutes() 
+    +(today.getSeconds() < 10 ? '0' : '')     	      		       
+    +today.getSeconds()
+    +(today.getMilliseconds() < 10 ? '00' : today.getMilliseconds() < 100 ? '0': '')
+    +today.getMilliseconds();
+  
+    //var time = today.getFullYear().toString()+(("0" + (today.getMonth() + 1)).slice(-2))+(("0" + today.getDate()).slice(-2))+today.getHours()+ today.getMinutes()+ today.getSeconds()+today.getMilliseconds().toString().padEnd(3, "0");
     //tworzenie pliku
-    
-    content = time+","+eventType;        
+    content = time + "," + localStorage.getItem('questionNo') + eventType + ",none,none,none,none,none,none,none,none,none\n";    
+    var existing = sessionStorage.getItem('contentArray');
+    var data = existing ? existing + content: content;
+    sessionStorage.setItem('contentArray', data);   
 
     //zapisywanie do pliku
-    var atag = document.createElement("a");
-    var file = new Blob([content], {type: 'text/plain'});
-    atag.href = URL.createObjectURL(file);
-    atag.download = "stymulacja.txt";
-    atag.click();
+        //var atag = document.createElement("a");
+        //var file = new Blob([content], {type: 'text/plain'});
+        //atag.href = URL.createObjectURL(file);
+        //atag.download = "stymulacja.txt";
+        //atag.click();
     //tworzenie kompletnego logu
-    contentArray.push(content);
-    sessionStorage.setItem("contentArray", JSON.stringify(contentArray));
+    //contentArray.push(content);
+    //console.log("contentArray.push(content);"+sessionStorage.getItem("contentArray"))
+   // sessionStorage.setItem("contentArray", JSON.stringify(contentArray));
+    //console.log("storedContentArray;"+sessionStorage.getItem("contentArray"))
+
 }
 
 
-function allPossibleCases(arr) {
+function allPossibleCases(arr) {    
   if (arr.length == 1) {
     return arr[0];
   } else {
@@ -174,35 +195,30 @@ $(document).ready(function() {
             // var img_static6 = document.createElement("img");
             // img_static6.src = "https://kids.kiddle.co/images/thumb/a/a8/Bees_Collecting_Pollen_2004-08-14.jpg/300px-Bees_Collecting_Pollen_2004-08-14.jpg";
             
-            var img_static1 = document.createElement("img");
-            var img_static2 = document.createElement("img");
-            var img_static3 = document.createElement("img");
-            var img_static4 = document.createElement("img");
-            var img_static5 = document.createElement("img");
-            var img_static6 = document.createElement("img");
-            //CZY WYBRANO WERSJĘ Z ZAJAWKĄ LUB BEZ
+           
+            //CZY WYBRANO WERSJĘ Z ZAJAWKĄ LUB BEZ ("TAK" = bez zajawki)
             if(localStorage.getItem("distractions").includes("Tak"))
             { 
-                img_static1.src = "exp1_images/1_1.gif";
-                img_static2.src = "exp1_images/2_1.gif";
-                img_static3.src = "exp1_images/3_1.gif";
-                img_static4.src = "exp1_images/4_1.gif";
-                img_static5.src = "exp1_images/5_1.gif";
-                img_static6.src = "exp1_images/6_1.gif";      
+                var advert_dir = [];
+                for (let i=1; i <= 3; i++) {
+            	    for (let j=1; j <= 15; j++) {
+                        var img_static = new Image();                     
+            		    img_static.src =  "exp2_images/" + i + "/"+j+".jpg";
+            		    advert_dir.push(img_static);
+            	    }
+                }
             }   
             if(localStorage.getItem("distractions").includes("Nie"))
             { 
-                img_static1.src = "exp1_images/10_1.gif";
-                img_static2.src = "exp1_images/11_1.gif";
-                img_static3.src = "exp1_images/12_1.gif";
-                img_static4.src = "exp1_images/13_1.gif";
-                img_static5.src = "exp1_images/14_1.gif";
-                img_static6.src = "exp1_images/15_1.gif"; 
+                var advert_dir = [];
+                for (let i=1; i <= 15; i++) {
+                    for (let j=1; j <= 3; j++) {
+                        var img_static = new Image();
+                        img_static.src = "exp1_images/" + i + "_" + j + ".gif";
+                        advert_dir.push(img_static);
+                    }
+                }
             }
-           
-
-            var advert_dir = [img_static1, img_static2, img_static3, img_static4, img_static5, img_static6];
-
             for (var i = 0; i < advert_dir.length; i++) {
                 advert_dir[i].style.height = "210px";
                 advert_dir[i].style.width = "350px";
@@ -248,10 +264,10 @@ $(document).ready(function() {
                         $(':input[type="submit"]').prop('disabled', true);
                         $("#question-data :input").prop('disabled', true);
                         $("#question-data :input").prop('style', "visibility: visible");
-                        // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        logEvent(",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                         src.appendChild(img);
                         $(img).hide().fadeIn(displaymoment);
-                        // $(img).delay(displaytime).hide(0);
+                        $(img).delay(displaytime).hide(0);
                     }, displaymoment);
 
                     window.setTimeout(function() {
@@ -260,7 +276,7 @@ $(document).ready(function() {
                         $("#question-data :input").prop('style', "visibility: visible");
                         $(img).delay(0).hide(0);
                         i++;
-                        // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        logEvent(",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                     }, displaytime*2);
 
                     break;
@@ -270,7 +286,7 @@ $(document).ready(function() {
                         $(':input[type="submit"]').prop('disabled', true);
                         $("#question-data :input").prop('disabled', true);
                         $("#question-data :input").prop('style', "visibility: visible");
-                        // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                        logEvent(",zajawka,start,srodek,zajawka");
                         element.css('width', '11px');
                         element.css('height', '11px');
                         element.css('background-color', 'lime');
@@ -281,12 +297,12 @@ $(document).ready(function() {
                     }, 0);
 
                     window.setTimeout(function() {
-                        // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                        logEvent(",zajawka,stop,srodek,zajawka");
                         element.delay(0).hide(0);
                     }, displaytime);
 
                     window.setTimeout(function() {
-                        // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        logEvent(",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                         src.appendChild(img);
                         $(img).hide().fadeIn(2000);
                     }, displaytime);
@@ -295,7 +311,7 @@ $(document).ready(function() {
                         $(':input[type="submit"]').prop('disabled', false);
                         $("#question-data :input").prop('disabled', false);
                         $("#question-data :input").prop('style', "visibility: visible");
-                        // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        logEvent(",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                         $(img).delay(0).hide(0);
                         i++;
                     }, displaytime*2);
@@ -307,7 +323,7 @@ $(document).ready(function() {
                         $(':input[type="submit"]').prop('disabled', true);
                         $("#question-data :input").prop('disabled', true);
                         $("#question-data :input").prop('style', "visibility: visible");
-                        // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        logEvent(",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                         src.appendChild(img);
                         $(img).delay(1000).fadeIn(0);
                     }, 1000);
@@ -316,7 +332,7 @@ $(document).ready(function() {
                         $(':input[type="submit"]').prop('disabled', false);
                         $("#question-data :input").prop('disabled', false);
                         $("#question-data :input").prop('style', "visibility: visible");
-                        // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                        logEvent(",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                         $(img).delay(0).hide(0);
                         i++;
                     }, displaytime);
@@ -339,7 +355,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', true);
                             $("#question-data :input").prop('disabled', true);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                             src.appendChild(img);
                             $(img).hide().fadeIn(teaserdisplay);
                             // $(img).delay(displaytime).hide(0);
@@ -350,13 +366,13 @@ $(document).ready(function() {
                             $("#question-data :input").prop('style', "visibility: visible");
                             $(img).delay(0).hide(0);
                             i++;
-                            // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                         }, displaytime*2);
                         break;
                         
                     case 'Poprzedzona bodźcem':
                         window.setTimeout(function() {
-                            // logEvent("zajawka,start,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                            logEvent(",zajawka,start,srodek,zajawka");
                             element.css('width', '11px');
                             element.css('height', '11px');
                             element.css('background-color', 'lime');
@@ -368,7 +384,7 @@ $(document).ready(function() {
                         }, 0);
 
                         window.setTimeout(function() {
-                            // logEvent("zajawka,stop,srodek,zajawka,none,none,none,none,none,none,none,none,none,none");
+                            logEvent(",zajawka,stop,srodek,zajawka");
                             element.delay(0).hide(0);
                         }, displaytime);
 
@@ -376,7 +392,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', true);
                             $("#question-data :input").prop('disabled', true);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                             src.appendChild(img);
                             $(img).hide().fadeIn(2000);
                         }, displaytime);
@@ -385,7 +401,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', false);
                             $("#question-data :input").prop('disabled', false);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                             $(img).delay(0).hide(0);
                             i++;
                         }, displaytime*2);
@@ -397,7 +413,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', true);
                             $("#question-data :input").prop('disabled', true);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(",start,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                             src.appendChild(img);
                             $(img).delay(100).fadeIn(0);
                         }, 3000);
@@ -406,7 +422,7 @@ $(document).ready(function() {
                             $(':input[type="submit"]').prop('disabled', false);
                             $("#question-data :input").prop('disabled', false);
                             $("#question-data :input").prop('style', "visibility: visible");
-                            // logEvent(img.src+",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'')+",none,none,none,none,none,none,none,none,none,none");
+                            logEvent(",stop,srodek,"+type.normalize('NFD').replace(/[\u0300-\u036f]/g, "").replace(/\s/g,'') + "," + img.src);
                             $(img).delay(0).hide(0);
                             i++;
                         }, displaytime*2);

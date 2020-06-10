@@ -3,12 +3,26 @@ function saveCompleteLog()
     // var storedLog = JSON.parse(localStorage.getItem("contentArray"));
      
     var atag = document.createElement("a");
-    var file = new Blob([JSON.stringify(sessionStorage.getItem("contentArray")).replace('"','').replace('[','').replace(']','').replace(']','').replace('/','')], {type: 'text/plain'});
-    atag.href = URL.createObjectURL(file);
-    atag.download = "stymulacjaKompletnyLog.txt";
-    atag.click();
-}
 
+    var file = new Blob([sessionStorage.getItem("contentArray")], {type: 'text/plain'});
+    atag.href = URL.createObjectURL(file);
+    today = new Date();
+    atag.download = "Exp_" + localStorage.getItem("userName") 
+    +today.getFullYear()
+    +(today.getMonth() < 10 ? '0' : '')     	      		         
+    +today.getMonth()
+    +(today.getDate() < 10 ? '0' : '')     	      		         
+    +today.getDate()
+    +(today.getHours() < 10 ? '0' : '')     	      		         
+    +today.getHours()
+    +(today.getMinutes() < 10 ? '0' : '')     	      		       
+    +today.getMinutes()
+    +".txt";
+    atag.click();
+    sessionStorage.removeItem("contentArray");
+
+}
+function imie(e) {localStorage.setItem("userName",e );}
 $(document).ready(function() {
     if(window.location.pathname.indexOf("/result.html") >= 0) {
         displayTimes();
@@ -89,24 +103,27 @@ $(document).ready(function() {
     if(questionNo == "10") {
         $(".next-question").html("Zakończ &nbsp;<i class='fas fa-check'></i>");
         $(".next-question").removeClass("btn-dark");
-        $(".next-question").addClass("btn-success");
+        $(".next-question").addClass("btn-success");        
     }
 
     // Submit user data
     $("#user-data").submit(function(e) {
+
         var data = $(this).serializeArray();
+        
+
+        sessionStorage.removeItem("contentArray");
 
         param = {
             userName: data[0].value,
             questions: []
         }
 
-        addReportUsername(param);
-
+        addReportUsername(param);        
         if(inputValidation(data)) {
             // Set first question number
             localStorage.setItem("questionNo", 1);
-            localStorage.setItem("userName", userName);
+            localStorage.setItem("userName", $( "input" ).first().val());
             goToNextQuestion();
         }
 
@@ -133,6 +150,7 @@ $(document).ready(function() {
             addReportParam(reportParam);
             if(questionNo == "10") {
                 // Show results and clear local storage
+                saveCompleteLog();
                 window.location.replace("result.html");       
                 localStorage.setItem("questionNo", "");
                 localStorage.setItem("askedQuestions", "");   
